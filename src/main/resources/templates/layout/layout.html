@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+th:fragment="myLayout(head, main)">
+	<head>
+		<meta charset="UTF-8">
+		<title>템풀릿</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="/css/commons/common.css">
+		<th:block th:replace="${head}"/>
+	</head>
+	<body>
+		<th:block th:insert="/layout/header::header"/>
+		<th:block th:replace="${main}"/>
+		<th:block th:insert="/layout/footer::footer"/>
+	</body>
+</html>
