@@ -1,0 +1,39 @@
+.intro-right{
+    background-color: rgb(236, 196, 120);
+    width: 327px;
+    height: 898px;
+    align-content: center;
+}
+.intro-right>h2{
+    text-align: center;
+}
+.intro-right>h2:nth-of-type(2){
+    margin-bottom: 100px;
+}
+
+.intro-right>p{
+    text-align: center;
+}
+.intro-right>p:last-child{
+    text-align: center;
+
+}
+.intro-right>div{
+    margin-top: 200px;
+    text-align: center;
+}
+.intro-right>div>input{
+
+    width:70%;
+    background-color: #674248;
+    border-radius: 3px;
+    padding: 0.5em 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.sec-2{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}

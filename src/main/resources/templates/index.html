@@ -2,12 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org"
 th:replace = "layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
-	
+	<link rel="stylesheet" href="/css/main.css">
 </head>
-<main>
-	<h1>메인컨텐츠</h1>
-	<div class="wrap">
-		메인영역입니다. 바꿔보자잉으악으악
-	</div>
+<main class="view-size">
+	<th:block th:insert="main::main"></th:block>
 </main>
 </html>
