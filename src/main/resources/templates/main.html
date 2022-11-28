@@ -1,8 +1,7 @@
-<th:block th:fragment="main" >
-	<section class="flex center">
+<th:block th:fragment="main" xmlns="http://www.w3.org/1999/html">
+	<section class="intro-left flex center">
 		<div>
-			<img src="/images/bgImg.jpg"
-				 alt="no img" style="width: 653px; height: 898px; object-fit: cover; object-position: 50% 50%;">
+			<img src="/images/bgImg.jpg">
 		</div>
 		<div class="intro-right flex center column">
 			<h2>What is on</h2>
@@ -11,24 +10,85 @@
 			<p>upcoming gift season with our</p>
 			<p>selected Sticky items</p>
 			<div>
-				<input type="button" value="GO TO THE GIFTSHOP"/>
+				<a href="#" type="button">GO TO THE GIFTSHOP</a>
 			</div>
 
 		</div>
 	</section>
-	<section class="sec-2 flex">
+	<section class="sec-2 flex between">
 		<div>
-
+			<img src="/images/sec2-img1.jpg">
+			<a href="#">GIFTS UNDER $20</a>
 		</div>
 		<div>
-
+			<img src="/images/sec2-img2.jpg">
+			<a href="#">GIFTS UNDER $40</a>
 		</div>
 		<div>
-
+			<img src="/images/sec2-img3.jpg">
+			<a href="#">GIFTS UNDER $60</a>
 		</div>
 		<div>
-
+			<img src="/images/sec2-img4.jpg">
+			<a href="#">GIFTS UNDER $80</a>
 		</div>
+	</section>
+	<section class="sec-3">
+		<p style="text-align: center;font-size: 20px;">SELECTED PRODUCTS</p>
+		<div>
+			<ul class="flex between center">
+				<li>
+					<a href="#">
+						<img src="/images/sec3-1.jpg"/>
+					</a>
+					<a href="#">
+						<div class="flex column">
+							<p>backpack large | meet me in the meadows | moonrise pink</p>
+							<span>$64.95</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/images/sec3-2.jpg"/>
+					</a>
+					<a href="#">
+						<div class="flex column">
+							<p>pouch bag | adventure collection | tartan map green</p>
+							<span>$19.95</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/images/sec3-3.jpg"/>
+					</a>
+					<a href="#">
+
+						<div class="flex column">
+							<p>rain boots | meet me in the meadows | racoon</p>
+							<span>$49.95</span>
+						</div>
+
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/images/sec3-4.jpg"/>
+					</a>
+					<a href="#">
+
+						<div class="flex column">
+							<p>fanny pack large | meet me in the meadows | deep lake blue</p>
+							<span>$24.95</span>
+						</div>
+
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<hr class="wave">
 	</section>
 
 </th:block>
