@@ -81,12 +81,46 @@
     justify-content: center;
 }
 
-.wave{
-    display: block;
+.sec-4{
+    align-items: center;
+}
+.pack>div>p,
+.sec-4>div>p{
+    text-align: center;
+    width: 290px;
+}
+.sec-4>div>img{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
 
-    margin: 0.5em auto;
 
-    border-style: dashed;
 
-    border-width: 1px;
+.pack>div{
+
+    text-align: center;
+    width: 500px;
+    height: 900px;
+}
+.pack>div>div>p{
+    display: inline-block;
+    width: 315px;
+}
+.pack>div>img{
+    margin: 0 auto;
+    width: 480px;
+    height: 715px;
+}
+
+.sec-5>div>img{
+    width: 230px;
+    height: 738px;
+}
+.sec-6{
+    text-align: center;
+}
+.sec-6>div>a>img{
+    width: 300px;
+    height: 300px;
 }
