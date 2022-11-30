@@ -15,5 +15,9 @@ public class PageController {
 	public String signup() {
 		return "views/sign/signup";
 	}
+	@GetMapping("/admin")
+	public String adminHome() {
+		return "admin";
+	}
 	
 }

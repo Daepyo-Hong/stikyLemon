@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import url("admin-footer.css");
+@import url("admin-header.css");
+@import url("admin-main.css");
+h3{display: none;}
+body {
+ /* 텍스트 정렬 */
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+	text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+}
+body a{
+	 text-decoration: none;
+}
+.wrap {
+	margin: 20px 0;
+}
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 15em 0 0 1em;
+	width: 180px;
+	height: 100%;
+	border: 5px solid rgba(0, 128, 192,1);
+	background-color: rgba(181, 214, 240, 0.3);
+	
+	
+}
+main{
+	padding: 2em;
+	position: absolute;
+	top: 165px;
+	left: 205px;
+	width: 2100px;
+	height: 1100px;
+	text-align: justify;
+	border: 1px solid  #fff;
+	background-color: #fff;
+	
+	
+}
+footer{
+	position: fixed; 
+	top: 0px;
+	width: 100%;
+	height: 100px;
+	padding: 2em;
+	border: 3px solid rgba(228,198,176,1);
+	border-radius: 12px;
+	background-color: rgba(243, 230, 220,1);
+	
+	
+}
+ 
