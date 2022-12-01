@@ -1,9 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/commons/header.css">
+<th:block th:replace="${head}"/>
 <header>
 	<h1>헤더파일</h1>
 	<div class="wrap">
-		헤더입니다.
+	
+	<a href="/"><img src="/images/headerImg/or.png" class="img_logo"/></a>
+	<!-- ↑ 로고이미지  ↓로고 글씨! -->
+	<section id="logo">
+		<h1>로고</h1>
+		<div class="wrap content-size">
+			<a href="/">
+				<span>sticky&nbsp;&nbsp;lemon</span>
+				<!-- &nbsp;은 띄어쓰기 해줌! 한번하면 한칸, 두번하면 두칸 -->
+			</a>
+		</div>
+	</section>
+		<section id="um">
+			<h1>유저메뉴</h1>
+			<div class="wrap content-size">
+				<ul class="Al flex right">
+					<li class="cart">
+						<a href="/" >
+							<span>Shopping cart</span>
+						</a>
+					</li>
+					<li class="log">
+						<a href="/signin" >
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<nav id="nb">
+			<h1>메인메뉴</h1>
+			<div class="wrap">
+				<ul class="flex">
+					<li class="menu1"><a href="#">shop</a>
+						<ul class="sub">
+							<li>
+								<a href="#">all&nbspproducts</a>
+							</li>
+							<li>
+								<a href="#">bags</a>
+							</li>
+							<li>
+								<a href="#">stationery</a>
+							</li>
+							<li>
+								<a href="#">accessories</a>
+							</li>
+							<li>
+								<a href="#">the&nbspsticky&nbspsis&nbspclub</a>
+							</li>
+							<li>
+								<a href="#">gift&nbspcard</a>
+							</li>				
+						</ul>
+					</li>
+					<li><a href="#">gift&nbspshop</a></li>
+					<li><a href="#">the&nbspstick&nbspsis&nbspclub</a>
+						<ul class="sub S">
+							<li>
+								<a href="#">shop</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#">about</a></li>
+					<li><a href="#">wholesale</a></li>
+					<li><a href="#">contact</a></li>
+				</ul>
+			</div>
+		</nav>
 	</div>
 </header>
 </html>
