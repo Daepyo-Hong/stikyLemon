@@ -1,48 +1,49 @@
 @charset "UTF-8";
 @import url("admin-outline.css");
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
+header{
+	font-family: 'Noto Sans KR', sans-serif;
+}
 .dropdown{
   position : relative;
   left:-20px;
   display : inline-block;
   padding: 60px 0px 60px 0px;
-  
 }
 
 .menulogo{
-	position: absolute;
-	top: 200px;
-	left: 60px;
-	box-shadow: 0 0 0 0 lightblue; 
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  box-shadow: 0 10px 0 0 lightblue; 
 }
 .dropmenu{
   position: absolute;
-  border-radius: 25px;
-  background: 1px solid rgba(0, 128, 192,0.2);
+  left: 20px;
+  top: 100px;
+  
 }
 .dropbtn_icon{
   font-family : 'Material Icons';
 }
 .dropbtn{
-  border : 3px solid rgba(0, 128, 192,0.2);
-  border-radius : 4px;
-  background-color: rgba(0, 128, 192,0.2);
-  width :200px;
+  width :199px;
   padding : 12px;
-  font-weight: 500;
-  color : rgb(37, 37, 37);
   text-align: left;
   cursor : pointer;
-  box-shadow: 0 0 20px 0 lightblue;
+  border : 1px solid rgba(0, 128, 192,0.3);
+  background-color: rgba(0, 128, 192,0.2);
+  box-shadow: 2px 1px 0px 1px lightblue;
   
 }
 .dropdown-content{
-  display : none;
+  
   position : absolute;
   z-index : 1; /*다른 요소들보다 앞에 배치*/
-  background-color: #f9f9f9;
   min-width : 200px;
+  border : 1px solid rgba(0, 128, 192,0.3);
+  background-color: rgba(0, 128, 192,0.1);
+  
 }
 
 .dropdown-content a{
@@ -53,7 +54,8 @@
 }
 
 .dropdown-content a:hover{
-  background-color : #ececec
+  background-color : rgba(0, 128, 192,0.1);
+  
 }
 
 .dropdown:hover .dropdown-content {

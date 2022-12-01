@@ -11,6 +11,7 @@ body {
 	text-align: center;
     font-size: 17px;
     font-weight: 300;
+    font-family: 'Noto Sans KR', sans-serif; 
 }
 body a{
 	 text-decoration: none;
@@ -20,35 +21,35 @@ body a{
 }
 header{
 	position: fixed;
-	top: 0;
-	left: 0;
-	padding: 15em 0 0 1em;
+	top: 170px;
+	left: 250px;
 	width: 180px;
-	height: 100%;
-	border: 5px solid rgba(0, 128, 192,1);
+	height: 80%;
 	background-color: rgba(181, 214, 240, 0.3);
-	
+	border-radius: 10px;
+ 	border: 1px solid rgba(0, 128, 192,0.4);
+ 	padding: 10px;
+ 	box-shadow: 5px 5px 5px 5px lightbeige;
 	
 }
 main{
 	
 	padding: 6em;
 	position: absolute;
-	top: 165px;
-	left: 205px;
+	top: 300px;
+	left: 650px;
 	width: 1400px;
-	height: 1000px;
+	height: 900px;
 	text-align: justify;
 	border: 1px solid  #fff;
 	background-color: #fff;
-	
-	
 }
 footer{
 	position: fixed; 
-	top: 0px;
-	width: 100%;
-	height: 100px;
+	top: 20px;
+	left: 190px;
+	width: 80%;
+	height: 80px;
 	padding: 2em;
 	background-color: rgba(243, 230, 220,1);
 	border-radius: 25px;
