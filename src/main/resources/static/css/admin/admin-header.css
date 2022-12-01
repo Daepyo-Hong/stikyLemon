@@ -2,37 +2,39 @@
 @import url("admin-outline.css");
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+.dropdown{
+  position : relative;
+  left:-20px;
+  display : inline-block;
+  padding: 60px 0px 60px 0px;
+  
+}
+
 .menulogo{
 	position: absolute;
 	top: 200px;
 	left: 60px;
+	box-shadow: 0 0 0 0 lightblue; 
 }
 .dropmenu{
-	position: absolute;
-	left: 0px;
-	margin: 20px 0;
-	
+  position: absolute;
+  border-radius: 25px;
+  background: 1px solid rgba(0, 128, 192,0.2);
 }
-	
-
-.dropdown{
-  position : relative;
-  display : inline-block;
-}
-
 .dropbtn_icon{
   font-family : 'Material Icons';
 }
 .dropbtn{
-  border : 1px solid rgba(0, 128, 192,0.2);
+  border : 3px solid rgba(0, 128, 192,0.2);
   border-radius : 4px;
   background-color: rgba(0, 128, 192,0.2);
+  width :200px;
+  padding : 12px;
   font-weight: 500;
   color : rgb(37, 37, 37);
-  padding : 12px;
-  width :200px;
   text-align: left;
   cursor : pointer;
+  box-shadow: 0 0 20px 0 lightblue;
   
 }
 .dropdown-content{

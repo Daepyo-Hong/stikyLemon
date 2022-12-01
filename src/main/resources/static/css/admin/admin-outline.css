@@ -31,12 +31,13 @@ header{
 	
 }
 main{
-	padding: 2em;
+	
+	padding: 6em;
 	position: absolute;
 	top: 165px;
 	left: 205px;
-	width: 2100px;
-	height: 1100px;
+	width: 1400px;
+	height: 1000px;
 	text-align: justify;
 	border: 1px solid  #fff;
 	background-color: #fff;
@@ -49,10 +50,12 @@ footer{
 	width: 100%;
 	height: 100px;
 	padding: 2em;
-	border: 3px solid rgba(228,198,176,1);
-	border-radius: 12px;
 	background-color: rgba(243, 230, 220,1);
-	
+	border-radius: 25px;
+ 	border: 2px solid rgba(228,198,176,1);
+ 	padding: 10px;
+ 	box-shadow: 0 5px 5px 5px lightbeige;
+ 	
 	
 }
  
