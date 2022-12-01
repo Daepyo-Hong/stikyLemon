@@ -25,4 +25,8 @@ public class PageController {
 	public String login() {
 		return "views/sign/signup2";
 	}
+	@GetMapping("/qna")
+	public String admin() {
+		return "views/admin/qna";
+	}
 }
