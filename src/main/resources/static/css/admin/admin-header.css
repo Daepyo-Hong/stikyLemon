@@ -1,12 +1,13 @@
 @charset "UTF-8";
-@import url("admin-outline.css");
+
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 header{
 	font-family: 'Noto Sans KR', sans-serif;
 }
 .dropdown{
   position : relative;
-  left:-20px;
+  top: -10px;
+  left: -20px;
   display : inline-block;
   padding: 60px 0px 60px 0px;
 }
@@ -15,7 +16,7 @@ header{
   position: absolute;
   top: 30px;
   left: 60px;
-  box-shadow: 0 10px 0 0 lightblue; 
+  box-shadow: 0 5px 0 0 lightblue; 
 }
 .dropmenu{
   position: absolute;
@@ -27,13 +28,14 @@ header{
   font-family : 'Material Icons';
 }
 .dropbtn{
-  width :199px;
+  width :200px;
   padding : 12px;
   text-align: left;
   cursor : pointer;
   border : 1px solid rgba(0, 128, 192,0.3);
+  border-radius: 1px;
   background-color: rgba(0, 128, 192,0.2);
-  box-shadow: 2px 1px 0px 1px lightblue;
+  box-shadow: 3px 2px 0px 1px rgba(171, 219, 224, 0.2);
   
 }
 .dropdown-content{
@@ -41,8 +43,9 @@ header{
   position : absolute;
   z-index : 1; /*다른 요소들보다 앞에 배치*/
   min-width : 200px;
-  border : 1px solid rgba(0, 128, 192,0.3);
   background-color: rgba(0, 128, 192,0.1);
+  border-radius: 1px;
+  box-shadow: 3px 2px 0px 1px rgba(171, 219, 224, 0.2);
   
 }
 

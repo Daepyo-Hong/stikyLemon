@@ -24,10 +24,10 @@ header{
 	top: 170px;
 	left: 250px;
 	width: 180px;
-	height: 80%;
+	height: 74%;
 	background-color: rgba(181, 214, 240, 0.3);
-	border-radius: 10px;
  	border: 1px solid rgba(0, 128, 192,0.4);
+ 	border-radius: 10px;
  	padding: 10px;
  	box-shadow: 5px 5px 5px 5px lightbeige;
 	
@@ -37,9 +37,8 @@ main{
 	padding: 6em;
 	position: absolute;
 	top: 300px;
-	left: 650px;
-	width: 1400px;
-	height: 900px;
+	left: 700px;
+	width: 1000px;
 	text-align: justify;
 	border: 1px solid  #fff;
 	background-color: #fff;
