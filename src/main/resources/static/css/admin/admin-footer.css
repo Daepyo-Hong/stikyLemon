@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+
+.admin-logo{
+	position: absolute;
+	left: 50px;
+	width: 50px;
+	margin-left: 1em;
+}
+.admin-logo>img{
+	position: absolute;
+	left: -10px;
+	top:-9px;
+	
+}
+
+.admin-logo> a{
+	position: absolute;
+	top: -15px;
+	font-size: 30px;
+	margin-right: 2em;	
+	
+	
+}
+.user-info{
+	position: absolute;
+	right: 40px;
+	bottom: 30px;
+	width: 200px;
+	 
+}
+.somenu{
+	position: absolute;
+	right: 70px;
+	bottom: 20px;
+	width: 200px;
+	
+}

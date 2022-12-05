@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+header{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.dropdown{
+  position : relative;
+  top: -10px;
+  left: -20px;
+  display : inline-block;
+  padding: 60px 0px 60px 0px;
+}
+
+.menulogo{
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  box-shadow: 0 5px 0 0 lightblue; 
+}
+.dropmenu{
+  position: absolute;
+  left: 20px;
+  top: 100px;
+  
+}
+.dropbtn_icon{
+  font-family : 'Material Icons';
+}
+.dropbtn{
+  width :200px;
+  padding : 12px;
+  text-align: left;
+  cursor : pointer;
+  border : 1px solid rgba(0, 128, 192,0.3);
+  border-radius: 1px;
+  background-color: rgba(0, 128, 192,0.2);
+  box-shadow: 3px 2px 0px 1px rgba(171, 219, 224, 0.2);
+  
+}
+.dropdown-content{
+  
+  position : absolute;
+  z-index : 1; /*다른 요소들보다 앞에 배치*/
+  min-width : 200px;
+  background-color: rgba(0, 128, 192,0.1);
+  border-radius: 1px;
+  box-shadow: 3px 2px 0px 1px rgba(171, 219, 224, 0.2);
+  
+}
+
+.dropdown-content a{
+  display : block;
+  color : rgb(37, 37, 37);
+  font-size: 12px;
+  padding : 12px 20px;
+}
+
+.dropdown-content a:hover{
+  background-color : rgba(0, 128, 192,0.1);
+  
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

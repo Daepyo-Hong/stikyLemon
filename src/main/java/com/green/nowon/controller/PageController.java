@@ -35,4 +35,9 @@ public class PageController {
 	public String admin() {
 		return "views/admin/qna";
 	}
+	@GetMapping("/admin")
+	public String adminHome() {
+		return "adminpage/admin";
+	}
+
 }
