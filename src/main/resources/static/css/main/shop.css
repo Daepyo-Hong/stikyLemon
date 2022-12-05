@@ -1,0 +1,20 @@
+
+
+.items{
+    align-items: center;
+}
+.items>div{
+    align-items: center;
+    text-align: center;
+}
+.items>img{
+    width: 80%;
+    height: 80%;
+}
+.items-list ul li{
+    margin-right: 5vw;
+}
+
+#filter>button{
+    width: 100%;
+}

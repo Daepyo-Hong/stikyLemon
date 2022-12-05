@@ -1,27 +1,118 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	  th:replace = "layout/layout :: myLayout(~{this::head}, ~{this::main})">
+	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
 	<link rel="stylesheet" href="/css/main/shop.css">
 </head>
 <main>
 	<a href="/">HOME</a>
 	<div class="flex" style="margin: 0 auto;">
-		<aside style="flex: 1">좌측</aside>
+		<aside style="flex: 1" id="filter">
+			<span>Filter</span>
+			<button class="flex between">
+				<span>Collection</span>
+				<span>+&nbsp;&nbsp;</span>
+			</button>
+			<ul>
+				<li></li>
+			</ul>
+
+		</aside>
 		<div style="flex:4;" class="flex column">
 			<div>상단정렬바</div>
-			<div class="flex column ">
-				<ul class="flex" style="flex: 1">
-					<li style="flex: 1">1</li>
-					<li style="flex: 1">2</li>
-					<li style="flex: 1">3</li>
-					<li style="flex: 1">4</li>
+			<div class="flex column">
+				<ul class="flex items-list" style="flex: 1">
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" >
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
 				</ul>
 				<ul class="flex" style="flex: 1">
-					<li style="flex: 1">5</li>
-					<li style="flex: 1">6</li>
-					<li style="flex: 1">7</li>
-					<li style="flex: 1">8</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+
 				</ul>
 			</div>
 		</div>
