@@ -16,6 +16,7 @@
 	margin-top: 40px;
 	font-size: 40px;
 	margin-top: 40px;
+	font-weight: 600;
 }
 
 #all>.wrap {
@@ -26,8 +27,10 @@
 }
 
 #all>.wrap>div {
-	margin: 10px 25px;
+	color: #f9b840;
+	margin: 10px 35px;
 	font-size: 18px;
+	font-weight: 500;
 }
 
 #all>.wrap>div>span {
@@ -65,7 +68,12 @@
 }
 
 #board {
-	padding: 20px 100px;
+	display: flex;
+	margin-top: 30px;
+	justify-content: center;
+	align-items: center;
+	background-color: orange;
+	min-height: 35vh;
 }
 
 .bno {

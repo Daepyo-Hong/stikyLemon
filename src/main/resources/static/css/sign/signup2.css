@@ -13,6 +13,15 @@
 	margin-bottom: 30px;
 }
 
+#all div>button>a {
+	display: inline-block;
+	left: 180px;
+	top: -20px;
+	font-size: 20px;
+	position: relative;
+	color: #a9a9a9;
+}
+
 .wrap {
 	margin: 20px 0;
 }
@@ -58,6 +67,7 @@
 #email>div>button>img {
 	border-radius: 5px;
 }
+
 #log-btn>div {
 	width: 316px;
 	height: 40px;
@@ -66,21 +76,27 @@
 	box-sizing: border-box;
 	margin: 10px;
 	font-size: 13px;
-	background-color : #bcbcbc;
+	background-color: #bcbcbc;
 	color: #fff;
 	border-radius: 5px;
 }
+
 #line>div {
-	position:relative; z-index: -3;
+	position: relative;
+	z-index: -3;
 	margin-left: 10px;
 	width: 316px;
 	height: 13px;
 	border-bottom: 1px solid #a9a9a9;
 }
 
-#or{margin: 0px;}
+#or {
+	margin: 0px;
+}
+
 #or>span {
-	position:relative; z-index: 3;
-	top:-15px;
+	position: relative;
+	z-index: 3;
+	top: -15px;
 	background-color: #fff;
 }
