@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+#all {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	min-height: 15vh;
+	text-align: center;
+	font-weight: 300;
+}
+
+#cs {
+	padding-top: 40px;
+	margin-top: 40px;
+	font-size: 40px;
+	margin-top: 40px;
+}
+
+#all>.wrap {
+	display: flex;
+	margin-top: 30px;
+	justify-content: center;
+	align-items: center;
+}
+
+#all>.wrap>div {
+	margin: 10px 25px;
+	font-size: 18px;
+}
+
+#all>.wrap>div>span {
+	position: relative;
+	top: 60px;
+}
+
+.list {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.admin {
+	background-image: url(/images/cs/admin.png);
+}
+
+.Mc {
+	background-image: url(/images/cs/box.png);
+}
+
+.truck {
+	background-image: url(/images/cs/truck.png);
+}
+
+.event {
+	background-image: url(/images/cs/firework.png);
+}
+
+.etc {
+	background-image: url(/images/cs/notebook.png);
+}
+
+#board {
+	padding: 20px 100px;
+}
+
+.bno {
+	width: 40px;
+	font-weight: 600;
+}
+
+.title {
+	width: 350px;
+	font-weight: 600;
+}
+
+.writer {
+	width: 100px;
+	font-weight: 600;
+}
+
+.createdDate {
+	width: 100px;
+	font-weight: 600;
+}
+
+.readCount {
+	width: 80px;
+	font-weight: 600;
+}
