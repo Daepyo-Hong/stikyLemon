@@ -35,3 +35,7 @@
     font-size: 14px;
     color: rgba(54, 50, 50, 0.63);
 }
+#filter>ul>li>input.target{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+}

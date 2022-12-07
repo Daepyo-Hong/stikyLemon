@@ -3,6 +3,27 @@
 	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
 	<link rel="stylesheet" href="/css/main/shop.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script sr></script>
+	<script>
+		$(function (){
+			$("#filter>ul>li>input").click(collectionListClickd);
+			$("#aside-collection").click(collectionShowHide);
+		});
+		function collectionListClickd(){
+			$("#filter>ul>li>input").removeClass("target");
+			$(this).addClass("target");
+		}
+		function collectionShowHide(){
+			if($("#aside-collection span").last().text()=="+"){
+				$("#aside-collection span").last().text("-");
+				$("#coll-list").show();
+			}else{
+				$("#aside-collection span").last().text("+");
+				$("#coll-list").hide();
+			}
+		}
+	</script>
 </head>
 <main>
 	<a href="/">HOME</a>
@@ -10,12 +31,12 @@
 		<aside style="flex: 1" id="filter">
 			<span>Filter</span>
 			<hr>
-			<button class="flex between">
+			<button id="aside-collection" class="flex between">
 				<span>Collection</span>
-				<span>+&nbsp;&nbsp;</span>
+				<span>-</span>
 			</button>
-			<ul>
-				<li><input type="button" value="All"></li>
+			<ul id="coll-list">
+				<li><input class="target" type="button" value="All"></li>
 				<li><input type="button" value="gifts under $20"></li>
 				<li><input type="button" value="gifts under $40"></li>
 				<li><input type="button" value="gifts under $60"></li>
