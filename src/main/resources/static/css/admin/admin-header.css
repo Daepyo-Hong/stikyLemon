@@ -1,50 +1,88 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-header{
-	font-family: 'Noto Sans KR', sans-serif;
+header div{
+	width: 980px; margin: 0 auto;
 }
+ul{
+   list-style:none;
+}
+nav>div>ul>li>a>img{
+	
+    width: 38px;
+    height: 45px;
+}
+/*------------------------------------------------*/
+
+#fn1>.wrap>ul.flex{
+	float: left; /* 메뉴 왼쪽으로 */
+}	
+#fn2>.wrap>ul.flex{	
+	float: right; /* 메뉴 오른쪽으로 */
+}
+#fn1>.wrap>ul.flex > li {
+	display:inline-block; /* 메뉴 가로정렬  */
+	padding:15px; /* 메뉴사이 간격 조정!  */
+}
+
+#fn2>.wrap>ul.flex > li {
+	display:inline-block;/* 메뉴 가로정렬  */
+	padding:15px; /* 메뉴사이 간격 조정!  */
+}
+
+div>nav>.wrap ul li a{
+	color: rgb(188, 125, 7); /*메뉴 색!  */
+	
+}
+
+#fn2>.wrap>ul.flex > li>button{
+	background-color:#fde8ae;
+	width: 65px;
+	height: 40px;
+	border: 0;
+	border-radius: 7em;
+	
+}
+#fn2>.wrap>ul.flex > li.upup{
+	position:absolute;
+	height: 10px;
+}
+
+
+
+
 .dropdown{
-  position : relative;
-  left:100px;
   display : inline-block;
   padding: 60px 0px 60px 0px;
 }
 
 .menulogo{
-  position: absolute;
-  top: 30px;
-  left: 60px;
+  
   box-shadow: 0 5px 0 0 lightblue; 
 }
 .dropmenu{
   position: absolute;
-  left: 20px;
-  top: 100px;
+  top: 0px;
   
 }
-.dropbtn_icon{
-  font-family : 'Material Icons';
-}
+
 .dropbtn{
   width :200px;
   padding : 12px;
   text-align: left;
   cursor : pointer;
-  border : 1px solid rgba(0, 128, 192,0.3);
+  border : 1px solid #fff;
   border-radius: 1px;
-  background-color: rgba(0, 128, 192,0.2);
-  box-shadow: 3px 2px 0px 1px rgba(171, 219, 224, 0.2);
+  background-color: #fff;
   
 }
 .dropdown-content{
-  
+  display: none;
   position : absolute;
   z-index : 1; /*다른 요소들보다 앞에 배치*/
   min-width : 200px;
-  background-color: rgba(0, 128, 192,0.1);
+  border : 1px solid #fff;
   border-radius: 1px;
-  box-shadow: 3px 2px 0px 1px rgba(171, 219, 224, 0.2);
+  background-color: #fff;
   
 }
 
@@ -57,7 +95,7 @@ header{
 
 .dropdown-content a:hover{
   background-color : rgba(0, 128, 192,0.1);
-  
+  display: none;
 }
 
 .dropdown:hover .dropdown-content {
