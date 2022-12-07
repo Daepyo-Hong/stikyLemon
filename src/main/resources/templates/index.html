@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-th:replace = "layout/layout :: myLayout(~{this::head}, ~{this::main})">
+	th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
-	
+	<link rel="stylesheet" href="/css/main/intro.css">
+	<link rel="stylesheet" href="/css/main.css">
 </head>
-<main>
+<main class="view-size">
+	<a href="/shop">SHOP</a>
+	<a href="/admin">어드민페이지</a>
 	<h1>메인컨텐츠</h1>
+	<th:block th:insert="views/main/intro::main"></th:block>
+
+	<hr>
 	<div class="wrap">
-		
-		<hr>
-		<button><a href="/admin">어드민페이지로 이동하기 </a></button>
-		<hr>
+		메인영역입니다.
+		<div class="wave">
+			<div>&nbsp;</div>
+		</div>
+
+		<div class="wrap" id="bot">
+			<div>
+				<button>
+					<a href="/qna"> <img src="/images/orange.png" width="60px">
+						<h5>문의주쇼</h5>
+					</a>
+				</button>
+			</div>
+		</div>
 	</div>
 </main>
 </html>

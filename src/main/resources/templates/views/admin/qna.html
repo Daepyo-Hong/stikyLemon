@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+<link rel="stylesheet" href="/css/admin/qna.css">
+<script type="text/javascript" src="https://livejs.com/live.js"></script>
+<style type="text/css">
+</style>
+</head>
+<title>무엇이든 물어보셔</title>
+<main>
+	<div id="all">
+		<div id="cs">고객센터</div>
+		<div class="wrap">
+			<div class="admin list">
+				<span>계정</span>
+			</div>
+			<div class="Mc list">
+				<span>상품</span>
+			</div>
+			<div class="truck list">
+				<span>배송</span>
+			</div>
+			<div class="event list">
+				<span>이벤트</span>
+			</div>
+			<div class="etc list">
+				<span>기타</span>
+			</div>
+		</div>
+		<div id="board">
+			<table>
+					<tr>
+						<td class="bno">번호</td>
+						<td class="title">제목</td>
+						<td class="writer">작성자</td>
+						<td class="createdDate">날짜</td>
+						<td class="readCount">조회수</td>
+					</tr>
+					<tr>
+						<td>100</td>
+						<td>제목은 이것입니다</td>
+						<td>작성자여섯자</td>
+						<td>2022.12.01</td>
+						<td>1000</td>
+					</tr>
+<!-- 					<tr th:each=""> -->
+<!-- 						<td><a th:href=""><span th:text=""></span></a></td> -->
+<!-- 						<td th:text=""></td> -->
+<!-- 						<td th:text=""></td> -->
+<!-- 						<td th:text=""></td> -->
+<!-- 						<td th:text=""></td> -->
+<!-- 					</tr> -->
+			</table>
+		</div>
+	</div>
+</main>
+</html>

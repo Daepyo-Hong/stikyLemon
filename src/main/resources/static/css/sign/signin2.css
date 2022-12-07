@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+#all {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+	text-align: center;
+	font-weight: 300;
+}
+
+#all>div {
+	margin-bottom: 30px;
+}
+
+.wrap {
+	margin: 20px 0;
+}
+
+#all div>button>a{
+	display: inline-block;
+	left: 180px;
+	top: -20px;
+	font-size: 20px;
+	position: relative;
+	color: #a9a9a9;
+}
+
+#sgmain>button>span>a {
+	position: relative;
+	color: #0198ff;
+}
+
+#input {
+	margin: 10px;
+	font-size: 11px;
+	color: #a9a9a9;
+	text-align: left;
+}
+
+#forgot>div {
+	font-size: 11px;
+	text-align: left;
+	margin-left: 10px;
+	text-decoration: underline;
+}
+
+#login {
+	font-size: 48px;
+	font-weight: 300;
+	margin-top: 50px;
+}
+
+#input div>input {
+	width: 316px;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	border-bottom-width: 1px;
+}
+
+#input>div {
+	margin-top: 10px;
+}
+
+#email>div>button:first-child {
+	margin-left: 140px;
+}
+
+#email>div>button:last-child {
+	margin-left: 16px;
+}
+
+#email>div>button>img {
+	border-radius: 5px;
+}
+
+#log-btn>div {
+	width: 316px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	box-sizing: border-box;
+	margin: 10px;
+	font-size: 13px;
+	background-color: #bcbcbc;
+	color: #fff;
+	border-radius: 5px;
+}
+
+#line>div {
+	position: relative;
+	z-index: -3;
+	margin-left: 10px;
+	width: 316px;
+	height: 13px;
+	border-bottom: 1px solid #a9a9a9;
+}
+
+#or {
+	margin: 0px;
+}
+
+#or>span {
+	position: relative;
+	z-index: 3;
+	top: -15px;
+	background-color: #fff;
+}
