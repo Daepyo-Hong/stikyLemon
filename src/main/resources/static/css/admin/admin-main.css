@@ -8,8 +8,8 @@
 }
 main>.wrap{
 	position: absolute;
-	top: -150px;
-	left: -130px;
+	top:240px;
+	left:100px;
 	width: 1000px;
 	height: 800px;
 	border-radius: 25px;
