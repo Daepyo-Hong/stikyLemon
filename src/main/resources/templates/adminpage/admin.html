@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 	<meta charset="utf-8">
 	<title>StikyAdmin</title>
@@ -11,33 +11,46 @@
 	</head>
 	
 	<body>
-	<th:block th:insert="adminpage/admin-header::header"/>
+	<th:block th:insert="adminpage/admin-header::header" />
 	
 		
-		<main>
-			<div class="flex column">
+		<main >
+			<div class="wrap">
+				<ul class="g-containter">
+					<li>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+					</li>
+					<li>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+					</li>
+					<li>
+						<p>작은칸</p>
+						<p>작은칸</p>
+					</li>
+					<li>
+						<p>작은칸</p>
+					</li>
+					<li>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+					</li>
+					<li>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+						<p>안녕하세요</p>
+					</li>
+				</ul>
 				
-				
-				 <div class="container flex around">
-					 <div class="card">인기 상품
-					 
-					 </div>
-					 <div class="card">상품 관리
-					 
-					 </div>				    
-					    <div class="card">최근 문의
-					    
-					</div>
-				  </div>
-			    
-			   	 <div class="container flex around">
-				    <div class="card">회원 관리
-				    </div>
-				    <div class="card2">매출 현황
-					</div>
-				
-				    
-				 </div>
+				 
 			</div>
 		</main>
 	

@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
-header div{
-	width: 980px; margin: 0 auto;
-}
+
 ul{
    list-style:none;
 }
@@ -13,25 +11,8 @@ nav>div>ul>li>a>img{
 }
 /*------------------------------------------------*/
 
-#fn1>.wrap>ul.flex{
-	float: left; /* 메뉴 왼쪽으로 */
-}	
-#fn2>.wrap>ul.flex{	
-	float: right; /* 메뉴 오른쪽으로 */
-}
-#fn1>.wrap>ul.flex > li {
-	display:inline-block; /* 메뉴 가로정렬  */
-	padding:15px; /* 메뉴사이 간격 조정!  */
-}
-
-#fn2>.wrap>ul.flex > li {
-	display:inline-block;/* 메뉴 가로정렬  */
-	padding:15px; /* 메뉴사이 간격 조정!  */
-}
-
 div>nav>.wrap ul li a{
 	color: rgb(188, 125, 7); /*메뉴 색!  */
-	
 }
 
 #fn2>.wrap>ul.flex > li>button{
@@ -47,57 +28,34 @@ div>nav>.wrap ul li a{
 	height: 10px;
 }
 
-
-
-
-.dropdown{
-  display : inline-block;
-  padding: 60px 0px 60px 0px;
+#h-b>.wrap{
+	border-top:1px solid #e9e9e9;
 }
-
-.menulogo{
-  
-  box-shadow: 0 5px 0 0 lightblue; 
+#h-b>.wrap dl>dt{
+	margin-right: 40px;
 }
-.dropmenu{
-  position: absolute;
-  top: 0px;
-  
+#h-b>.wrap dl>dd .dropdown{
+	margin: 0 20px;
+	/* position: relative; */
 }
-
-.dropbtn{
-  width :200px;
-  padding : 12px;
-  text-align: left;
-  cursor : pointer;
-  border : 1px solid #fff;
-  border-radius: 1px;
-  background-color: #fff;
-  
+#h-b>.wrap dl>dd .dropdown:hover .dropdown-content{
+	display: flex;
 }
-.dropdown-content{
-  display: none;
-  position : absolute;
-  z-index : 1; /*다른 요소들보다 앞에 배치*/
-  min-width : 200px;
-  border : 1px solid #fff;
-  border-radius: 1px;
-  background-color: #fff;
-  
+#h-b>.wrap dl>dd .dropdown .dropdown-content{
+	display: none;
+	position: absolute;
+	width:100vw;
+	padding:0.5em 1em;
+	top :87px;
+	left: 0;
+	border: 1px solid #e9e9e9;	
+	background-color: rgba(255,255,255,75%);
+	justify-content: center;
 }
-
-.dropdown-content a{
-  display : block;
-  color : rgb(37, 37, 37);
-  font-size: 12px;
-  padding : 12px 20px;
+#h-b>.wrap dl>dd .dropdown .dropdown-content ul{
+	display: flex;
 }
-
-.dropdown-content a:hover{
-  background-color : rgba(0, 128, 192,0.1);
-  display: none;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+#h-b>.wrap dl>dd .dropdown .dropdown-content ul>li a{
+	padding: 0.5em 1em;
+	display: inline-block;
 }

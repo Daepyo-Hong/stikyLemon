@@ -2,8 +2,8 @@
 
 /*헤더 범위설정*/
 header {
-	width: calc(100% -100px);
-	height: calc(100% -100px);
+	width: calc(100% - 100px);
+	height: calc(100% - 100px);
 }
 
 .content-size {
