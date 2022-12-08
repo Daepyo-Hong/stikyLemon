@@ -18,3 +18,6 @@ main>.wrap .g-containter li:nth-of-type(2) {
 main>.wrap .g-containter li:nth-of-type(6) {
 	grid-column: 2 / 4;
 }
+main>.wrap .g-containter li p img{
+	height: 300px;
+}

@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+.view-size-b{
+	width:1500px;
+	margin: 0 auto;
+}
 
 h3{display: none;}
 body a{text-decoration: none;}
@@ -9,7 +12,9 @@ header{
 	background-color: #fff;
 }
 main{
-	height:800px;
+	width:1500px;
+
+	margin: auto;
 	background-color: rgba(251, 211, 138,0.25);
 }
 

@@ -3,6 +3,7 @@
 
 ul{
    list-style:none;
+   margin-top: 10px;
 }
 nav>div>ul>li>a>img{
 	
@@ -10,17 +11,20 @@ nav>div>ul>li>a>img{
     height: 45px;
 }
 /*------------------------------------------------*/
-
+div>nav>.wrap ul li{
+	padding: 1em;
+}
 div>nav>.wrap ul li a{
 	color: rgb(188, 125, 7); /*메뉴 색!  */
+	padding: 1em;
 }
 
 #fn2>.wrap>ul.flex > li>button{
 	background-color:#fde8ae;
-	width: 65px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
 	border: 0;
-	border-radius: 7em;
+	border-radius: 5em;
 	
 }
 #fn2>.wrap>ul.flex > li.upup{
