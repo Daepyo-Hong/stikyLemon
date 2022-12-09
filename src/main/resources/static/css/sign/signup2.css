@@ -45,6 +45,7 @@
 }
 
 #input div>input {
+	text-align: left;
 	width: 316px;
 	border-left-color: transparent;
 	border-right-color: transparent;
@@ -56,12 +57,10 @@
 	margin-top: 10px;
 }
 
-#email>div>button:first-child {
-	margin-left: 140px;
-}
-
-#email>div>button:last-child {
-	margin-left: 16px;
+#email>div{
+	text-align: center;
+	justify-content: center;
+	align-items: center;
 }
 
 #email>div>button>img {

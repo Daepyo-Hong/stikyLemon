@@ -17,7 +17,7 @@ public class SecurityConfig {
                         //.antMatchers("/admin/**").hasAnyRole("ADMIN")
                         .anyRequest().authenticated()
                 )
-                .formLogin()
+//                .formLogin()
 
         ;
         return http.build();
