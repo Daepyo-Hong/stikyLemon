@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	th:replace="layout/layout2 :: myLayout2(~{this::head}, ~{this::main})">
+      th:replace="layout/layout2 :: myLayout2(~{this::head}, ~{this::main})">
 <head>
-<link rel="stylesheet" href="/css/sign/signup2.css">
-<style type="text/css">
-</style>
+    <link rel="stylesheet" href="/css/sign/signup2.css">
+    <style type="text/css">
+    </style>
 </head>
 <main>
-	<h1>메인컨텐츠</h1>
-	<div id="all">
-		<div class="wrap">
-			<div class="wrap" id="login">
-				<div>
-					<button class="x">
-						<a href="/">X</a>
-					</button>
-				</div>
-				<span>Sign Up</span>
-			</div>
-			<form>
-				<div class="wrap" id="sgmain">
-					<span>Already a member?</span>
-					<button>
-						<span><a href="/signin">Log In</a></span>
-					</button>
-					<div class="wrap" id="input">
-						<div>Email</div>
-						<div>
-							<input id="inputId" type="email" placeholder="Email" />
-						</div>
+    <h1>메인컨텐츠</h1>
+    <div id="all">
+        <div class="wrap">
+            <div class="wrap" id="login">
+                <div>
+                    <button class="x">
+                        <a href="/">X</a>
+                    </button>
+                </div>
+                <span>Sign Up</span>
+            </div>
+            <form>
+                <div>
+                    <div class="wrap" id="sgmain">
+                        <span>Already a member?</span>
+                        <button>
+                            <span><a href="signin">Log In</a></span>
+                        </button>
+                        <div class="wrap" id="input">
+                            <div>Email</div>
+                            <div>
+                                <input id="inputId" type="email" placeholder="Email"/>
+                            </div>
 
-						<div>Password</div>
-						<div>
-							<input id="inputPw" type="password" placeholder="password" />
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="wrap" id="log-btn">
-						<button>Sign Up</button>
-					</div>
+                            <div>Password</div>
+                            <div>
+                                <input id="inputPw" type="password" placeholder="password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="wrap" id="log-btn">
+                            <div>Sign Up</div>
+                        </div>
 
-				</div>
-			</form>
-			<div id="line">
-				<div></div>
-			</div>
-			<div class="wrap" id="or">
-				<span>&nbsp;&nbsp;or sign up with&nbsp;&nbsp;</span>
-			</div>
-			<div class="warp" id="email">
-				<div class="flex">
-					<button>
-						<img src="/images/google.png" width="23px">
-					</button>
-					<button>
-						<img src="/images/kakao.png" width="23px">
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+                    </div>
+                </div>
+            </form>
+            <div id="line">
+                <div></div>
+            </div>
+            <div class="wrap" id="or">
+                <span>&nbsp;&nbsp;or sign up with&nbsp;&nbsp;</span>
+            </div>
+            <div class="warp" id="email">
+                <div class="flex">
+                    <button>
+                        <img src="/images/google.png" width="23px">
+                    </button>
+                    <button>
+                        <img src="/images/kakao.png" width="23px">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 </html>
