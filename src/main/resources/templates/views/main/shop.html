@@ -4,31 +4,13 @@
 <head>
 	<link rel="stylesheet" href="/css/main/shop.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script sr></script>
-	<script>
-		$(function (){
-			$("#filter>ul>li>input").click(collectionListClickd);
-			$("#aside-collection").click(collectionShowHide);
-		});
-		function collectionListClickd(){
-			$("#filter>ul>li>input").removeClass("target");
-			$(this).addClass("target");
-		}
-		function collectionShowHide(){
-			if($("#aside-collection span").last().text()=="+"){
-				$("#aside-collection span").last().text("-");
-				$("#coll-list").show();
-			}else{
-				$("#aside-collection span").last().text("+");
-				$("#coll-list").hide();
-			}
-		}
-	</script>
+	<script src="/js/main/shop.js"></script>
+
 </head>
 <main>
 	<a href="/">HOME</a>
 	<div class="flex" style="margin: 0 auto;">
-		<aside style="flex: 1" id="filter">
+		<nav style="flex: 1" id="filter">
 			<span>Filter</span>
 			<hr>
 			<button id="aside-collection" class="flex between">
@@ -43,9 +25,18 @@
 				<li><input type="button" value="gifts under $80"></li>
 			</ul>
 
-		</aside>
+		</nav>
 		<div style="flex:4;" class="flex column">
-			<div>상단정렬바</div>
+			<div class="sort-box">
+				<select name="job">
+					<option value="">Sort by</option>
+					<option value="학생">Newest</option>
+					<option value="회사원">Price (low to high)</option>
+					<option value="기타">Price (high to low)</option>
+					<option value="기타">Name A-Z</option>
+					<option value="기타">Name Z-A</option>
+				</select>
+			</div>
 			<div class="flex column">
 				<ul class="flex items-list" style="flex: 1">
 					<li style="flex: 1">

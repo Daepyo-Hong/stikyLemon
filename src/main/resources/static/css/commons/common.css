@@ -9,7 +9,7 @@
 .center{justify-content: center;}
 .between{justify-content: space-between;}
 .around{justify-content: space-around;}
-
+.aicenter{align-items: center}
 .font-zero{
 	font-size:0;
 }

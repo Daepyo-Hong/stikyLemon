@@ -1,0 +1,82 @@
+#empty-content{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 1000px;
+    height: 500px;
+    align-items: center;
+}
+.underbar{
+    border-bottom: 1px solid black;
+}
+#empty-content>h3{
+    font-weight: 900;
+}
+#empty-content>a{
+    margin-top: 15px;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+#cover{
+    position: relative;
+    width: 30px;
+    height: 105px;
+    background-color: white;
+    left: calc(50% - 15px);
+    bottom: 30px;
+}
+.product{
+    width: 100%;
+    height: 220px;
+}
+.content{
+    width: 1000px;
+}
+.btn-option{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-align: left;
+    border: 1px solid rgba(130, 130, 130, 0.5);
+}
+/*
+
+.btn-ea{
+    width: 80px;
+    height: 30px;
+}
+*/
+
+main>div{
+    margin: 30px 20px;
+}
+.product>div{
+    align-items: center;
+}
+.product>div>ul>li{
+    margin-top: 10px;
+}
+.bseq_ea{
+    display: none;
+}
+.btn-ea>ul>li{
+    border: 1px solid black;
+}
+.btn-ea>ul>li>*{
+    flex: 1;
+}
+.btn-ea>ul>li>input:focus{
+    outline: none;
+
+}
+.btn-ea>ul>li>input{
+    width: 40px;
+    font-size: 18px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+}
+.btn-ea>ul>li>button{
+    width: 25px;
+    font-size: 22px;
+    font-weight: 700;
+}

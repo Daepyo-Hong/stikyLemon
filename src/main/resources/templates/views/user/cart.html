@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+	<link rel="stylesheet" href="/css/user/cart.css">
+	<script src="/js/user/cart.js"></script>
+</head>
+<main class="flex view-size">
+	<!--상품 리스트가 없을 시-->
+	<div th:if="${list}==null">
+		<div>
+			<h3><span>My Cart</span></h3>
+		</div>
+		<div id="empty-content" class="flex column center">
+			<h3>Oops! Your cart is empty.</h3>
+			<a>Continue Shopping</a>
+		</div>
+		<div id="cover">
+		</div>
+	</div>
+	<!--상품 리스트가 있을 시-->
+	<div th:if="${list}" class="flex content">
+		<div style="flex: 2" class="flex column">
+			<div class="underbar">
+				<h3><span>My Cart</span></h3>
+			</div>
+			<ul>
+				<li class="product underbar" > <!--th:each="dto :${list}"-->
+					<div class="product flex">
+						<div class="flex" style="flex: 3">
+							<div style="flex: 1">
+								<img src="/images/shop/1.jpg" width="100px" height="150px">
+							</div>
+							<ul class="flex column" style="flex: 3">
+								<li>backpack large | meet me in the meadows | moonrise pink</li>
+								<li>€64.95</li>
+								<li>Pick a colour: moonrise pink</li>
+								<li>
+									<div class="btn-ea">
+										<ul class="flex" style="text-align:center;">
+											<li class="bseq_ea">10</li>
+											<li class="flex">
+												<button type="button" onclick="fnCalCount('m', this);">-</button>
+												<input type="text" name="pop_out" value="0" readonly="readonly"
+													   style="text-align:center;"/>
+												<button type="button" onclick="fnCalCount('p',this);">+</button>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="flex around aicenter" style="flex: 1">
+							<span>€64.95</span><button>X</button>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button class="btn-option">
+				<img src="/images/icon/orange.png" width="15" height="15">
+				<span>쿠폰 적용</span>
+			</button>
+			<br>
+			<button class="btn-option">
+				<img src="/images/icon/orange.png" width="15" height="15">
+				<span>문의사항</span>
+			</button>
+		</div>
+		<div style="flex: 1">
+
+		</div>
+	</div>
+</main>
+</html>
