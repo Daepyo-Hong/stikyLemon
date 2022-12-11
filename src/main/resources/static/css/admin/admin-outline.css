@@ -1,26 +1,21 @@
 @charset "UTF-8";
+/* 어드민에서 사용할 기본 사이즈 규격  */
 .view-size-b{
 	width:1500px;
 	margin: 0 auto;
 }
-
-h3{display: none;}
-body a{text-decoration: none;}
-
-
+/* 헤더 배경컬러 */
 header{
 	background-color: #fff;
 }
-main{
+/* 메인 기본 사이즈 설정 */
+main{	
 	width:1500px;
-
-	margin: auto;
+	margin: 5em auto;
+	padding: 5em;
 	background-color: rgba(251, 211, 138,0.25);
+	border-radius: 25px;
+ 	border: 2px solid rgba(251, 211, 138,0.25);
+ 	box-shadow: 1px 1px rgba(251, 211, 138,0.25);
 }
 
-main>.wrap{
-	margin: 20em;
-	border-radius: 25px;
- 	border: 2px solid rgba(0, 0, 0, 0.01);
- 	box-shadow: 1px 1px rgba(255, 255, 255, 0.1);
-} 

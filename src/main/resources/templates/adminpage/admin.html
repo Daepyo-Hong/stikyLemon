@@ -1,62 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-	<meta charset="utf-8">
-	<title>StikyAdmin</title>
-		<link rel="stylesheet" href="/css/admin/admin-main.css">
-		<link rel="stylesheet" href="/css/admin/admin-footer.css">
-		<link rel="stylesheet" href="/css/admin/admin-outline.css">
-		<link rel="stylesheet" href="/css/admin/admin-header.css">
-		<link rel="stylesheet" href="/css/commons/common.css">	
+		<meta charset="utf-8">
+		<title>StcikyAdmin</title>
+			<link rel="stylesheet" href="/css/admin/admin-outline.css">
+			<link rel="stylesheet" href="/css/admin/admin-header.css">
+			<link rel="stylesheet" href="/css/admin/admin-main.css">
+			<link rel="stylesheet" href="/css/admin/admin-footer.css">
+			<link rel="stylesheet" href="/css/commons/common.css">	
 	</head>
 	
 	<body>
-	<th:block th:insert="adminpage/admin-header::header" />
-	
+		<th:block th:insert="adminpage/admin-header::header" />
+		<th:block th:insert="adminpage/admin-main::main" />
 		
-		<main>
-			<div class="wrap">
-				<ul class="g-containter">
+		<footer>
+			<div class="flex between view-size-b">
+				<nav id="fn1">
+					<p>opyright © sticky orange 2022 - all rights reserved.<p>
+				</nav>
+				<nav id="fn2">
 					<li>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p><img src="/images/headerImg/or.png"/></p>
+						<a href="#">About</a>
+						<a href="#">Support</a>
 					</li>
-					<li>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p><img src="/images/headerImg/or.png"/></p>
-					</li>
-					<li>
-						<p>작은칸</p>
-						<p><img src="/images/headerImg/or.png"/></p>
-					</li>
-					<li>
-						<p>작은칸</p>
-						<p><img src="/images/headerImg/or.png"/></p>
-					</li>
-					<li>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p><img src="/images/headerImg/or.png"/></p>
-					</li>
-					<li>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p>안녕하세요</p>
-						<p><img src="/images/headerImg/or.png"/></p>
-					</li>
-				</ul>
-				
-				 
+				</nav>
 			</div>
-		</main>
-	
-		
-
-
+			
+		</footer>
 	</body>
 </html>
