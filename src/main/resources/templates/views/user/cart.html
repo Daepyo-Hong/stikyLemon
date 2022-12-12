@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+      th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
-	<link rel="stylesheet" href="/css/user/cart.css">
-	<script src="/js/user/cart.js"></script>
+    <link rel="stylesheet" href="/css/user/cart.css">
+    <script src="/js/user/cart.js"></script>
 </head>
 <main class="flex view-size center">
 	<!--상품 리스트가 없을 시-->
@@ -38,12 +38,12 @@
 								<li>
 									<div class="btn-ea">
 										<ul class="flex" style="text-align:center;">
-											<li class="bseq_ea">10</li>
+											<li class="bseq_ea"></li> <!--재고수량-->
 											<li class="flex">
-												<button type="button" onclick="fnCalCount('m', this);">-</button>
-												<input type="text" name="pop_out" value="0" readonly="readonly"
-													   style="text-align:center;"/>
-												<button type="button" onclick="fnCalCount('p',this);">+</button>
+												<input type="hidden" name="sell_price" value="65" id="vprice">
+												<input type="button" value=" - " name="minus" id="minus">
+												<input type="text" name="amount" value="1" size="3" max="99" id="amount">
+												<input type="button" value=" + " name="add" id="add">
 											</li>
 										</ul>
 									</div>
@@ -51,7 +51,8 @@
 							</ul>
 						</div>
 						<div class="flex around aicenter" style="flex: 1">
-							<span>€64.95</span><button>X</button>
+							€<input type="text" id="TP" value="65">
+							<button>X</button>
 						</div>
 					</div>
 				</li>
