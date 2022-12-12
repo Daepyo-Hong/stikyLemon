@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .wrap-all{
-	margin-bottom: 20em;
+	margin-bottom: 30em;
 }
 
 #all {
@@ -66,19 +66,34 @@ ul.mu li summary.sum{
     font-weight: bold;
     margin: -.5em -.5em 0;
     padding: .5em;
-    width: 1px;
     color:  rgb(188, 125, 7);
 	display: flex;
 }
 
 .mu details[open] {
-    padding: .5em;
-	 float: inherit;
+    padding: 1em;
+	float: inherit;
 }
 .mu details[open] summary {
-    margin-bottom: .5em;
- 
+    margin-bottom: 1.5em;
 }
+.sum-1{
+	width: 70px;
+	padding-top: 5em;
+}
+
 .subA{
-	float: inherit;
+	width: 50em;
+	padding-top: 5em;
+	margin: 10px;
+}
+
+.ans{
+	
+	background: #fff0ca;
+	border-radius: 25px;
+	padding: 20px 0 20px 0;
+	color: #81573F;
+	width: 25em;
+	
 }
