@@ -30,6 +30,11 @@ public class PageController {
 	public String goods() {
 		return "views/goods/goodsDetailPage";
 	}
-	
-	
+
+	@GetMapping("/main/contact") // goods gno{num}으로 수정 예정.
+	public String contact() {
+		return "views/main/contact";
+	}
+
+
 }

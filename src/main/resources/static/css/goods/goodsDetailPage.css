@@ -89,7 +89,11 @@
 
 .bseq_ea{
     display: none;
+    color: transparent;
     margin: 10px 0;
+}
+.btn-ea{
+    margin:15px 0;
 }
 .btn-ea>ul>li{
     border: 1px solid transparent;
