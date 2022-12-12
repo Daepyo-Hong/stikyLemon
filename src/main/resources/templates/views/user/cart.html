@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="/css/user/cart.css">
 	<script src="/js/user/cart.js"></script>
 </head>
-<main class="flex view-size">
+<main class="flex view-size center">
 	<!--상품 리스트가 없을 시-->
 	<div th:if="${list}==null">
 		<div>
@@ -24,7 +24,7 @@
 			<div class="underbar">
 				<h3><span>My Cart</span></h3>
 			</div>
-			<ul>
+			<ul class="product-list">
 				<li class="product underbar" > <!--th:each="dto :${list}"-->
 					<div class="product flex">
 						<div class="flex" style="flex: 3">
@@ -66,9 +66,34 @@
 				<span>문의사항</span>
 			</button>
 		</div>
-		<div style="flex: 1">
+		<div id="total-pay" style="flex: 1" class="flex column">
+			<div class="underbar">
+				<h3><span>Order summary</span></h3>
+			</div>
+			<div class="underbar">
+				<ul>
+					<li class="flex between">
+						<span>Subtotal</span>
+						<span>물건합계</span>
+					</li>
+					<li class="flex between">
+						<span>배송료</span>
+						<span>배송료값</span>
+					</li>
+				</ul>
+			</div>
 			<div>
-
+				<ul>
+					<li class="flex between">
+						<span>총합</span><span>총합값</span>
+					</li>
+					<li class="sub-text">
+						<span>세금포함</span>
+					</li>
+				</ul>
+				<div >
+					<button class="btn-style-common">결제하기</button>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -44,11 +44,13 @@
 }
 .btn-style-common{
 	width:100%;
-	background-color: #6ba543;
+	height: 42px;
+	background-color: #ff9600;
 	border-radius: 3px;
-	padding: 1.5em 0;
-	color: #fff;
+	color: black;
 	font-weight: 700;
+	text-align: center;
+	font-size: 20px;
 }
 
 .btn-style1{

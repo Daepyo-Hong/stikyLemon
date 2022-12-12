@@ -7,6 +7,8 @@
 }
 .underbar{
     border-bottom: 1px solid black;
+    padding: 0 0 20px 0;
+    margin: 20px 0;
 }
 #empty-content>h3{
     font-weight: 900;
@@ -30,6 +32,10 @@
 }
 .content{
     width: 1000px;
+}
+
+main>.content>div{
+    margin: 0 30px;
 }
 .btn-option{
     display: inline-block;
@@ -74,4 +80,19 @@ main>div{
     width: 25px;
     font-size: 22px;
     font-weight: 700;
+}
+
+#total-pay>div>ul>li{
+    margin-bottom: 20px;
+
+}
+#total-pay>div>ul>li.sub-text{
+    margin-top: -15px;
+}
+#total-pay>div>ul>li.sub-text>span{
+    font-size: 12px;
+    color: #a22c2c;
+}
+.product-list{
+    margin-top: -20px;
 }
