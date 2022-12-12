@@ -3,109 +3,28 @@
 	th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
 <link rel="stylesheet" href="/css/admin/qna.css">
-<link rel="stylesheet" href="/css/admin/qna2.css">
 <script type="text/javascript" src="https://livejs.com/live.js"></script>
-
 <style type="text/css">
 </style>
 </head>
 <title>무엇이든 물어보셔</title>
 <main>
-	<div class="wrap-all">
+	<div class="wrap">
 		<nav id="all">
-			<div class="wrap content-size">고객센터</div>
-			<div class="wrap-2 content-size">자주 묻는 질문</div>
-			<div class="wrap between view-size-m">
-				<button class="bu-b"><a href="/board-list"><img src="/images/orange.png"/>1:1 문의</a></button>
-			</div>
-				<div class="div-m">
+			<div class="wrap content-size">COMMUNITY</div>
+				<div>
 					<ul class="mu flex center">   
 						<li class="admin list">
-							<details>
-								<summary class="sum">계정</summary>
-							  		<p>
-									<details>
-										<summary class="sum-sub1 subA">계정이 이상해요</summary>
-										<p class="ans">준비중 입니다.</p>
-									</details>
-								</p>
-								<p>
-									<details>
-										<summary class="sum-sub2 subA">로그인이 안돼요</summary>
-										<p class="ans">넵</p>
-									</details>
-								</p>
-							</details>
+							<a href="/notice"><img src="/images/cs/notice.png"/><span>NOTICE</span></a>
 						</li>
 						<li class="Mc list">
-							<details>
-								<summary class="sum">상품</summary>
-								<p>
-									<details>
-										<summary class="sum-sub1 subA">가격이 이상하게 나와요</summary>
-										<p class="ans">네</p>
-									</details>
-								</p>
-								<p>
-									<details>
-										<summary class="sum-sub2 subA">상품 크기를 알고싶어요</summary>
-										<p class="ans">상품 잘 보면 있습니다.</p>
-									</details>
-								</p>
-							</details>
-							  	
+							<a href="/faq"><img src="/images/cs/qna.png"/><span>Q&A</span></a>
 						</li>
 						<li class="truck list">
-							<details>
-							   <summary class="sum">배송</summary>
-							  	<p>
-									<details class="det">
-										<summary class="sum-sub1 subA">배송은 얼마나 걸리나요?</summary>
-										<p class="ans">2~3일 소요됩니다.</p>
-									</details>
-								</p>
-								<p>
-									<details class="det">
-										<summary class="sum-sub2 subA">아직 배송준비중으로 나와요</summary>
-										<p class="ans">준비중입니다.</p>
-									</details>
-								</p>
-							</details>
+							<a href="/review"><img src="/images/cs/review.png"/><span>REVIEW</span></a>
 						</li>
 						<li class="event list">
-							<details>
-							   <summary class="sum">이벤트</summary>
-							  	<p>
-									<details class="det">
-										<summary class="sum-sub1 subA">이벤트는 안하나요?</summary>
-										<p class="ans">네</p>
-									</details>
-								</p>
-								<p>
-									<details class="det">
-										<summary class="sum-sub2 subA">이벤트는 언제하나요?</summary>
-										<p class="ans">몰라요</p>
-									</details>
-								</p>
-							</details>
-						</li>
-						<li class="etc list">
-							<details>
-							   <summary class="sum">기타</summary>
-							  	<p>
-									<details class="det">
-										<summary class="sum-sub1 subA">고객센터는 어디인가요?</summary>
-										<p class="ans">요기</p>
-									</details>
-								</p>
-								<p>
-									<details class="det">
-										<summary class="sum-sub2 subA">무슨 사이트인가요?</summary>
-										<p class="ans">쇼핑몰</p>
-									</details>
-								</p>
-							
-							</details>
+							<a href="/event"><img src="/images/cs/event.png"/><span>EVENT</span></a>
 						</li>
 					</ul>
 				</div>

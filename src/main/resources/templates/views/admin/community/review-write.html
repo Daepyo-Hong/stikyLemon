@@ -2,15 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
-<link rel="stylesheet" href="/css/board/board-write.css">
-
+<link rel="stylesheet" href="/css/admin/community/review-write.css">
 <script type="text/javascript" src="https://livejs.com/live.js"></script>
 <style type="text/css">
 </style>
 <body>
     <main>
    		<div class="wrap3 content-size">
-   			<p class="board-m">문의 사항</p>
+   			<p class="board-m">리뷰 작성</p>
    		</div>
    		<div class="wrap2 content-size">
     		<form action="/board-write">
@@ -32,7 +31,7 @@
     				</tr>
     				<tr>
     					<td class="ok-m">
-							<button class="bu-c"><a href="/board-list"><img src="/images/orange.png"/>등록</a></button>
+							<button class="bu-c"><a href="/review"><img src="/images/orange.png"/>등록</a></button>
     					</td>
     				</tr>
     			</table>
