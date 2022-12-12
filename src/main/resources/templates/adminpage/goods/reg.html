@@ -4,36 +4,87 @@ th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 	<head>
 		<link rel="stylesheet" href="/css/admin/admin-main.css">
 		<link rel="stylesheet" href="/css/admin/goods/admin-reg.css">
-		
-	</head>
-	<main>
-	<p id="regf">상품 등록이 가능합니다.</p>
-	<p></p>
-		<div class="wrap">
-			<form action="" method="post">
-			<p>
-				<input type="text" name="goodsname" placeholder="상품명">
-			</p>
-			<p>
-				<input type="text" name="goodsnumber" placeholder="상품번호">
-			</p>
-			<p>
-				<input type="img" id="defimg" name="goodsimg" placeholder="상품이미지">
-			</p>
-			<p>
-	    		<input type="text" name="goodsprice" placeholder="가격">
-	    	</p>
-	    	<p>
-	    		<input type="number" name="goodsstock" placeholder="재고">
-	    	</p>
-	    	<p>
-	    		<textarea id="summernote" name="goodscontent" placeholder="상세설명을 작성하세요."></textarea>
-	    	</p>
-	    	<p>
-	    		<button>등록</button>
-	    	</p>
-		</form>
-		</div>
+	</head>	
+	  
+	   
+    <main>
+   		 <section class="reg-fr flex center">
+			<p>상품 등록이 가능합니다.</p>
+		</section>
+		<section class="reg-se">
+			<div>
+				<select name="de">
+					<option value="">대분류</option>
+					<option value="bags">bags</option>
+    				<option value="stationery">stationery</option>
+   					<option value="accessories">accessories</option>
+   					<option value="the sticky sis club">the sticky sis club</option>
+   					<option value="gift card">gift card</option>
+    			</select>
+    			<select name="so">
+    			
+    			</select>
+			</div>	
+			<div class="flex center">
+				<form action="/admin/goods/list" method="post">
+					<ul class="flex between">
+						<li class="wrap">
+							<p>
+								<input type="file" id="defimg" name="goodsimg" placeholder="상품이미지">
+							</p>
+							<h1>대표사진 크게 하나 세부사진 여러개 </h1>
+							<p>
+							<button type="button" id="btn-addimg">디테일 컷 추가</button>
+							</p>
+							<p>
+								<input type="file" id="sufimg" name="goodsimg" placeholder="상품이미지">
+								<input type="file" id="sufimg" name="goodsimg" placeholder="상품이미지">
+								<input type="file" id="sufimg" name="goodsimg" placeholder="상품이미지">
+								<input type="file" id="sufimg" name="goodsimg" placeholder="상품이미지">
+								<input type="file" id="sufimg" name="goodsimg" placeholder="상품이미지">
+							</p>
+						</li>
+						<li class="wrap">
+							
+							<p>
+								<input type="text" name="goodsname" placeholder="상품명">
+							</p>
+							<p>
+								<input type="text" name="goodsnumber" placeholder="상품번호">
+							</p>
+							
+							<p>
+					    		<input type="text" name="goodsprice" placeholder="가격">
+					    	</p>
+					    	<p>
+					    		<input type="number" name="goodsstock" placeholder="재고">
+					    	</p>
+					    	<p>
+					    		<textarea name="goodscontent" placeholder="상세설명을 작성하세요.">
+| Information 
+	- 캐주얼한 무드의 실용성 높은 스트링 백팩입니다.
+	- 촘촘한 짜임의 나일론 소재로 내구성이 높은 매력적인 제품입니다.
+	- 두꺼운 스트링을 사용하여 볼드한 디자인이 포인트 되는 제품입니다.
+	- 스트링 매듭을 풀고, 묶을 수 있어 기장 조절이 자유롭습니다.
+	- 앞・뒤면 구분 없이 자유로운 방향으로 편리하게 사용이 가능합니다.
+	- 수납력이 좋으며 취향에 따라 크로스로 맬 수 있어 활용도가 높습니다.
+	- 베이직한 디자인으로 제작하여 다양한 무드의 아웃핏을 선사합니다.
+| Size(cm)
+	가로: 33.5 세로: 44 끈 길이: 95
+	*측정 방법에 따라 1-3cm 오차가 있을 수 있습니다.
+| Fabric
+	Nylon 100%
+| Delivery
+	-배송기간
+	영업일 기준 3-10일 소요 예정
+	(주말, 공휴일 제외) 
+					    		</textarea>
+					    	</p>
+					    	<button class="admin-reg-btn">상품 등록하기</button>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</section>
 	</main>
-	
 </html>
