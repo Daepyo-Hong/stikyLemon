@@ -37,6 +37,13 @@
 	color: #a9a9a9;
 	text-align: left;
 }
+#input>div>input{
+	border-bottom: 1px solid #f9b840;
+}
+#input>div>input:focus{
+	border-bottom: 1px solid #f9b840;
+	outline: none;
+}
 
 #forgot>div{
 	font-size: 11px;

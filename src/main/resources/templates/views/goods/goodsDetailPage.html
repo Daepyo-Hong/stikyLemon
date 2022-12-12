@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="myLayout(head, main)">
+<head>
+    <script src="/js/user/cart.js"></script>
+    <meta charset="UTF-8">
+    <title>템풀릿</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/commons/common.css">
+    <link rel="stylesheet" href="/css/commons/header.css">
+    <link rel="stylesheet" href="/css/commons/footer.css">
+    <link rel="stylesheet" href="/css/goods/goodsDetailPage.css">
+
+
+</head>
+<body>
+<th:block th:insert="/layout/header::header"/>
+<main id="all">
+    <div class="wrap flex">
+        <div class="leftS">
+            <div><img src="/images/main/sec3-1.jpg" alt="상품이미지"></div>
+            <div class="second">작은 이미지들</div>
+            <div class="third">Yay! This backpack is made from recycled PET bottles! On the front you find an extra
+                pocket. The lining
+                has an acorn pattern and is waterproof. The zippers are from YKK and the shoulder straps are
+                adjustable.
+                On the inside you'll find an elastic bottle holder and a pocket all over the back that closes with
+                velcro. On the name tag you can write down your name and contact details.
+            </div>
+        </div>
+        <div class="rightS">
+            <h3>backpack large | meet me in the meadows | moonrise pink</h3>
+            <div class="RS">SKU: 1802049</div>
+            <div class="price">€64.95</div>
+            <section class="color">
+                <div>Pick a colour: moonrise pink</div>
+                <div class="color2"><button></button></div>
+            </section>
+            <section class="color">
+                <div>Quintity</div>
+                <div class="btn-ea">
+                    <ul class="flex" style="text-align:center;">
+                        <li class="bseq_ea">10</li>
+                        <li class="flex">
+                            <button type="button" onclick="fnCalCount('m', this);">-</button>
+                            <input type="text" name="pop_out" value="0" readonly="readonly"
+                                   style="text-align:center;"/>
+                            <button type="button" onclick="fnCalCount('p',this);">+</button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <button><span>Add</span></button>
+            <div class="goodsdetail">
+                <h2>specifications</h2>
+                <ul>
+                    <li><h2>sizes</h2></li>
+                    <li><span>size - </span><span>27 x 13 x 38 cm</span></li>
+                    <li><span>maximun shoulder strap - </span><span>67cm</span></li>
+                    <li><br></li>
+                    <li><h2>materials</h2></li>
+                    <li><span>material outside - </span><span>recycled PET bottles</span></li>
+                    <li><span>material inside - </span><span>waterproof nylon</span></li>
+                    <li><span>material strap - </span><span>cotton webbing</span></li>
+                    <li><span>zipper - </span><span>matt white YKK</span></li>
+                    <li><span>buckles - </span><span>matt white metal</span></li>
+
+                </ul>
+                <hr>
+                <h2>product care</h2>
+                <div>You can easily clean this bag with a wet cloth. We advise you not to wash the bag in the
+                    washing
+                    machine. Just some water will do the trick!
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+<th:block th:insert="/layout/footer::footer"/>
+</body>
+</html>

@@ -25,6 +25,11 @@ public class PageController {
 	public String faqList() {
 		return "views/admin/faq/faq-list";
 	}
+
+	@GetMapping("/goods001") // goods gno{num}으로 수정 예정.
+	public String goods() {
+		return "views/goods/goodsDetailPage";
+	}
 	
 	
 }
