@@ -61,7 +61,7 @@
 	
 }
 
-#um>.wrap .Al li.cart a span {
+#um>.wrap .Al li.cart a {
 	padding: 15px;
 	color: #f9b840;
 	font-weight: 400;
@@ -70,7 +70,7 @@
 
 }
 
-#um>.wrap .Al li.cart a span:hover {
+#um>.wrap .Al li.cart a:hover {
 	color: rgb(251, 211, 138);
 	
 }
