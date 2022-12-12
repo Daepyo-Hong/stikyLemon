@@ -9,50 +9,34 @@
 </head>
 <title>무엇이든 물어보셔</title>
 <main>
-	<div id="all">
-		<div id="cs">고객센터</div>
-		<div class="wrap">
-			<div class="admin list">
-				<span>계정</span>
+	<div class="wrap">
+		<nav id="all">
+			<div class="wrap content-size">고객센터</div>
+				<div>
+					<ul class="mu flex center">   
+						<li class="admin list">
+							<a><span>계정</span></a>
+						</li>
+						<li class="Mc list">
+							<a><span>상품</span></a>
+						</li>
+						<li class="truck list">
+							<a><span>배송</span></a>
+						</li>
+						<li class="event list">
+							<a><span>이벤트</span></a>
+						</li>
+						<li class="etc list">
+							<a><span>기타</span></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		<section id="go-b">
+			<div class="wrap flex center view-size-m">
+				<button class="bu-b"><a href="/board-list"><img src="/images/orange.png"/>게시판 이동</a></button>
 			</div>
-			<div class="Mc list">
-				<span>상품</span>
-			</div>
-			<div class="truck list">
-				<span>배송</span>
-			</div>
-			<div class="event list">
-				<span>이벤트</span>
-			</div>
-			<div class="etc list">
-				<span>기타</span>
-			</div>
-		</div>
-		<div id="board">
-			<table>
-					<tr>
-						<td class="bno">번호</td>
-						<td class="title">제목</td>
-						<td class="writer">작성자</td>
-						<td class="createdDate">날짜</td>
-						<td class="readCount">조회수</td>
-					</tr>
-					<tr>
-						<td>100</td>
-						<td>제목은 이것입니다</td>
-						<td>작성자여섯자</td>
-						<td>2022.12.01</td>
-						<td>1000</td>
-					</tr>
-<!-- 					<tr th:each=""> -->
-<!-- 						<td><a th:href=""><span th:text=""></span></a></td> -->
-<!-- 						<td th:text=""></td> -->
-<!-- 						<td th:text=""></td> -->
-<!-- 						<td th:text=""></td> -->
-<!-- 						<td th:text=""></td> -->
-<!-- 					</tr> -->
-			</table>
-		</div>
+		</section>
 	</div>
 </main>
 </html>

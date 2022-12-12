@@ -1,0 +1,77 @@
+.right2{
+	float: right;
+}
+
+.board{
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	min-height: 15vh;
+	text-align: center;
+}
+
+.board div.wrap{
+	margin: 0px auto;
+    color: #81573F;
+    font-weight: 500;
+    font-size: 21px;
+}
+
+.table{
+	margin: 0 auto;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	width: 100%;
+   /*  border-collapse: collapse; */  /*테이블 사이 간격 없애기*/
+}
+
+
+.table tr{
+	background-color:#C68646;
+	
+}
+
+.table th, td{  
+	/*padding: 1em 0.5em;*/
+    padding: 6px 24px;
+    vertical-align: middle;
+}
+
+.table .tr1 th{
+	color: white;
+}
+
+.table .tr2 {
+	text-align: center;
+	background-color:#ECD7C2;
+}
+
+.table .tr2 td{
+	color:#8D6023;
+	font-weight: 400;
+}
+
+#board {
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.bu-a{
+	background-color: #97654A;
+    color: #D2B3A2;
+    font-size: 17px;
+    padding: 9px;
+    border-radius: 25px;
+    font-weight: 400;
+}
+.bu-a a{
+
+	color:#D2B3A2;
+	
+}
+.bu-a img{
+	height: 12px;
+	position: relative;
+}

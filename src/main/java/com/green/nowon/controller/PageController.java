@@ -21,5 +21,10 @@ public class PageController {
 		model.addAttribute("list","value");
 		return "views/user/cart";
 	}
-
+	@GetMapping("/faq-list")
+	public String faqList() {
+		return "views/admin/faq/faq-list";
+	}
+	
+	
 }
