@@ -18,7 +18,7 @@
                 </div>
                 <span>Sign Up</span>
             </div>
-            <form>
+            <form action="#" method="post" id="signUpForm">
                 <div>
                     <div class="wrap" id="sgmain">
                         <span>Already a member?</span>
@@ -26,6 +26,10 @@
                             <span><a href="signin">Log In</a></span>
                         </button>
                         <div class="wrap" id="input">
+                            <div>Name</div>
+                            <div>
+                                <input id="inputName" type="text" placeholder="Name"/>
+                            </div>
                             <div>Email</div>
                             <div>
                                 <input id="inputId" type="email" placeholder="Email"/>
@@ -37,14 +41,9 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="wrap" id="log-btn">
-                            <div>Sign Up</div>
-                        </div>
-
-                    </div>
                 </div>
             </form>
+            <button class="log-btn" type="submit" form="signUpForm">Sign Up</button>
             <div id="line">
                 <div></div>
             </div>
@@ -53,15 +52,10 @@
             </div>
             <div class="warp" id="email">
                 <div class="flex">
-                    <button>
-                        <img src="/images/google.png" width="23px">
-                    </button>
-                    <button>
-                        <img src="/images/kakao.png" width="23px">
-                    </button>
+                    <a href="/oauth2/authorization/google"></a>
+                    <a href="/oauth2/authorization/kakao"></a>	                    </button>
                 </div>
             </div>
         </div>
-    </div>
 </main>
 </html>

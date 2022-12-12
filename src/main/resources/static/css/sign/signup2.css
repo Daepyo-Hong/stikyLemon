@@ -58,16 +58,14 @@
 }
 
 #email>div{
-	text-align: center;
 	justify-content: center;
-	align-items: center;
 }
 
 #email>div>button>img {
 	border-radius: 5px;
 }
 
-#log-btn>div {
+.log-btn{
 	width: 316px;
 	height: 40px;
 	line-height: 40px;
@@ -98,4 +96,25 @@
 	z-index: 3;
 	top: -15px;
 	background-color: #fff;
+}
+#email{
+	width: 336px;
+	justify-content: center;
+}
+#email>div>a {
+	margin: 0 15px;
+	border-radius: 5px;
+	width: 25px;
+	height: 25px;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+}
+#email>div>a:first-child{
+	justify-content: left;
+	background-image: url("/images/google.png");
+}
+
+#email > div > a:last-child {
+	background-image: url("/images/kakao.png");
 }
