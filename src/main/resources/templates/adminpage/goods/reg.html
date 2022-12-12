@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
+	<head>
+		<link rel="stylesheet" href="/css/admin/admin-main.css">
+		<link rel="stylesheet" href="/css/admin/goods/admin-reg.css">
+		
+	</head>
+	<main>
+	<p id="regf">상품 등록이 가능합니다.</p>
+	<p></p>
+		<div class="wrap">
+			<form action="" method="post">
+			<p>
+				<input type="text" name="goodsname" placeholder="상품명">
+			</p>
+			<p>
+				<input type="text" name="goodsnumber" placeholder="상품번호">
+			</p>
+			<p>
+				<input type="img" id="defimg" name="goodsimg" placeholder="상품이미지">
+			</p>
+			<p>
+	    		<input type="text" name="goodsprice" placeholder="가격">
+	    	</p>
+	    	<p>
+	    		<input type="number" name="goodsstock" placeholder="재고">
+	    	</p>
+	    	<p>
+	    		<textarea id="summernote" name="goodscontent" placeholder="상세설명을 작성하세요."></textarea>
+	    	</p>
+	    	<p>
+	    		<button>등록</button>
+	    	</p>
+		</form>
+		</div>
+	</main>
+	
+</html>
