@@ -1,11 +1,17 @@
 @charset "UTF-8";
 
+.wrap-all{
+	margin-bottom: 20em;
+}
+
 #all {
 	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
 	min-height: 15vh;
 	text-align: center;
+	padding-top: 50px;
+	
 	
 }
 #all div.wrap{
@@ -13,6 +19,26 @@
     color: #81573F;
     font-weight: 500;
     font-size: 21px;
+    padding: 25px 0 25px;
+    width: 10%;
+    border-color:#b18056;
+    padding: 15px 0 15px;
+}
+#all div.wrap-2{
+	margin: 0px auto;
+    color: #81573F;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 25px 0 25px;
+    background: #fff0ca;
+    display: inline-block;
+    width: 22%;
+    border-radius: 25px;
+    padding: 15px 0 15px;
+    
+}
+.div-m{
+	margin: 10px;
 }
 #all div span{
 	margin: 30px auto;
@@ -20,97 +46,39 @@
 
 ul.mu{ 
 	margin:35px auto;
-	
+	justify-content: center;
 }
 
-ul.mu li a span{
-	color:  rgb(188, 125, 7);
-	position: absolute;
-	top:35px;
-	left:40px;
+ul.mu li{
+	margin: 10px;
+}
+
+ul.mu li summary.sum{
+	width: 70px;
+	padding-top: 5em;
+}
+
+.mu details {
+    padding: 0.5em 0.5em ;
+    margin-bottom: 1em;
+}
+.mu summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+    width: 1px;
+    color:  rgb(188, 125, 7);
 	display: flex;
-	
 }
 
-.list {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	padding: 0 5em 0 2em;
-	
+.mu details[open] {
+    padding: .5em;
+	 float: inherit;
 }
-
-.admin {
-	background-image: url(/images/cs/admin2.png);
+.mu details[open] summary {
+    margin-bottom: .5em;
+ 
 }
-
-.Mc {
-	background-image: url(/images/cs/box2.png);
-}
-
-.truck {
-	background-image: url(/images/cs/truck2.png);
-}
-
-.event {
-	background-image: url(/images/cs/firework2.png);
-}
-
-.etc {
-	background-image: url(/images/cs/notebook2.png);
-}
-
-.bno {
-	width: 40px;
-	font-weight: 500;
-	color: white;
-}
-
-.title {
-	width: 350px;
-	font-weight: 500;
-	color: white;
-}
-
-.writer {
-	width: 100px;
-	font-weight: 500;
-	color: white;
-}
-
-.createdDate {
-	width: 100px;
-	font-weight: 500;
-	color: white;
-}
-
-.readCount {
-	width: 80px;
-	font-weight:500;
-	color: white;
-}
-
-#go-b>div{
-	padding: 50px ;
-}
-
-.bu-b{
-	background-color:#97654A;
-	color:#D2B3A2;
-	font-size: 17px;
-	padding: 13px;
-	border-radius: 25px;
-	font-weight:500;
-}
-.bu-b a{
-
-	color:#D2B3A2;
-	
-}
-.bu-b img{
-	height: 10px;
-	position: relative;
+.subA{
+	float: inherit;
 }
