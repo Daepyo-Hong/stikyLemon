@@ -19,13 +19,12 @@ th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 			<tr>
 				<td>상품번호</td>
 				<td>이미쥐</td>
-				<!--/*<td class="list-img" th:style="|background-image: url('${dto.imgUrl}');|"></td>*/-->
 				<td><a href="">상품명</a></td>
 				<td>가격</td>
 				<td>재고수량</td>
 				<td>등록일</td>
 				<td>
-					<a href=/admin/goods/{1}"><button>수정</button></a>
+					<a href="/admin/goods/detail"><button>수정</button></a>
 					<a href="#"><button>삭제</button></a>
 				</td>
 			</tr>
@@ -37,7 +36,7 @@ th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 				<td>재고수량</td>
 				<td>등록일</td>
 				<td>
-					<a href="/admin/goods/{1}"><button>수정</button></a>
+					<a href="/admin/goods/detail"><button>수정</button></a>
 					<a href="#"><button>삭제</button></a>
 				</td>
 			</tr>

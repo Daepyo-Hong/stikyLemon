@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 어드민에서 사용할 기본 사이즈 규격  */
 .view-size-b{
-	width:1500px;
+	width:1200px;
 	margin: 0 auto;
 }
 /* 헤더 배경컬러 */
@@ -10,7 +10,7 @@ header{
 }
 /* 메인 기본 사이즈 설정 */
 main{	
-	width:1500px;
+	width:1200px;
 	margin: 5em auto;
 	padding: 5em;
 	background-color: rgba(251, 211, 138,0.25);

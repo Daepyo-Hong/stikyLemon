@@ -25,11 +25,18 @@ public class AdminController {
         return "adminpage/goods/list";
     }
 
+    @GetMapping("/admin/goods/detail")
+    public String goodsupdate(){
+        //서비스처리해서 상세내용 모델에 담아서 디테일페이지로 가져갈듯?
+        return "adminpage/goods/detail";
+    }
+    /*
     @GetMapping("/admin/goods/{ino}")
     public String goodsupdate(@PathVariable long ino){
         //서비스처리해서 상세내용 모델에 담아서 디테일페이지로 가져갈듯?
         return "adminpage/goods/detail";
     }
+    */
 //상품등록!
 //    @PostMapping("/admin/goods/list")
 //    public String adminGoodsslist() {
