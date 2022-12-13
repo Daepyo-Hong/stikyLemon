@@ -24,7 +24,7 @@ public class SignController {
     //이메일로 로그인하기 버튼 눌렀을 때
     @GetMapping("/comm/emailSignin")
     public String emailLogin() {
-        return "views/sign/signin2";
+        return "views/sign/emailsignin";
     }
 
 
@@ -51,7 +51,7 @@ public class SignController {
 
     @GetMapping("/comm/emailSignup")
     public String emailSignup() {
-        return "views/sign/signup2";
+        return "views/sign/emailsignup";
     }
 
 
@@ -59,6 +59,6 @@ public class SignController {
     @PostMapping("/comm/signup")
     public String Esignup(MemberInsertDTO dto){
         service.save(dto);
-        return "redirect:views/sign/emailsignin";
+        return "redirect:/comm/emailSignin";
     }
 }

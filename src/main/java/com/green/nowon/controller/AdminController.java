@@ -2,6 +2,7 @@ package com.green.nowon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,7 @@ public class AdminController {
 	public String adminGoodsUpload(GoodsInsertDTO dto) {
 		//등록하면 dto에 업데이트! 하고 리스트로 리턴
 		service.update(dto);
-		return "adminpage/goods/list";
+		return "redirect:/admin/goods/list";
 	}
 //상품조회페이지 이동
     @GetMapping("/admin/goods/list")
@@ -48,10 +49,6 @@ public class AdminController {
 	public String adminQnAlist(){
 	    return "adminpage/qna/admin-qnalist";
 	}
-    */
-//상품등록!
-//    @PostMapping("/admin/goods/list")
-//    public String adminGoodsslist() {
-//        return "adminpage/goods/list";
-//    }
+
+
 }
