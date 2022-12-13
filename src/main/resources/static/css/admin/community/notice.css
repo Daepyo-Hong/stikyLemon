@@ -1,17 +1,12 @@
-.right4{
+.right2{
 	float: right;
 }
 
-.left4 {
-    float: left;
+.left2{
+	float: left;
 }
 
-.content-size-v{
-	width: 280px;
-	margin: 0 auto;
-}
-
-.board{
+.board2{
 	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
@@ -20,48 +15,49 @@
 	
 }
 
-.board div.wrap{
-	margin: -20px auto;
+.board2 div.wrap{
+	margin: -35px auto;
     color: #81573F;
     font-weight: 500;
     font-size: 21px;
     padding-top: 50px;
 }
 
-.table{
+.table2{
 	margin: 0 auto;
+	padding-top: 65px;
 	padding-bottom: 50px;
 	width: 100%;
    /*  border-collapse: collapse; */  /*테이블 사이 간격 없애기*/
 }
 
 
-.table tr{
+.table2 tr{
 	background-color:#C68646;
 	
 }
 
-.table th, td{  
+.table2 th, td{  
 	/*padding: 1em 0.5em;*/
     padding: 6px 24px;
     vertical-align: middle;
 }
 
-.table .tr1 th{
+.table2 .tr1 th{
 	color: white;
 }
 
-.table .tr2 {
+.table2 .tr2 {
 	text-align: center;
 	background-color:#ECD7C2;
 }
 
-.table .tr2 td{
+.table2 .tr2 td{
 	color:#8D6023;
 	font-weight: 400;
 }
 
-#board {
+#board2 {
 	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
@@ -84,24 +80,4 @@
 .bu-a img{
 	height: 12px;
 	position: relative;
-}
-ul.call{
-	background:  #f3e9de;
-	border-radius: 25px;
-	padding: 5px 0px 10px;
-}
-ul.call a{
-	font-size: 20px;
-    color: #8D6023;
-    line-height: 2em;
-    font-weight: 500;
-}
-ul.call li{
-	font-size: 15px;
-    color: #ac752b;
-    line-height: 20px;
-}
-
-.wrap6 ul.call img{
-	height: 20px;
 }

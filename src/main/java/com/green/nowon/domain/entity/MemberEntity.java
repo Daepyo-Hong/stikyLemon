@@ -49,4 +49,8 @@ public class MemberEntity extends BaseDateEntity {
         this.roles.add(role);
         return this;
     }
+
+    //delivery 정보 -- ㄴ내일하기루
+
+
 }

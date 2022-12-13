@@ -1,16 +1,13 @@
 @charset "UTF-8";
 
 .wrap-all{
-	margin-bottom: 20em;
+	margin-bottom: 30em;
 }
 
 #all {
 	margin: 0 auto;
-	justify-content: center;
-	align-items: center;
-	min-height: 15vh;
-	text-align: center;
-	padding-top: 50px;
+	
+	padding-top: 25px;
 	
 	
 }
@@ -24,61 +21,32 @@
     border-color:#b18056;
     padding: 15px 0 15px;
 }
-#all div.wrap-2{
-	margin: 0px auto;
-    color: #81573F;
-    font-weight: 500;
-    font-size: 15px;
-    padding: 25px 0 25px;
-    background: #fff0ca;
-    display: inline-block;
-    width: 22%;
-    border-radius: 25px;
-    padding: 15px 0 15px;
-    
-}
-.div-m{
-	margin: 10px;
-}
-#all div span{
-	margin: 30px auto;
-}
 
 ul.mu{ 
 	margin:35px auto;
-	justify-content: center;
+	text-align: center;
+	padding-bottom: 35px;
 }
 
 ul.mu li{
 	margin: 10px;
-}
-
-ul.mu li summary.sum{
-	width: 70px;
-	padding-top: 5em;
-}
-
-.mu details {
-    padding: 0.5em 0.5em ;
-    margin-bottom: 1em;
-}
-.mu summary {
-    font-weight: bold;
-    margin: -.5em -.5em 0;
-    padding: .5em;
-    width: 1px;
-    color:  rgb(188, 125, 7);
+	color: #CD8964;
 	display: flex;
 }
 
-.mu details[open] {
-    padding: .5em;
-	 float: inherit;
+ul.mu li a span{
+	color: #CD8964;
 }
-.mu details[open] summary {
-    margin-bottom: .5em;
- 
+
+.list {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	padding: 0 5em 0 2em;
+	
 }
-.subA{
-	float: inherit;
+.list img{
+	height: 61px;
+    margin: 2px;
+	
 }

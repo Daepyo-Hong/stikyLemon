@@ -106,25 +106,5 @@
 	margin-top:15px;
 	background: url("/img/icon/icon_star_yellow.png") no-repeat left center / 12px 12px;
 }
-/* 모든 체크박스 + label인 경우 사용자 이미지를 박스이미지로 적용 */
-input[type=checkbox]{
-	display: none;
-}
-input[type=checkbox]:checked + label::before{
-	background-color:  #6ba543;
-}
-input[type=checkbox] + label::before{
-	content:"";
-	display:inline-block;
-	width:18px;
-	height:18px;
-	border-radius:50%;
-	background-image: url("/img/login/img_order_checkW.png");
-	background-size:70%;
-	background-repeat:no-repeat;
-	background-position:center;
-	background-color: rgba(0,0,0,0.25);
-	position: relative;
-	top:2px;
-	margin-right: 5px;
-}
+
+

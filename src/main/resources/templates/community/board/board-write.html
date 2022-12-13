@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
-<link rel="stylesheet" href="/css/admin/qna.css">
 <link rel="stylesheet" href="/css/board/board-write.css">
 
 <script type="text/javascript" src="https://livejs.com/live.js"></script>
@@ -28,12 +27,12 @@
     				</tr>
     				<tr>
     					<td class="content-m">
-    						<textarea rows="22" cols="82" name="content" placeholder="내용을 입력하세요"></textarea>
+    						<textarea rows="18" cols="70" name="content" placeholder="내용을 입력하세요"></textarea>
     					</td>
     				</tr>
     				<tr>
     					<td class="ok-m">
-							<button class="bu-c"><a href="/board-list"><img src="/images/orange.png"/>등록</a></button>
+							<button class="bu-c"><a href="/members/board-list"><img src="/images/orange.png"/>등록</a></button>
     					</td>
     				</tr>
     			</table>

@@ -11,10 +11,6 @@ public class PageController {
 	public String shop(){
 		return "views/main/shop";
 	}
-	@GetMapping("/qna")
-	public String admin() {
-		return "views/admin/qna";
-	}
 
 	//장바구니로 이동
 	@GetMapping("/members/cart")
