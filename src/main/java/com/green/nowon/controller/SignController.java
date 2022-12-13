@@ -59,6 +59,6 @@ public class SignController {
     @PostMapping("/comm/signup")
     public String Esignup(MemberInsertDTO dto){
         service.save(dto);
-        return "redirect:/";
+        return "redirect:views/sign/emailsignin";
     }
 }

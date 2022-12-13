@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
+	<head>
+			<link rel="stylesheet" href="/css/admin/admin-main.css">
+			<link rel="stylesheet" href="/css/board/board-list.css">
+
+
+	</head>
+	<main>
+		<section class="board content-size">
+			<div class="wrap">고객센터 문의글 조회 페이지</div>
+			<div class="wrap">
+				<table class="table center flex">
+					
+						<tr class="tr1">
+							<th class="bno">번호</th>
+							<th class="title">제목</th>
+							<th class="writer">작성자</th>
+							<th class="createdDate">날짜</th>
+							<th class="readCount">조회수</th>
+						</tr>
+					
+						<tr class="tr2">
+							<td>100</td>
+							<td>제목은 이것입니다</td>
+							<td>작성자여섯자</td>
+							<td>2022.12.01</td>
+							<td>1000</td>
+						</tr>
+				</table>
+			</div>
+			
+			<div class="wrap"> 답변줄거임
+				<table class="table center flex">
+					
+						<tr class="tr1">
+							<th class="bno">번호</th>
+							<th class="title">제목</th>
+							<th class="writer">작성자</th>
+							<th class="createdDate">날짜</th>
+							<th class="readCount">조회수</th>
+						</tr>
+					
+						<tr class="tr2">
+							<td>100</td>
+							<td>제목은 이것입니다</td>
+							<td>작성자여섯자</td>
+							<td>2022.12.01</td>
+							<td>1000</td>
+						</tr>
+				</table>
+			</div>
+		</section>
+	</main>
+</html>
