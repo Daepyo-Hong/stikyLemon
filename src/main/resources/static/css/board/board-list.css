@@ -1,9 +1,14 @@
-.right2{
+.right4{
 	float: right;
 }
 
-.left2{
-	float: left;
+.left4 {
+    float: left;
+}
+
+.content-size-v{
+	width: 280px;
+	margin: 0 auto;
 }
 
 .board{
@@ -16,7 +21,7 @@
 }
 
 .board div.wrap{
-	margin: -35px auto;
+	margin: -20px auto;
     color: #81573F;
     font-weight: 500;
     font-size: 21px;
@@ -25,7 +30,6 @@
 
 .table{
 	margin: 0 auto;
-	padding-top: 65px;
 	padding-bottom: 50px;
 	width: 100%;
    /*  border-collapse: collapse; */  /*테이블 사이 간격 없애기*/
@@ -80,4 +84,24 @@
 .bu-a img{
 	height: 12px;
 	position: relative;
+}
+ul.call{
+	background:  #f3e9de;
+	border-radius: 25px;
+	padding: 5px 0px 10px;
+}
+ul.call a{
+	font-size: 20px;
+    color: #8D6023;
+    line-height: 2em;
+    font-weight: 500;
+}
+ul.call li{
+	font-size: 15px;
+    color: #ac752b;
+    line-height: 20px;
+}
+
+.wrap6 ul.call img{
+	height: 20px;
 }

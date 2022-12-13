@@ -1,3 +1,12 @@
+
+.right2{
+	float: right;
+}
+
+.left2{
+	float: left;
+}
+
 div.wrap3{
 	margin: 0 auto;
     color: #81573F;
@@ -77,19 +86,26 @@ div.wrap4{
 }
 
 .bu-a{
-	background-color:#97654A;
-	color:#D2B3A2;
-	font-size: 17px;
-	padding: 13px;
-	border-radius: 25px;
-	font-weight:500;
-     justify-content: space-between;	
+	background-color: #97654A;
+    color: #e8d9d0;
+    font-size: 17px;
+    padding: 9px;
+    border-radius: 25px;
+    font-weight: 350;
 }
 .bu-a a{
+
 	color: #e8d9d0;
 	
 }
 .bu-a img{
-	height: 10px;
+	height: 12px;
 	position: relative;
+}
+
+.wrap5 {
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }

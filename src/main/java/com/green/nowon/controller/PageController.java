@@ -11,6 +11,7 @@ public class PageController {
 	public String shop(){
 		return "views/main/shop";
 	}
+	//커뮤니티 페이지 
 	@GetMapping("/qna")
 	public String admin() {
 		return "views/admin/qna";
