@@ -25,8 +25,9 @@ public class AdminController {
         return "adminpage/goods/list";
     }
 
+    //관리자 상품수정 페이지이동(디테일)
     @GetMapping("/admin/goods/detail")
-    public String goodsupdate(){
+    public String goodsdetail(){
         //서비스처리해서 상세내용 모델에 담아서 디테일페이지로 가져갈듯?
         return "adminpage/goods/detail";
     }

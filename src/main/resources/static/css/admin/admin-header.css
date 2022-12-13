@@ -39,7 +39,7 @@ div>nav>.wrap ul li a{
 	border-top:2px solid #e8e8e8;
 }
 /* 하단 메뉴로고와 메뉴 간격 */
-#hb>.wrap dl>dt, #hb>.wrap dl>dd .dropdown{
+#hb>.wrap dl>dt, #hb>.wrap dl>dd .mydropdown{
 	margin: 1.5em 3.5em;
 }
 /* 하단 메뉴로고 */
@@ -54,29 +54,32 @@ div>nav>.wrap ul li a{
 	padding: 2em;
 	color: rgba(188, 125, 7, 0.9);
 	}
+.dropmenu{
+	position: relative;
+}
 /* 하단 메뉴 클릭 세부메뉴 보이게 */
-#hb>.wrap dl>dd .dropdown:hover .dropdown-content{
+#hb>.wrap dl>dd .mydropdown:hover .mydropdown-content{
 	display: flex;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 /* 하단 메뉴 안누르면 세부메뉴 안보이게랑 기본규격 */
-#hb>.wrap dl>dd .dropdown .dropdown-content{
+#hb>.wrap dl>dd .mydropdown .mydropdown-content{
 	display: none;
 	position: absolute;
-	width:60vw;
-	top: 160px;
-	left: 500px;
+	top:53px;
+	left: 0;
+	width:916px;
 	border: 1px solid rgba(188, 125, 7, 0.2);
 	border-radius: 5em;
 	background-color: rgba(255,255,255,75%);
 	justify-content: center;
 }
 /* 하단 메뉴의 세부메뉴 */
-#hb>.wrap dl>dd .dropdown .dropdown-content ul{
+#hb>.wrap dl>dd .mydropdown .mydropdown-content ul{
 	display: flex;
 	}
 /* 하단 메뉴의 세부메뉴의 text */
-#hb>.wrap dl>dd .dropdown .dropdown-content ul>li a{
+#hb>.wrap dl>dd .mydropdown .mydropdown-content ul>li a{
 	display: inline-block;
 	padding: 2em 5em;
 	color: rgba(188, 125, 7, 0.7);

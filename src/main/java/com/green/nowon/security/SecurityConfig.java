@@ -26,13 +26,14 @@ public class SecurityConfig {
                 .authorizeRequests(authorize -> authorize
                         .antMatchers("/**").permitAll()
                         .antMatchers("/css/**", "/js/**","/images/**").permitAll()
-                        .antMatchers("/","/member/signup").permitAll()
-                        .antMatchers("/admin/**").hasAnyRole("ADMIN")
+                        .antMatchers("/", "/comm/**").permitAll()
+                        .antMatchers("/members/**").hasRole("USER")
+                        .antMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form->form
-                        .loginPage("/member/login")             //[GET]
-                        .loginProcessingUrl("/member/login")    //[POST] form태그의 action
+                        .loginPage("/comm/signin")             //[GET]
+                        .loginProcessingUrl("/comm/emailSigninSec")    //[POST] form태그의 action
                         .usernameParameter("email")         //username -> email
                         .passwordParameter("pass")          //password -> pass
                         .permitAll()

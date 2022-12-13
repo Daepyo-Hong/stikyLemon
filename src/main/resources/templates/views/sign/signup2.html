@@ -18,26 +18,26 @@
                 </div>
                 <span>Sign Up</span>
             </div>
-            <form action="#" method="post" id="signUpForm">
+            <form action="/comm/signup" method="post" id="signUpForm">
                 <div>
                     <div class="wrap" id="sgmain">
                         <span>Already a member?</span>
                         <button>
-                            <span><a href="signin">Log In</a></span>
+                            <span><a href="/members/signin">Log In</a></span>
                         </button>
                         <div class="wrap" id="input">
                             <div>Name</div>
                             <div>
-                                <input id="inputName" type="text" placeholder="Name"/>
+                                <input id="inputName" name="name" type="text" placeholder="Name"/>
                             </div>
                             <div>E-mail</div>
                             <div>
-                                <input id="inputId" type="email" placeholder="E-mail"/>
+                                <input id="inputId" name="email" type="email" placeholder="E-mail"/>
                             </div>
 
                             <div>Password</div>
                             <div>
-                                <input id="inputPw" type="password" placeholder="password"/>
+                                <input id="inputPw" name="pass" type="password" placeholder="password"/>
                             </div>
                         </div>
                     </div>
