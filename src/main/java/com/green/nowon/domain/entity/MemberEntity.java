@@ -14,12 +14,12 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@SequenceGenerator(name = "stiky_gen_mem", sequenceName = "stiky_seq_mem", allocationSize = 1)
-@Table(name = "stiky_my_member")
+@SequenceGenerator(name = "sticky_gen_mem", sequenceName = "sticky_seq_mem", allocationSize = 1)
+@Table(name = "sticky_member")
 @Entity
 public class MemberEntity extends BaseDateEntity {
 
-    @GeneratedValue(generator = "stiky_gen_mem", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "stikcy_gen_mem", strategy = GenerationType.SEQUENCE)
     @Id
     private long mno;   //회원번호
 
@@ -34,13 +34,13 @@ public class MemberEntity extends BaseDateEntity {
 
     @Column(unique = true)
     private String nickName;
-
+    
     private boolean social;     // 소셜유저여부
     private boolean deleted;    // 탈퇴여부
 
     //ROLE정보 --enum 사용
     @Builder.Default
-    @CollectionTable(name = "stiky_my_role")
+    @CollectionTable(name = "sticky_role")
     @Enumerated(EnumType.STRING)    //저장유형 문자열로(롤 확장시 유리) 기본 ordinal(숫자)
     @ElementCollection(fetch = FetchType.EAGER) //1:N member테이블에서만 접근가능한 내장테이블?로 만들어줌
     private Set<MyRole> roles = new HashSet<>();
@@ -49,4 +49,8 @@ public class MemberEntity extends BaseDateEntity {
         this.roles.add(role);
         return this;
     }
+    
+    //delivery 정보 -- ㄴ내일하기루
+    
+    
 }
