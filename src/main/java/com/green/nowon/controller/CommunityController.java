@@ -6,29 +6,34 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class CommunityController {
 	
+	//커뮤니티 페이지 
+	@GetMapping("/members/qna")
+	public String admin() {
+		return "community/qna";
+	}
 	//공지사항 페이지
-	@GetMapping("/notice")
+	@GetMapping("/members/notice")
 	    public String notice() {
-	        return "views/admin/community/notice";
+	        return "community/notice";
 	    }
 	//자주묻는질문 페이지
-	 @GetMapping("/faq")
+	 @GetMapping("/members/faq")
 	    public String faq() {
-	        return "views/admin/community/faq";
+	        return "community/faq";
 	    }
 	 //리뷰 페이지
-	 @GetMapping("/review")
+	 @GetMapping("/members/review")
 	    public String review() {
-	        return "views/admin/community/review";
+	        return "community/review";
 	    }
 	 //리뷰작성 페이지
-	 @GetMapping("/review-write")
+	 @GetMapping("/members/review-write")
 	    public String reviewWrite() {
-	        return "views/admin/community/review-write";
+	        return "community/review-write";
 	    }
 	 //이벤트 페이지
-	 @GetMapping("/event")
+	 @GetMapping("/members/event")
 	    public String event() {
-	        return "views/admin/community/event";
+	        return "community/event";
 	    }
 }
