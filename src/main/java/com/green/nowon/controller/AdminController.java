@@ -30,14 +30,16 @@ public class AdminController {
 	@PostMapping("/admin/goods/upload")
 	public String adminGoodsUpload(GoodsInsertDTO dto) {
 		//등록하면 dto에 업데이트! 하고 리스트로 리턴
-		service.update(dto);
+		service.save(dto);
 		return "redirect:/admin/goods/list";
 	}
-//상품조회페이지 이동
-    @GetMapping("/admin/goods/list")
-    public String adminGoodslist() {
-        return "adminpage/goods/list";
-    }
+//관리자상품등록페이지에서 상품등록을 위해 상품정보를 입력한 후 
+//관리자상품조회페이지 이동하면 모델객체에다가 상품정보랑 상품이미지를 받아서 보여주는 기능 처리 
+	@GetMapping("/admin/goods/list")
+	public String goods(Model model){	//상품 등록시 데이터가 저장될 곳
+	    model.addAttribute("goods", new GoodsInsertDTO());
+	    return "adminpage/goods/list";
+	}
 //관리자-상품-수정페이지로 이동
     @GetMapping("/admin/goods/detail")
     public String goodsUpdate(){
@@ -49,6 +51,5 @@ public class AdminController {
 	public String adminQnAlist(){
 	    return "adminpage/qna/admin-qnalist";
 	}
-
 
 }
