@@ -7,7 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Builder
@@ -36,7 +38,7 @@ public class MemberEntity extends BaseDateEntity {
     private String nickName;
 
     private boolean social;     // 소셜유저여부
-    private boolean deleted;    // 탈퇴여부
+    private boolean deleted ;    // 탈퇴여부
 
     //ROLE정보 --enum 사용
     @Builder.Default
@@ -50,7 +52,14 @@ public class MemberEntity extends BaseDateEntity {
         return this;
     }
 
-    //delivery 정보 -- ㄴ내일하기루
+    //배송지정보
+    @Builder.Default
+    @JoinColumn
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<DestinationEntity> dests = new ArrayList<>();
 
-
+    public MemberEntity addAddress(DestinationEntity dest){
+        this.dests.add(dest);
+        return this;
+    }
 }

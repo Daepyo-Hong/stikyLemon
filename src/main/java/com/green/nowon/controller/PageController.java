@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-	@GetMapping("/members/goods/list")
+	@GetMapping("/comm/goods/list")
 	public String shop(){
 		return "views/main/shop";
 	}
@@ -29,7 +29,7 @@ public class PageController {
 		return "views/goods/goodsDetailPage";
 	}
 
-	@GetMapping("/main/contact") // goods gno{num}으로 수정 예정.
+	@GetMapping("/comm/contact") // goods gno{num}으로 수정 예정.
 	public String contact() {
 		return "views/main/contact";
 	}
