@@ -1,13 +1,18 @@
 package com.green.nowon.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
+import com.green.nowon.service.GoodsImgSevice;
 import com.green.nowon.service.GoodsService;
 
 @Controller
@@ -15,6 +20,9 @@ public class AdminController {
 
 	@Autowired
 	private GoodsService service;
+	
+	@Autowired
+	private GoodsImgSevice imgService;
 
 //어드민페이지 이동
     @GetMapping("/admin")
@@ -50,6 +58,24 @@ public class AdminController {
 	@GetMapping("/admin/qna/list")
 	public String adminQnAlist(){
 	    return "adminpage/qna/admin-qnalist";
+	}
+	
+//	
+	@ResponseBody //응답데이터를 json타입으로 리턴합니다. 
+	@PostMapping("/admin/temp-upload")
+	public Map<String,String> tempUpload(MultipartFile gimg) {
+		//System.out.println(">>>"+gimg.getOriginalFilename());
+		return service.fileTempUpload(gimg);
+	}
+	
+//
+	@ResponseBody
+	@DeleteMapping("/admin/goods-img")
+	public void delete(String imgUrl) {//변수이름이 ajax data의 key와 일치
+		
+		System.out.println("imgUrl: "+imgUrl);
+		imgService.delete(imgUrl);
+		
 	}
 
 }

@@ -37,7 +37,7 @@ public class GoodsDTO extends BaseDateEntity{
 	@Column(nullable = false)
 	private long stock;
 	
-
+	
 	private List<GoodsImgDTO> goodsImgDTOList = new ArrayList<>();
 
     private List<Long> goodsImgIds  = new ArrayList<>();

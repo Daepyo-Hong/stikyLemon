@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.green.nowon.domain.entity.BaseDateEntity;
+import com.green.nowon.domain.entity.GoodsEntity;
 
 import lombok.Setter;
 
@@ -32,6 +33,12 @@ public class GoodsInsertDTO extends BaseDateEntity{
 	
 	@Column(nullable = false)
 	private long stock;
+
+
+	public GoodsEntity toEntity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	//이미지파일
 	

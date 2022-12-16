@@ -42,8 +42,52 @@ th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 		    opt.innerHTML = s[x];
 		    target.appendChild(opt);
 		  } 
-		}
-	</script>
+		  
+	}
+		  
+		 /////////////////// //이미지저장 ///////////////////////////////
+		  function gimgChanged(el){
+		    	var fileData=$(el)[0].files[0];
+		    	console.log(fileData);
+		    	
+		    	var formData = new FormData()
+		    	formData.append('gimg', fileData);
+		    	
+		    	$.ajax({
+		    		url:"/admin/temp-upload",
+		    		type:"post",
+		    		contentType: false,
+		    		processData: false,
+		    		data: formData,
+		    		success:function(map){ //서버에 업로드이후 url을 리턴-> 파라미터에 전달
+		    			console.log(map);
+		    		
+		    			$(el).siblings(".img").css("background-image", "url("+map.url+")");
+		    			$(el).siblings(".newName").val(map.fileName);
+		    			//대표이미지 와 추가이미지 구분
+		    			if($(el).prop("id")=="defimg")return;//대표이미지인경우 여기서 함수종료
+		    			
+		    			//추가이미지를 넣을수 있는 태그 삽입
+		    			if(idx < 3)addTag();
+		    			
+		    		}
+		    	});
+		    }
+		   
+		    function addTag(){
+		    	
+		    	var tag=`
+		  		<div class="addimg">
+					<label class="img" for="addimg_${idx}">+</label>
+					<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+					<input type="hidden" class="newName" name="newName">
+				</div>
+		    	`
+		    	//클래스이름이 addimg인 모든태그 선택자중 마지막태그 뒤에 삽입
+		    	$(".addimg").last().after(tag);
+		    	idx++;
+		    }
+		  </script>
 	</head>	
    
     <main id="all" class="content-size">
@@ -55,12 +99,22 @@ th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 				<form action="/admin/goods/upload" method="post">
 					<ul class="flex between">
 						<li class="wrap">
-							<p>
-								<input type="file" id="defImg" name="goodsImg" placeholder="상품이미지">
-							</p>
-							<p>
-								<input type="file" id="sufimg" name="goodsImg" placeholder="상품이미지">
-							</p>
+								<div>
+									<p>
+										<label class="img" for="defimg">+</label>
+										<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+		    							<input type="hidden" class="newName" name="newName">
+									</p>
+								</div>
+								<div class="flex">
+									<p class="addimg">
+										<label class="subimg" for="addimg">+</label>
+			    						<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+			    						<input type="hidden" class="newName" name="newName">
+			    					</p>
+								</div>
+								<!-- 여기에 동적삽입 -->	
+							
 							<p>
 				    		<textarea id="summernote" name="goodsContent-L" placeholder="상세설명을 작성하세요.">
 | Information 
