@@ -4,25 +4,26 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
-
-@DynamicUpdate
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Table(name = "category_goods")
 @Entity
-@Table(name = "destination")
-public class DestinationEntity {
+public class CategoryGoodsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long dno;
-    @Column(nullable = false)
-    private String zonecode;
-    @Column(nullable = false)
-    private String address;
+    private long no;
+
+    @JoinColumn//category_no
+    @ManyToOne
+    private CategoryEntity category;
+
+    @JoinColumn//goods_no
+    @ManyToOne
+    private GoodsEntity goods;
 
 }

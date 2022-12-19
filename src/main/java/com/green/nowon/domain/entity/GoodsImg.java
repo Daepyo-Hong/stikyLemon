@@ -4,25 +4,25 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
-
-@DynamicUpdate
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Entity
-@Table(name = "destination")
-public class DestinationEntity {
+public class GoodsImg extends BaseDateEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long dno;
-    @Column(nullable = false)
-    private String zonecode;
-    @Column(nullable = false)
-    private String address;
+    private long no;
+    private String orgName;
+    private String newName;
+    private String url;
+    private boolean defImg;
 
+    @JoinColumn//item_no
+    @ManyToOne
+    private GoodsEntity goods;
 }

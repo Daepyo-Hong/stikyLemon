@@ -16,28 +16,16 @@ th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 				<th>등록일</th>
 				<th>비고</th>
 			</tr>
-			<tr>
-				<td>상품번호</td>
-				<td>이미쥐</td>
-				<!--/*<td class="list-img" th:style="|background-image: url('${dto.imgUrl}');|"></td>*/-->
-				<td><a href="">상품명</a></td>
-				<td>가격</td>
-				<td>재고수량</td>
-				<td>등록일</td>
-				<td>
-					<a href="/admin/goods/detail"><button>수정</button></a>
-					<a href="#"><button>삭제</button></a>
-				</td>
-			</tr>
-			<tr>
-				<td>상품번호</td>
-				<td>이미쥐</td>
-				<td><a>상품명</a></td>
-				<td>가격</td>
-				<td>재고수량</td>
-				<td>등록일</td>
-				<td>
-					<a href="/admin/goods/detail"><button>수정</button></a>
+			<tr th:each="dto:${list}">
+				<td>[[${dto.no}]]</td>
+
+				<td class="list-img" th:style="|background-image: url('${dto.defImgUrl}');|"></td>
+				<td><a th:href="|/admin/goods/${dto.gno}|">[[${dto.title}]]</a></td>
+				<td>[[${dto.price}]]</td>
+				<td>[[${dto.stock}]]</td>
+				<td>[[${dto.updatedDate}]]</td>
+				<td class="flex between">
+					<a th:href="|/admin/goods/${dto.gno}|"><button>수정</button></a>
 					<a href="#"><button>삭제</button></a>
 				</td>
 			</tr>
