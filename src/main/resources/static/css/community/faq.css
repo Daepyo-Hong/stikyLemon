@@ -22,7 +22,7 @@ div.wrap4{
 .qna li p{
 	line-height: 160%;
 	color: #b05902;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 450;
 }
 .qna{
@@ -34,9 +34,9 @@ div.wrap4{
     border-radius: 25px;
 }
 .qna > li{
-  padding: 15px 0;
+  padding: 12px 50px 21px;
   box-sizing: border-box;
-  text-align: center; 
+  
 }
 .qna > li:nth-child(n+2){ /* 아이템 구분 점선 */
   border-top: 3px dashed #b6752e;

@@ -50,7 +50,6 @@ public class MemberEntity extends BaseDateEntity {
         return this;
     }
 
-    //delivery 정보 -- ㄴ내일하기루
 
 
 }
