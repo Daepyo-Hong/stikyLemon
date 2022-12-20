@@ -5,7 +5,12 @@
 .left4 {
     float: left;
 }
-
+.td1{
+	color:#8D6023; 
+}
+.createdDate, .readCount{
+	text-align: center;
+}
 .content-size-v{
 	width: 280px;
 	margin: 0 auto;
@@ -28,7 +33,7 @@
     padding-top: 50px;
 }
 
-.table{
+.table-0{
 	margin: 0 auto;
 	padding-bottom: 50px;
 	width: 100%;
@@ -36,27 +41,27 @@
 }
 
 
-.table tr{
+.table-0 tr{
 	background-color:#C68646;
 	
 }
 
-.table th, td{  
+.table-0 th, td{  
 	/*padding: 1em 0.5em;*/
     padding: 6px 24px;
     vertical-align: middle;
 }
 
-.table .tr1 th{
+.table-0 .tr1 th{
 	color: white;
 }
 
-.table .tr2 {
+.table-0 .tr2 {
 	text-align: center;
 	background-color:#ECD7C2;
 }
 
-.table .tr2 td{
+.table-0 .tr2 td{
 	color:#8D6023;
 	font-weight: 400;
 }

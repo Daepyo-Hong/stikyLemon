@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
 <head>
-<link rel="stylesheet" href="/css/admin/community/faq.css">
+<link rel="stylesheet" href="/css/community/faq.css">
 <script type="text/javascript" src="https://livejs.com/live.js"></script>
 <style type="text/css">
 </style>
@@ -12,10 +12,10 @@
 		<div class="wrap3 content-size center flex">자주 묻는 질문</div>
 		<div class="wrap5 flex view-size-m">
 			<div class="wrap left2 view-size-m">
-				<button class="bu-a"><a href="/members/qna"><img src="/images/orange.png"/>뒤로가기</a></button>
+				<button class="bu-a"><a href="/comm/qna"><img src="/images/orange.png"/>뒤로가기</a></button>
 			</div>
 			<div class="wrap right2 view-size-m">
-				<button class="bu-a bu-a2"><a href="/members/board-list"><img src="/images/orange.png"/>고객센터</a></button>
+				<a href="/comm/board-list"><button class="bu-a bu-a2" type="button"><img src="/images/orange.png"/>고객센터</button></a>
 			</div>
 		</div>
 		<div class="wrap4 view-size-m">

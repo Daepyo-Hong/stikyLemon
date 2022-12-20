@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CommunityController {
 	
 	//커뮤니티 페이지 
-	@GetMapping("/members/qna")
+	@GetMapping("/comm/qna")
 	public String admin() {
 		return "community/qna";
 	}
 	//공지사항 페이지
-	@GetMapping("/members/notice")
+	@GetMapping("/comm/notice")
 	    public String notice() {
 	        return "community/notice";
 	    }
 	//자주묻는질문 페이지
-	 @GetMapping("/members/faq")
+	 @GetMapping("/comm/faq")
 	    public String faq() {
 	        return "community/faq";
 	    }
 	 //리뷰 페이지
-	 @GetMapping("/members/review")
+	 @GetMapping("/comm/review")
 	    public String review() {
 	        return "community/review";
 	    }
@@ -32,7 +32,7 @@ public class CommunityController {
 	        return "community/review-write";
 	    }
 	 //이벤트 페이지
-	 @GetMapping("/members/event")
+	 @GetMapping("/comm/event")
 	    public String event() {
 	        return "community/event";
 	    }
