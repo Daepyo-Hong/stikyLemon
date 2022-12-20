@@ -1,13 +1,13 @@
 package com.green.nowon.domain.dto.member;
 
-import com.green.nowon.domain.entity.MemberEntity;
-import com.green.nowon.security.MyRole;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.green.nowon.security.MyRole;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
