@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 @Setter
 public class MyUserDetails extends User  implements OAuth2User {
 
+    private long mno;
     private String email;
     private String name;
     private String nickName;
@@ -42,6 +43,7 @@ public class MyUserDetails extends User  implements OAuth2User {
         this.nickName = entity.getNickName();    //null일 수 있으므로
         this.social=entity.isSocial();
         this.deleted= entity.isDeleted();
+        this.mno=entity.getMno();
     }
 
     //소셜로그인일시 진입점

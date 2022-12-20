@@ -75,6 +75,7 @@ public class MyOAuth2UserService extends DefaultOAuth2UserService {
         }
         log.info(memberEntity);
 
+        myUserDetails.setMno(memberEntity.getMno());
 
 
 
