@@ -99,8 +99,8 @@ public class GoodsServiceProcess implements GoodsService{
 
 	//관리자페이지에서 상품 수정버튼 눌렀을 때 페이지 이동 전 객체담기
 	@Override
-	public void update(long gno, Model model) {
-		GoodsEntity entity = goodsRepo.findById(gno).orElseThrow();
+	public void update(long no, Model model) {
+		GoodsEntity entity = goodsRepo.findById(no).orElseThrow();
 		model.addAttribute("dto", new GoodsListDTO(entity));
 
 		//카테고리정보도 가져가고, 뿌려주는것도 해야할 듯.

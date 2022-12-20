@@ -32,6 +32,9 @@ public class GoodsEntity extends BaseDateEntity{
     private int stock;
     @Lob
     private String content;
+
+
+
     @Builder.Default
     @OneToMany(mappedBy = "goods")
     private List<GoodsImg> imgs = new ArrayList<>();

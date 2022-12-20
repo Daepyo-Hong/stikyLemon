@@ -12,8 +12,6 @@ import java.util.List;
 public class GoodsInsertDTO {
 
     private long[]  categoryNo;
-
-
     private String title;       //상품명
     private String specifications;  //상품상세
     private String productCare;    //주의사항
