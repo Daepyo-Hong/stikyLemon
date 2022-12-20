@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+<link rel="stylesheet" href="/css/board/board-list.css">
+<script type="text/javascript" src="https://livejs.com/live.js"></script>
+<style type="text/css">
+</style>
+</head>
+<main>
+	<div class="wrap">
+		<section class="board content-size">
+		<div class="wrap content-size">고객센터 문의</div>
+		<div class="wrap center flex">
+			<div class="wrap left4 view-size-m">
+				<button class="bu-a"><a href="/members/qna"><img src="/images/orange.png"/>뒤로가기</a></button>
+			</div>
+			<div class="wrap right4 view-size-m">
+				<button class="bu-a"><a href="/members/board-write"><img src="/images/orange.png"/>글쓰기</a></button>
+			</div>
+		</div>
+		<div class="wrap6 content-size-v">
+			<ul class="call"><img src="images/cs/call.png"/><a>고객센터 1990-5555</a>
+				<li class="dd">평일 11:00 ~ 12:00</li>
+				<li class="dd">토,일요일 휴무</li>
+				<li class="dd">점심시간 12:00 ~ 13:00</li>
+			</ul>
+		</div>
+		<div>
+			<table class="table center flex">
+				<div class="wrap">
+					<tr class="tr1">
+						<th class="bno">번호</th>
+						<th class="title">제목</th>
+						<th class="writer">작성자</th>
+						<th class="createdDate">날짜</th>
+						<th class="readCount">조회수</th>
+					</tr>
+				</div>
+				<div class="wrap">
+					<tr class="tr2">
+						<td>100</td>
+						<td>제목은 이것입니다</td>
+						<td>작성자여섯자</td>
+						<td>2022.12.01</td>
+						<td>1000</td>
+					</tr>
+					</div>
+		 	<!-- 		<tr th:each=""> -->
+				<!-- 			<td><a th:href=""><span th:text=""></span></a></td> -->
+				<!-- 			<td th:text=""></td> -->
+				<!-- 			<td th:text=""></td> -->
+			<!-- 			<td th:text=""></td> -->
+				<!-- 	<td th:text=""></td> -->
+			<!-- 	</tr> -->
+				</table>
+			</div>
+		</section>
+	</div>
+</main>
+</html>

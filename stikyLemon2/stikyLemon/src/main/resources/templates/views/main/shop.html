@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+	<link rel="stylesheet" href="/css/main/shop.css">
+	<script src="/js/main/shop.js"></script>
+</head>
+<main>
+	<a href="/">HOME</a>
+	<div class="flex" style="margin: 0 auto;">
+		<nav style="flex: 1" id="filter">
+			<span>Filter</span>
+			<hr>
+			<button id="aside-collection" class="flex between">
+				<span>Collection</span>
+				<span>-</span>
+			</button>
+			<ul id="coll-list">
+				<li><input class="target" type="button" value="All"></li>
+				<li><input type="button" value="gifts under $20"></li>
+				<li><input type="button" value="gifts under $40"></li>
+				<li><input type="button" value="gifts under $60"></li>
+				<li><input type="button" value="gifts under $80"></li>
+			</ul>
+
+		</nav>
+		<div style="flex:4;" class="flex column">
+			<div class="sort-box">
+				<select name="job">
+					<option value="">Sort by</option>
+					<option value="학생">Newest</option>
+					<option value="회사원">Price (low to high)</option>
+					<option value="기타">Price (high to low)</option>
+					<option value="기타">Name A-Z</option>
+					<option value="기타">Name Z-A</option>
+				</select>
+			</div>
+			<div class="flex column">
+				<ul class="flex items-list" style="flex: 1">
+					<li style="flex: 1">
+						<span>처음거에만 디테일페이지연결해놓음</span>
+						<a href="/comm/goods/detail" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" >
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="flex" style="flex: 1">
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+					<li style="flex: 1">
+						<a href="#" class="items flex column around">
+							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
+							<div class="flex column between">
+								<p>
+									backpack large | meet me in the meadows | moonrise pink
+								</p>
+								<span>$64.95</span>
+							</div>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+</main>
+</html>

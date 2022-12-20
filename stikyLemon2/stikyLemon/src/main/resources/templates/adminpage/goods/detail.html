@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
+<head>
+	<link rel="stylesheet" href="/css/admin/goods/admin-detail.css">
+	<script src="/js/admin/goods/detail.js"></script>
+</head>
+<main class="content-size">
+	<h1>상품 상세 페이지</h1>
+	<form class="flex">
+		<ul class="flex column" style="flex: 1">
+			<li>
+				<ol>
+					<li>대표이미지</li>
+					<li>
+						<div>
+							<label class="img main-img" for="defimg">+</label>
+							<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+							<input type="hidden" class="newName" name="newName">
+						</div>
+					</li>
+				</ol>
+				<ol>
+					<li>추가이미지</li>
+					<li class="flex">
+						<div class="addimg">
+							<label class="img" for="addimg">+</label>
+							<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+							<input type="hidden" class="newName" name="newName">
+						</div>
+						<!--여기에 삽입-->
+					</li>
+				</ol>
+			</li>
+			<li>
+				<label>내용
+					<textarea id="summernote">
+Yay! This backpack is made from recycled PET bottles! On the front you find an extra pocket. The lining has an acorn pattern and is waterproof. The zippers are from YKK and the shoulder straps are adjustable. On the inside you'll find an elastic bottle holder and a pocket all over the back that closes with velcro. On the name tag you can write down your name and contact details.
+					</textarea>
+					<!--/*<textarea id="summernote">[[${detail.content}]]</textarea>*/-->
+				</label>
+			</li>
+		</ul>
+		<ul class="details flex column" style="flex: 1">
+			<li>
+				<label>상품번호
+					<span>detail.gno</span>
+					<!--/*<span>[[${detail.gno}]]</span>*/-->
+				</label>
+			</li>
+			<li>
+				<label>등록일
+					<span>detail.createdDate</span>
+					<!--/*<span>[[${detail.createdDate}]]</span>*/-->
+				</label>
+			</li>
+			<li>
+				<label>수정일
+					<span>detail.updatedDate</span>
+					<!--/*<span>[[${detail.createdDate}]]</span>*/-->
+				</label>
+			</li>
+			<li>
+				<label>상품명
+					<input type="text" value="detail.title">
+					<!--/*<input type="text" th:value="${detail.title}">*/-->
+				</label>
+			</li>
+
+			<li>
+				<label>판매가격
+					<input type="text" value="detail.price">
+					<!--/*<input type="text" th:value="${detail.price}">*/-->
+				</label>
+			</li>
+			<li>
+				<label>재고
+					<input type="text" value="detail.stock">
+					<!--/*<input type="text" th:value="${detail.stock}">*/-->
+				</label>
+			</li>
+			<li class="flex column">
+				<div>
+					<p>specifications</p>
+					<textarea>sizes
+size - 27 x 13 x 38 cm
+maximum length shoulder straps - 67 cm
+
+materials
+material outside - recycled PET bottles
+material inside - waterproof nylon
+material straps - cotton webbing
+zipper - matt white YKK
+buckles - matt white metal
+					</textarea>
+
+				</div>
+
+				<hr>
+				<div>
+					<p>product care</p>
+					<textarea>
+You can easily clean this bag with a wet cloth. We advise you not to wash the bag in the washing machine. Just some water will do the trick!
+					</textarea>
+				</div>
+			</li>
+			<li class="btn-edit">
+				<button type="submit">수정완료</button>
+				<button type="button">취소</button>
+			</li>
+		</ul>
+	</form>
+</main>
+
+</html>

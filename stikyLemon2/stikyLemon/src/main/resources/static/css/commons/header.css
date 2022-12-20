@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+
+.content-size {
+	width: 980px;
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+}
+
+.right {
+	justify-content: flex-end;
+}
+
+/*로고 이미지와 로고글씨! */
+.img_logo {
+	display: block;
+	margin: 30px auto;
+	width: 55px;
+	height: 55px;
+}
+.img_logo:hover{
+	content : url('/images/orange.png');
+	margin: 30px auto;
+	width: 55px;
+	height: 55px;
+}
+
+#logo>.wrap a {
+	font-size: 0;
+}
+
+#logo>.wrap a span {
+	font-weight: normal;
+	display: block;
+	margin: -30px auto;
+	width: 125px;
+	height: 55px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 20px;
+	color: #474747;
+	
+}
+
+/* 로그인, 쇼핑카트 */
+#um>.wrap .Al li{
+	margin-right: -30px;
+	padding: 0px 8px 1px 10px;
+}
+
+#um>.wrap .Al li.cart {
+	
+}
+#um>.wrap .Al li.cart a img {
+	height: 30px;
+	padding-right: 13px;
+    margin: -8px;
+	
+}
+
+#um>.wrap .Al li.cart a {
+	padding: 15px;
+	color: #f9b840;
+	font-weight: 400;
+	margin-top: -10px;
+	
+
+}
+
+#um>.wrap .Al li.cart a:hover {
+	color: rgb(251, 211, 138);
+	
+}
+
+#um>.wrap .Al li.log a span {
+	padding: 10px 0 10px 10px;
+	color: #f9b840;
+	font-weight: 400;
+}
+
+#um>.wrap .Al li.log a span:hover {
+	color: rgb(251, 211, 138);
+}
+/* 메인메뉴 */
+#nb>.wrap>ul.flex {
+	justify-content: center; /* 메뉴가운데!!가로 정렬 */
+}
+
+#nb>.wrap>ul.flex>li {
+	display: inline-block;
+	padding: 25px; /* 메뉴사이 간격 조정!  */
+	/* background:#eee;  */
+	position: relative; /*이거적어야 서브메뉴 아래로 수직정렬!  */
+}
+
+#nb>.wrap ul li a {
+	color: rgb(188, 125, 7); /*메뉴 색!  */
+	font-weight: 400;
+}
+
+#nb>.wrap ul li a:hover { /* 마우스 커서올리면 색바뀜!*/
+	color: rgb(251, 211, 138);
+}
+
+#nb>.wrap ul li ul.sub { /* 숨겨진 메뉴!!*/
+	display: none;
+	position: absolute;
+	text-align: center;
+	left: -30px;
+}
+
+#nb>.wrap ul li ul.sub.S {
+	left: 10px;
+}
+
+#nb>.wrap ul li:hover ul.sub {
+	display: block; /* 마우스올리면 메뉴펼쳐짐!!  */
+}
+
+#nb>.wrap ul li ul.sub>li {
+	display: inline-block;
+	background: white;
+	background-position: center;
+	background-size: 50px;
+	margin: auto;
+	padding: 10px 15px;
+	width: 150px;
+	text-align: center;
+}
