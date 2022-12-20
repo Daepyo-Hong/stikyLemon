@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+    <link rel="stylesheet" href="/css/user/cart.css">
+    <script src="/js/user/cart.js"></script>
+</head>
+<main class="flex view-size center">
+	<!--상품 리스트가 없을 시-->
+	<div th:if="${list}==null">
+		<div>
+			<h3><span>My Cart</span></h3>
+		</div>
+		<div id="empty-content" class="flex column center">
+			<h3>Oops! Your cart is empty.</h3>
+			<a>Continue Shopping</a>
+		</div>
+		<div id="cover">
+		</div>
+	</div>
+	<!--상품 리스트가 있을 시-->
+	<div th:if="${list}" class="flex content">
+		<div style="flex: 2" class="flex column">
+			<div class="underbar">
+				<h3><span>My Cart</span></h3>
+			</div>
+			<ul class="product-list">
+				<li class="product underbar" > <!--th:each="dto :${list}"-->
+					<div class="product flex">
+						<div class="flex" style="flex: 3">
+							<div style="flex: 1">
+								<img src="/images/shop/1.jpg" width="100px" height="150px">
+							</div>
+							<ul class="flex column" style="flex: 3">
+								<li>backpack large | meet me in the meadows | moonrise pink</li>
+								<li>€64.95</li>
+								<li>Pick a colour: moonrise pink</li>
+								<li>
+									<div class="btn-ea">
+										<ul class="flex" style="text-align:center;">
+											<li class="bseq_ea"></li> <!--재고수량-->
+											<li class="flex">
+												<input type="hidden" name="sell_price" value="65" id="vprice">
+												<input type="button" value=" - " name="minus" id="minus">
+												<input type="text" name="amount" value="1" size="3" max="99" id="amount">
+												<input type="button" value=" + " name="add" id="add">
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="flex around aicenter" style="flex: 1">
+							€<input type="text" id="TP" value="65">
+							<button>X</button>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button class="btn-option">
+				<img src="/images/icon/orange.png" width="15" height="15">
+				<span>쿠폰 적용</span>
+			</button>
+			<br>
+			<button class="btn-option">
+				<img src="/images/icon/orange.png" width="15" height="15">
+				<span>문의사항</span>
+			</button>
+		</div>
+		<div id="total-pay" style="flex: 1" class="flex column">
+			<div class="underbar">
+				<h3><span>Order summary</span></h3>
+			</div>
+			<div class="underbar">
+				<ul>
+					<li class="flex between">
+						<span>Subtotal</span>
+						<span>물건합계</span>
+					</li>
+					<li class="flex between">
+						<span>배송료</span>
+						<span>배송료값</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<ul>
+					<li class="flex between">
+						<span>총합</span><span>총합값</span>
+					</li>
+					<li class="sub-text">
+						<span>세금포함</span>
+					</li>
+				</ul>
+				<div >
+					<button class="btn-style-common">결제하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+</html>

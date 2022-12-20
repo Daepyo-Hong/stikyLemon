@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 페이지 소개 */
+.reg-fr>p{
+	font-size: 24px;
+	color: rgba(188, 125, 7, 1);
+}
+#all{
+	width: 1200px;
+	
+}
+/* ---------------L--------------------- */
+/*---------상품 이미지 영역-------------*/
+
+/* 대표 이미지 */
+main>.reg-se> .flex>form>ul>li #defImg{
+	width: 500px;
+	height: 750px;
+	background-color: rgba(255,255,255,0.8);
+}
+/* 상세 이미지 .second {}*/
+
+main>.reg-se> .flex>form>ul>li #sufImg{
+	position: relative;
+    width: 500px;
+    height: 49px;
+    background-color: rgba(255,255,255,0.8);
+}
+/* 상세 이미지 추가 버튼*/
+main>.reg-se> .flex form #btn-addImg{
+}
+
+/* 상품 세부 내용 크기  */
+main>.reg-se> .flex form p textarea{
+	position: relative;
+    width: 500px;
+    height: 144px;
+	border: 2px solid #e9e9e9;
+	border-radius: 5px;
+}
+/* 상품 세부 정보 크기  */
+main>.reg-se> .flex form p input{
+	width: 300px;
+	height: 50px;
+	border: 2px solid #e9e9e9;
+	border-radius: 5px;
+}
+/* ---------------R--------------------- */
+main>.reg-se> .flex form ul li p select{
+	width: 150px;
+	height: 40px;
+}
+/* 상품 세부 정보 영역  */
+main>.reg-se> .flex{
+	padding: 1em;
+	margin: 0 auto;
+}
+/* 상품 세부 정보 간격  */
+main>.reg-se> .flex form p{
+	margin: 3em 2em;
+}
+/* title */
+main>.reg-se> .flex form p #goodsTitle{
+    width: 300px;
+    height: 200px;
+    font-size: 32px;
+    font-weight: 400;
+}
+main>.reg-se> .flex form p #goodsName,#goodsNumber{
+	width: 150px;
+	height: 200px;
+	font-size: 14px;
+    margin-top: 12px;
+}
+
+/* 상품 등록 버튼  */
+main>.reg-se> .flex form .admin-reg-btn{
+	
+	width: 100px;
+	height: 40px;
+	color: rgba(188, 125, 7, 1);
+	background-color: rgba(251, 211, 138, 0.3);
+	border: 2px solid #e9e9e9;
+	border-radius: 10px;
+}
+/* 상품 등록 버튼 강조 */
+main>.reg-se> .flex form .admin-reg-btn:hover{
+	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.12), 0 7px 20px 0 rgba(0,0,0,0.09);
+}
+
