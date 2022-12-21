@@ -22,7 +22,9 @@ public class GoodsImg extends BaseDateEntity{
     private String url;
     private boolean defImg;
 
-    @JoinColumn//item_no
+    @JoinColumn//goods_no
     @ManyToOne
     private GoodsEntity goods;
 }
+
+

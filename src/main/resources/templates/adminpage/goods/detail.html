@@ -7,7 +7,13 @@
 		var idx=1;
 		$(document).ready(function() {
 			$('#summernote').summernote();
+			$("#btn-img-add").click(addTag);
+			/*$(".btn-img-delete").click(removeTag);*/
 		});
+		function removeTag(el){
+			$(el).parents("div.addimg").remove();
+		}
+
 		function gimgChanged(el){
 			var fileData = $(el)[0].files[0];
 			console.log(fileData);
@@ -29,8 +35,6 @@
 					$(el).siblings(".newName").val(map.fileName);
 					//대표이미지 와 추가이미지 구분
 					if($(el).prop("id")=="defimg") return; //대표이미지 처리는 여기서끝
-					//추가이미지인경우 처리
-					if(idx < 3)addTag();
 				}
 			});
 		}
@@ -43,13 +47,20 @@
 			var tag=	//자바스크립트 백틱 이용하여 변수적용 가능합니다~
 					`
 					<div class="addimg">
-						<label class="img" for="addimg_${idx}">+</label>
-						<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+						<label class="img" for="addimg${idx}">+</label>
+						<input id="addimg${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
 						<input type="hidden" class="newName" name="newName">
+						<div>
+							<button class="btn-img-delete" type="button" onclick="removeTag(this)">삭제</button>
+						</div>
 					</div>
 					`;
+			if($("addimgs").length){	//태그 추가
+				addimgs.last().after(tag);
+			}else{
+				$("#btn-img-add").before(tag);	//추가이미지 하나도 없을 때.
+			}
 
-			addimgs.last().after(tag);
 			idx++;
 		}
 	</script>
@@ -59,32 +70,35 @@
 	<form class="flex">
 		<ul class="flex column" style="flex: 1">
 			<li>
-				<ol>
+				<ol th:each="img:${imgs}" th:if="${img.defImg}">
 					<li>대표이미지</li>
 					<li>
 						<div>
-							<label class="img main-img" for="defimg">+</label>
+							<label class="img main-img" for="defimg" th:style="|background-image: url('${img.totUrl}')|">+</label>
 							<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
 							<input type="hidden" class="newName" name="newName">
 						</div>
 					</li>
 				</ol>
-				<ol>
+				<ol >
 					<li>추가이미지</li>
-					<li class="flex">
-						<div class="addimg">
-							<label class="img" for="addimg">+</label>
-							<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+					<li id="addimgList" class="flex">
+						<div class="addimg" th:each="img, imgStat : ${imgs}" th:if="!${img.defImg}">
+							<label class="img" th:for="|addimg_${imgStat.count}|" th:style="|background-image: url('${img.totUrl}')|">+</label>
+							<input th:id="|addimg_${imgStat.count}|" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
 							<input type="hidden" class="newName" name="newName">
+							<div>
+								<button class="btn-img-delete" type="button" onclick="removeTag(this)">삭제</button>
+							</div>
 						</div>
-						<!--여기에 삽입-->
+
+						<button type="button" id="btn-img-add">사진추가</button>
 					</li>
 				</ol>
 			</li>
 			<li>
 				<label>내용
-					<textarea id="summernote">
-Yay! This backpack is made from recycled PET bottles! On the front you find an extra pocket. The lining has an acorn pattern and is waterproof. The zippers are from YKK and the shoulder straps are adjustable. On the inside you'll find an elastic bottle holder and a pocket all over the back that closes with velcro. On the name tag you can write down your name and contact details.
+					<textarea id="summernote" th:text="${dto.content}">
 					</textarea>
 					<!--/*<textarea id="summernote">[[${detail.content}]]</textarea>*/-->
 				</label>
@@ -93,54 +107,42 @@ Yay! This backpack is made from recycled PET bottles! On the front you find an e
 		<ul class="details flex column" style="flex: 1">
 			<li>
 				<label>상품번호
-					<span>detail.gno</span>
+					<span th:text="${dto.no}"></span>
 					<!--/*<span>[[${detail.gno}]]</span>*/-->
 				</label>
 			</li>
 			<li>
 				<label>등록일
-					<span>detail.createdDate</span>
+					<span th:text="${dto.createdDate}">detail.createdDate</span>
 					<!--/*<span>[[${detail.createdDate}]]</span>*/-->
 				</label>
 			</li>
 			<li>
 				<label>수정일
-					<span>detail.updatedDate</span>
+					<span th:text="${dto.updatedDate}">detail.updatedDate</span>
 					<!--/*<span>[[${detail.createdDate}]]</span>*/-->
 				</label>
 			</li>
 			<li>
 				<label>상품명
-					<input type="text" value="detail.title">
-					<!--/*<input type="text" th:value="${detail.title}">*/-->
+					<input type="text" th:value="${dto.title}">
 				</label>
 			</li>
 
 			<li>
 				<label>판매가격
-					<input type="text" value="detail.price">
-					<!--/*<input type="text" th:value="${detail.price}">*/-->
+					<input type="text" th:value="${dto.price}">
 				</label>
 			</li>
 			<li>
 				<label>재고
-					<input type="text" value="detail.stock">
-					<!--/*<input type="text" th:value="${detail.stock}">*/-->
+					<input type="text" th:value="${dto.stock}">
 				</label>
 			</li>
 			<li class="flex column">
 				<div>
 					<p>specifications</p>
-					<textarea>sizes
-size - 27 x 13 x 38 cm
-maximum length shoulder straps - 67 cm
-
-materials
-material outside - recycled PET bottles
-material inside - waterproof nylon
-material straps - cotton webbing
-zipper - matt white YKK
-buckles - matt white metal
+					<textarea th:text="${dto.specifications}">
 					</textarea>
 
 				</div>
@@ -148,14 +150,14 @@ buckles - matt white metal
 				<hr>
 				<div>
 					<p>product care</p>
-					<textarea>
-You can easily clean this bag with a wet cloth. We advise you not to wash the bag in the washing machine. Just some water will do the trick!
+					<textarea th:text="${dto.productCare}">
 					</textarea>
 				</div>
 			</li>
 			<li class="btn-edit">
 				<button type="submit">수정완료</button>
 				<button type="button">취소</button>
+				<button type="button">삭제</button>
 			</li>
 		</ul>
 	</form>

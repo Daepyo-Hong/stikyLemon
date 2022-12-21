@@ -107,6 +107,14 @@
 			$(".addimg").last().after(tag);
 			idx++;
 		}
+		/*
+		function requiredCheck(){
+			if($("#defimg").css("background-image")==""){
+				event.preventDefault();
+				alert("대표이미지는 무조건 설정 해주셔야 합니다.")
+			}
+		}
+		*/
 	</script>
 </head>
 <main id="all" class="content-size">
@@ -119,7 +127,7 @@
 				<ul class="flex between">
 					<li class="wrap">
 						<div>
-							<p>대표이미지</p>
+							<p>대표이미지(무조건 등록하셔야 합니다.)</p>
 							<p>
 								<div>
 									<label class="img" for="defimg">+</label>

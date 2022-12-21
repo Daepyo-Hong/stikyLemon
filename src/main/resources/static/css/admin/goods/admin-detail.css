@@ -44,3 +44,23 @@ hr{
     height: 50px;
 
 }
+
+form>ul>li>ol>li>div{
+    position: relative;
+}
+form>ul>li>ol>li>div>div{
+    width: 100%;
+    height: 18px;
+    display: flex;
+
+    justify-content: flex-end;
+    position: absolute;
+    line-height: 18px;
+    bottom:0;
+    right: 0;
+
+}
+form>ul>li>ol>li>div>div>button{
+    border: 1px solid red;
+    background-color: white;
+}

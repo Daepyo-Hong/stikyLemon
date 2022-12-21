@@ -7,10 +7,11 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class GoodsUpdateDTO {
+public class GoodsDetailDTO {
 
     private long no;
     private String title;       //상품명
+    private String content;
     private String specifications;  //상품상세
     private String productCare;    //주의사항
     private int price;
@@ -20,9 +21,10 @@ public class GoodsUpdateDTO {
     private LocalDateTime updatedDate;
     private String defImgUrl;
 
-    public GoodsUpdateDTO(GoodsEntity e){
+    public GoodsDetailDTO(GoodsEntity e){
         this.no=e.getNo();
         this.title=e.getTitle();
+        this.content=e.getContent();
         this.specifications=e.getSpecifications();
         this.productCare=e.getProductCare();
         this.price=e.getPrice();
@@ -31,7 +33,7 @@ public class GoodsUpdateDTO {
         this.updatedDate=e.getUpdatedDate();
         this.defImgUrl=e.defImg().getUrl()+e.defImg().getNewName();
     }
-    public GoodsUpdateDTO(CategoryGoodsEntity cie){
+    public GoodsDetailDTO(CategoryGoodsEntity cie){
         this(cie.getGoods());
     }
 }

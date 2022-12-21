@@ -1,6 +1,8 @@
 package com.green.nowon.service.impl;
 
+import com.green.nowon.domain.dto.goods.GoodsDetailImgDTO;
 import com.green.nowon.domain.dto.goods.GoodsListDTO;
+import com.green.nowon.domain.dto.goods.GoodsDetailDTO;
 import com.green.nowon.domain.entity.*;
 import com.green.nowon.utils.MyFileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,12 +100,23 @@ public class GoodsServiceProcess implements GoodsService{
 	}
 
 	//관리자페이지에서 상품 수정버튼 눌렀을 때 페이지 이동 전 객체담기
+	@Transactional
 	@Override
 	public void update(long no, Model model) {
 		GoodsEntity entity = goodsRepo.findById(no).orElseThrow();
-		model.addAttribute("dto", new GoodsListDTO(entity));
+		model.addAttribute("dto", new GoodsDetailDTO(entity));
+
 
 		//카테고리정보도 가져가고, 뿌려주는것도 해야할 듯.
+
 		//model.addAttribute("cate",);
+
+		//이미지정보도 가져가고, 뿌려주는것도 해야할 듯.
+		List<GoodsImg> result = imgRepo.findAllByGoodsNo(no);
+		List<GoodsDetailImgDTO> imgList = result.stream()
+				.map(GoodsDetailImgDTO::new)
+				.collect(Collectors.toList());
+		model.addAttribute("imgs",imgList);
+
 	}
 }

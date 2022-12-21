@@ -48,7 +48,7 @@ public class AdminController {
         return "adminpage/goods/list";
     }
 //관리자-상품-수정페이지로 이동
-    @GetMapping("/admin/goods/{nno}")
+    @GetMapping("/admin/goods/{no}")
     public String goodsUpdate(@PathVariable long no, Model model){
         //서비스처리해서 상세내용 모델에 담아서 디테일페이지로 가져갈듯?
         goodsService.update(no,model);

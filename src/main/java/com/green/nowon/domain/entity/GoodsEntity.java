@@ -36,8 +36,9 @@ public class GoodsEntity extends BaseDateEntity{
 
 
     @Builder.Default
-    @OneToMany(mappedBy = "goods")
+    @OneToMany(mappedBy = "goods", fetch = FetchType.EAGER)
     private List<GoodsImg> imgs = new ArrayList<>();
+
 
     public GoodsImg defImg(){
         for(GoodsImg img: imgs){
