@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+	<link rel="stylesheet" href="/css/main/intro.css">
+	<link rel="stylesheet" href="/css/user/myOrders.css">
+	<link rel="stylesheet" href="/css/main.css">
+	
+</head>
+
+<main>
+	<h1>주문목록페이지</h1>
+		<div class="flex">
+			<ul class="wrap center">
+				<li class="order-list">
+					주문목록페이지
+				</li>
+			</ul>
+		</div>
+</main>
+</html>

@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/*영역 설정 못함 이거 안먹힘 */
+.flex .wrap .oeder-list{
+	width: 600px;
+	height: 800px;
+	background-color: rgb(206, 222, 215);
+}
