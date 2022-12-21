@@ -23,5 +23,23 @@ public class MemberController {
 
         return "views/user/info";
     }
+    
+    //멤버 마이페이지관련 경로이동
+    
+    //주문목록페이지 이동
+    @GetMapping("/members/myOrders")
+    public String myOrders() {
+    	return "mypage/myOrders";
+    }
+    //내정보페이지 이동
+    @GetMapping("/members/myAccount")
+    public String myAccount() {
+    	return "mypage/myAccount";
+    }
+    //내배송지페이지 이동
+    @GetMapping("/members/myAddresses")
+    public String myAddresses() {
+    	return "mypage/myAddresses";
+    }
 
 }

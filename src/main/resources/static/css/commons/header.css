@@ -66,13 +66,10 @@
 	color: #f9b840;
 	font-weight: 400;
 	margin-top: -10px;
-	
-
 }
 
 #um>.wrap .Al li.cart a:hover {
 	color: rgb(251, 211, 138);
-	
 }
 
 #um>.wrap .Al li.log a span {
@@ -84,6 +81,58 @@
 #um>.wrap .Al li.log a span:hover {
 	color: rgb(251, 211, 138);
 }
+
+/*////////////////////////////////////////*/
+/*로그인 시 로그인없어지고 닉네임나오는 부분 */
+#um>.wrap .Al li.mypage{
+	position: relative;	
+}
+/*닉네임나오는 부분 */
+#um>.wrap .Al li.mypage span {
+	padding: 10px 0 10px 10px;
+	color: #f9b840;
+	font-weight: 400;
+} 
+/*로그인시 나타나는 닉네임 호버시 흐려지게 */
+#um>.wrap .Al li.mypage span:hover {
+	color: rgb(251, 211, 138);
+}
+/*닉네임 옆 이미지*/
+#um>.wrap .Al li.mypage img {
+	height: 20px;
+	padding: 0.3em;
+    margin-right: 30px;
+}
+/* 이미지 클릭시 마이페이지메뉴 나오게*/
+#um>.wrap .Al li.mypage:hover .mypage_content {
+  display: block;
+}
+/*마이페이지 메뉴내용*/
+#um>.wrap .Al li.mypage div.mypage_content{
+	position: absolute;
+	display: none;
+	background-color: rgba(255,255,255,0.8);
+	border-radius:15px;
+}
+/*마이페이지 메뉴내용 p태그 공간줌*/
+#um>.wrap .Al li.mypage div.mypage_content p {
+	width: 120px;
+	padding: 0.5em;
+	margin: 0.5em;
+	display: block;
+}
+/*마이페이지 메뉴내용의 a태그*/
+#um>.wrap .Al li.mypage div.mypage_content p a{
+	display: inline-block;
+	color: rgb(188, 125, 7);
+	text-decoration-line:none;
+}
+/*마이페이지 메뉴내용호버시 색변환*/
+#um>.wrap .Al li.mypage div.mypage_content p a:hover{
+	color: darkorange;
+}
+/*////////////////////////////////////////*/
+
 /* 메인메뉴 */
 #nb>.wrap>ul.flex {
 	justify-content: center; /* 메뉴가운데!!가로 정렬 */

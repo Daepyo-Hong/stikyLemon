@@ -26,7 +26,7 @@ class SpringWebSampleApplicationTests {
 	@Autowired
 	PasswordEncoder pe;
 
-	@Test
+	//@Test
 	void 회원가입이잘되는지() {
 		mrepo.save(MemberEntity.builder()
 				.name("관리자")
@@ -42,7 +42,7 @@ class SpringWebSampleApplicationTests {
 
 	@Commit
 	@Transactional
-	@Test
+	//@Test
 	void 배송지입력테스트() {
 		mrepo.findById(1L).orElseThrow()
 				.addAddress(DestinationEntity.builder()
@@ -52,5 +52,5 @@ class SpringWebSampleApplicationTests {
 
 	}
 
-	}
+	
 }
