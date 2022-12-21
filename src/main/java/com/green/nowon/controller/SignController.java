@@ -2,10 +2,15 @@ package com.green.nowon.controller;
 
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
 import com.green.nowon.service.LogService;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SignController {
@@ -61,4 +66,12 @@ public class SignController {
         service.save(dto);
         return "redirect:/comm/emailSignin";
     }
+    
+    @RequestMapping("/logout")
+    public ModelAndView logout(HttpSession session) {
+        session.invalidate();
+        ModelAndView mv = new ModelAndView("redirect:/");
+        return mv;
+    }
+
 }

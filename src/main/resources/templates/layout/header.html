@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <header>
-
 	<h1>헤더파일</h1>
 	<div class="wrap">
 	
@@ -20,14 +20,23 @@
 		<section id="um">
 			<h1>유저메뉴</h1>
 			<div class="wrap content-size">
-				<ul class="Al flex right">
+				<ul  class="Al flex right">
 					<li class="cart">
 						<a href="/members/cart"><img src="/images/headerImg/cart.png" class="img_cart"/>Shopping cart</a>
 					</li>
-					<li class="log">
+					<li class="log" sec:authorize="isAnonymous()">
 						<a href="/comm/signin" >
 							<span>Login</span>
 						</a>
+					</li>
+					<li class="log" sec:authorize="isAuthenticated()">
+						<!-- <span th:text="${#authentication.name+'(이름)'}">유저네임정보</span> -->
+						<span class="log-email" sec:authentication="principal.email"></span>
+						(
+						<span th:if="${#authentication.principal.nickName==null}"  sec:authentication="principal.name"></span>
+						<span th:if="${#authentication.principal.nickName!=null}" sec:authentication="principal.nickName"></span>
+						)
+						<a href="/logout"><span>로그아웃</span></a>
 					</li>
 				</ul>
 			</div>

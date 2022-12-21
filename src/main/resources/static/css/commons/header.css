@@ -130,3 +130,10 @@
 	width: 150px;
 	text-align: center;
 }
+
+.log span{
+	color: #97610f;
+}
+.log .log-email{
+	padding-left: 10px;
+}
