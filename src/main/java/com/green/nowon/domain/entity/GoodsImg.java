@@ -25,6 +25,12 @@ public class GoodsImg extends BaseDateEntity{
     @JoinColumn//goods_no
     @ManyToOne
     private GoodsEntity goods;
+
+    public GoodsImg update(String newName, String orgName) {
+        this.newName=newName;
+        this.orgName=orgName;
+        return this;
+    }
 }
 
 

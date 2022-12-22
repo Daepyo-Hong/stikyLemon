@@ -1,5 +1,6 @@
 package com.green.nowon.controller;
 
+import com.green.nowon.domain.dto.goods.GoodsUpdateDTO;
 import com.green.nowon.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,16 +50,30 @@ public class AdminController {
     }
 //관리자-상품-수정페이지로 이동
     @GetMapping("/admin/goods/{no}")
-    public String goodsUpdate(@PathVariable long no, Model model){
+    public String adminGoodsDetail(@PathVariable long no, Model model){
         //서비스처리해서 상세내용 모델에 담아서 디테일페이지로 가져갈듯?
-        goodsService.update(no,model);
+        goodsService.adminDetail(no,model);
         return "adminpage/goods/detail";
     }
+    //관리자상품수정완료 버튼클릭시
+    @PostMapping("/admin/goods/update")
+    public String adminGoodsUpdate(GoodsUpdateDTO dto){
+        System.out.println(dto);
+        goodsService.update(dto);
+        return "redirect:/admin/goods/list";
+    }
+
 //관리자페이지에서 관리자-게시글조회페이지로 이동
 	@GetMapping("/admin/qna/list")
 	public String adminQnAlist(){
 	    return "adminpage/qna/admin-qnalist";
 	}
+// 상품 삭제처리
+    @GetMapping("/admin/goods/delete/{no}")
+    public String goodsRemove(@PathVariable long no){
+        goodsService.removeGoods(no);
+        return "redirect:/admin/goods/list";
+    }
 
     //카테고리등록페이지로 이동
     @GetMapping("/admin/category/reg")

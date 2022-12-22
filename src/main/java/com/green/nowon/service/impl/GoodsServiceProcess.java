@@ -1,15 +1,12 @@
 package com.green.nowon.service.impl;
 
-import com.green.nowon.domain.dto.goods.GoodsDetailImgDTO;
-import com.green.nowon.domain.dto.goods.GoodsListDTO;
-import com.green.nowon.domain.dto.goods.GoodsDetailDTO;
+import com.green.nowon.domain.dto.goods.*;
 import com.green.nowon.domain.entity.*;
 import com.green.nowon.utils.MyFileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 import com.green.nowon.service.GoodsService;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
@@ -64,13 +61,12 @@ public class GoodsServiceProcess implements GoodsService{
 
 	}
 
-
+//상품등록처리
 	@Override
 	public void save(GoodsInsertDTO dto) {
 		//카테고리와 상품 등록
 		//이미지 정보 등록, temp->실제 upload위치
 		long[] categoryNo=dto.getCategoryNo();
-		dto.toGoodsEntity();
 
 		GoodsEntity entity= goodsRepo.save(dto.toGoodsEntity());
 		for(long no:categoryNo) {
@@ -82,6 +78,51 @@ public class GoodsServiceProcess implements GoodsService{
 
 		dto.toItemListImgs(entity, locationUpload).forEach(imgRepo::save);
 		//이미지 temp->temp->실제 upload위치
+	}
+	//상품업데이트처리
+	@Transactional
+	@Override
+	public void update(GoodsUpdateDTO dto) {
+		GoodsEntity entity= goodsRepo.save(dto.toGoodsEntity());
+
+		Map<String, List<String>> infos = dto.toGoodsImg(entity, locationUpload);
+		List<String> defChange = infos.get("defImg");
+		List<String> deletedList = infos.get("delete");
+		List<String> addedList = infos.get("add");
+		if(defChange!=null) {
+			if (defChange.size() != 0) {
+				imgRepo.save(imgRepo.findByDefImgAndGoodsNo(true, dto.getNo()).orElseThrow()
+						.update(defChange.get(0),defChange.get(1)));
+			}
+		}
+		for(String newName : deletedList){
+			imgRepo.deleteByNewName(newName);
+		}
+
+		for(int i=0;i<addedList.size();i++){
+			String newName = addedList.get(i);
+			String orgName = dto.getOrgName().get(dto.getNewName().indexOf(newName));
+					imgRepo.save(GoodsImg.builder()
+							.orgName(orgName)
+							.newName(newName)
+							.url(locationUpload)
+							.goods(entity)
+					.build());
+		}
+	}
+
+	//상품 삭제처리, 연관된 테이블:현재 카테고리, 이미지파일, ,차후 주문상세, 장바구니디테일 (삭제해야하나 싶기도함)
+	@Transactional
+	@Override
+	public void removeGoods(long no) {
+		//순서는 상품 참조하고있는 애들 먼저 삭제하면 될듯.
+		//이미지, 카테고리, 상품 순?
+		//이미지 삭제
+		imgRepo.deleteByGoodsNo(no);
+		//카테고리 삭제
+		cateGoodsRepo.deleteByGoodsNo(no);
+		//상품삭제
+		goodsRepo.deleteById(no);
 	}
 
 	@Override
@@ -102,14 +143,16 @@ public class GoodsServiceProcess implements GoodsService{
 	//관리자페이지에서 상품 수정버튼 눌렀을 때 페이지 이동 전 객체담기
 	@Transactional
 	@Override
-	public void update(long no, Model model) {
+	public void adminDetail(long no, Model model) {
 		GoodsEntity entity = goodsRepo.findById(no).orElseThrow();
 		model.addAttribute("dto", new GoodsDetailDTO(entity));
 
+		//카테고리 수정은 일단 불가. 뿌려주기만 함.
+		List<String> cates =cateGoodsRepo.findByGoodsNo(no).stream()
+				.map(e->e.getCategory().getName())
+				.collect(Collectors.toList());
+		model.addAttribute("cates",cates);
 
-		//카테고리정보도 가져가고, 뿌려주는것도 해야할 듯.
-
-		//model.addAttribute("cate",);
 
 		//이미지정보도 가져가고, 뿌려주는것도 해야할 듯.
 		List<GoodsImg> result = imgRepo.findAllByGoodsNo(no);

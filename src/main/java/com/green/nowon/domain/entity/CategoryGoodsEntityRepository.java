@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface CategoryGoodsEntityRepository extends JpaRepository<CategoryGoodsEntity,Long> {
     List<CategoryGoodsEntity> findAllByCategoryNo(long cateNo);
+
+    void deleteByGoodsNo(long no);
+
+    List<CategoryGoodsEntity> findByGoodsNo(long no);
 }

@@ -1,6 +1,7 @@
 package com.green.nowon.service;
 
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
+import com.green.nowon.domain.dto.goods.GoodsUpdateDTO;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,5 +17,9 @@ public interface GoodsService {
 
     void getList(Model model);
 
-    void update(long gno, Model model);
+    void adminDetail(long gno, Model model);
+
+    void update(GoodsUpdateDTO dto);
+
+    void removeGoods(long no);
 }
