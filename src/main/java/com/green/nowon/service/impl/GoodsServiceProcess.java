@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.green.nowon.domain.dto.goods.GoodsDetailDTO;
+import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 import com.green.nowon.service.GoodsService;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;

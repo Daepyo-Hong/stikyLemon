@@ -25,4 +25,5 @@ public class CategoryEntity {
     @ManyToOne
     private CategoryEntity parent; //상위카테고리
 
+	
 }

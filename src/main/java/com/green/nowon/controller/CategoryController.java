@@ -1,6 +1,5 @@
 package com.green.nowon.controller;
 
-import com.green.nowon.domain.entity.CategoryEntityRepository;
 import com.green.nowon.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,4 +23,5 @@ public class CategoryController {
         service.categoryList(parentNo, model);
         return "adminpage/category/category";
     }
+   
 }

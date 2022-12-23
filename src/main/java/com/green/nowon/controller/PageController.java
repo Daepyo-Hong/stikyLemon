@@ -19,18 +19,17 @@ public class PageController {
         return "views/main/shop";
     }
 
-    //장바구니로 이동
-    @GetMapping("/members/cart")
-    public String cart(Model model) {
-        //임시 list 저장해놓은것
-        model.addAttribute("list", "value");
-        return "views/user/cart";
-    }
-
-    @GetMapping("/faq-list")
-    public String faqList() {
-        return "views/admin/faq/faq-list";
-    }
+	//장바구니로 이동
+	@GetMapping("/members/cart")
+	public String cart(Model model){
+		//임시 list 저장해놓은것
+		model.addAttribute("list","value");
+		return "views/user/cart";
+	}
+	@GetMapping("/faq-list")
+	public String faqList() {
+		return "views/admin/faq/faq-list";
+	}
 
     @GetMapping("/comm/goods/detail") // goods gno{num}으로 수정 예정.
     public String goods() {

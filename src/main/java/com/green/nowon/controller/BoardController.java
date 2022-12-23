@@ -49,15 +49,13 @@ public class BoardController {
 			return "redirect:/comm/board-list";
 		}
 	//삭제
-		@DeleteMapping("/members/board-list/{bno}")
+		@DeleteMapping("/comm/board-list/{bno}")
 		public String delete(@PathVariable long bno) {
-			
 			service.delete(bno);
-			
-			return "redirect:/members/board-list";
+			return "redirect:/comm/board-list";
 		}
-		//삭제
-		@PutMapping("/members/board-list/{bno}")                 //setter 있어야함.
+		//수정
+		@PutMapping("/comm/board-list/{bno}")                 //setter 있어야함.
 		public String update(@PathVariable long bno, BoardUpdateDTO dto) {
 			
 			//System.out.println(">>>>>>>>>>"+bno +"수정처리:"+ dto);
@@ -65,7 +63,7 @@ public class BoardController {
 			
 			service.updateProc(bno, dto);
 			
-			return "redirect:/members/board-list/{bno}";
+			return "redirect:/comm/board-list/{bno}";
 		}
 	 
 	 

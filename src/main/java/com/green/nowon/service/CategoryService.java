@@ -8,4 +8,7 @@ public interface CategoryService {
     void fistCategory(Model model);
 
     void categoryList(Long parentNo, Model model);
+
+
+
 }
