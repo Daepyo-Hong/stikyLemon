@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.green.nowon.domain.dto.goods.GoodsDetailDTO;
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 import com.green.nowon.service.GoodsService;
 import org.springframework.ui.Model;
@@ -106,4 +107,15 @@ public class GoodsServiceProcess implements GoodsService{
 		//카테고리정보도 가져가고, 뿌려주는것도 해야할 듯.
 		//model.addAttribute("cate",);
 	}
+
+	@Transactional //아이템->이미지 LAZY이므로 정보획득을위해 
+	@Override
+	public void detail(long no, Model model) {
+		model.addAttribute("detail", goodsRepo.findById(no)
+				//.map(e->new GoodsDetailDTO(e))
+				.map(GoodsDetailDTO::new)
+				.orElseThrow()) ;
+		
+	}
+	
 }

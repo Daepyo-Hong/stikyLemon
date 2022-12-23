@@ -17,4 +17,7 @@ public interface GoodsService {
     void getList(Model model);
 
     void update(long gno, Model model);
+
+	void detail(long no, Model model);
+
 }

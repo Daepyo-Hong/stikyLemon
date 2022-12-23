@@ -1,7 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
+ <script type="text/javascript">
+    	//var left=0;
+    	$(function(){
+    		createCategory($(".gnb"));
+    	});
+    	
+    	function createCategory(target){
+    		var parentNo=$(target).attr("value");
+    		console.log("pno:"+parentNo);
+    		$.ajax({
+    			url:`/comm/categorys/${parentNo}`,
+    			success:function(olTag){
+    				$(target).children(".cate-wrap").html(olTag);
+    				
+    				//$(target).children(".sub").children("ol").css("left",left+'px').css("top",0);
+    				//left = left+179;
+    				var sub=$(target).find(".cate");
+    				//console.log(sub);
+    				$.each(sub, subCategory);
+    			}
+    		});
+    	}
+    	function subCategory(){
+    		//console.log($(this).attr("value"));
+    		createCategory($(this));
+    	}
+    </script>
 <header>
 	<h1>헤더파일</h1>
 	<div class="wrap">
@@ -32,11 +58,10 @@
 					<li class="log" sec:authorize="isAuthenticated()">
 						<!-- <span th:text="${#authentication.name+'(이름)'}">유저네임정보</span> -->
 						<span class="log-email" sec:authentication="principal.email"></span>
-						(
 						<span th:if="${#authentication.principal.nickName==null}"  sec:authentication="principal.name"></span>
 						<span th:if="${#authentication.principal.nickName!=null}" sec:authentication="principal.nickName"></span>
-						)
-						<a href="/logout"><span>로그아웃</span></a>
+						
+						<a href="/logout"><span>Logout</span></a>
 					</li>
 				</ul>
 			</div>
@@ -45,8 +70,25 @@
 			<h1>메인메뉴</h1>
 			<div class="wrap">
 				<ul class="flex">
-					<li class="menu1"><a href="/comm/goods/list">shop</a>
-						<ul class="sub">
+					<li>
+					<li value="0" class="gnb cate">
+							<a href="#" class="flex">
+								<span class="gnb-icon">
+									<i></i>
+									<i></i>
+									<i></i>
+								</span>
+								<span>전체상품보기</span>
+							</a>
+							<div class="cate-wrap">
+								<!-- 카테고리 자동삽입 -->
+							</div>
+					</li>
+					<li value="0" class="gnb cate menu1"><a>shop</a>
+						<div class="cate-wrap">
+								<!-- 카테고리 자동삽입 -->
+						</div>
+						<!-- <ul class="sub">
 							<li>
 								<a href="#">all&nbsp;products</a>
 							</li>
@@ -65,7 +107,7 @@
 							<li>
 								<a href="#">gift&nbsp;card</a>
 							</li>				
-						</ul>
+						</ul> -->
 					</li>
 					<li><a href="#">gift&nbsp;shop</a></li>
 					<li><a href="#">the&nbsp;stick&nbsp;sis&nbsp;club</a>

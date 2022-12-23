@@ -48,7 +48,7 @@
 /* 로그인, 쇼핑카트 */
 #um>.wrap .Al li{
 	margin-right: -30px;
-	padding: 0px 8px 1px 10px;
+	padding: 0px 10px 0px 10px;
 }
 
 #um>.wrap .Al li.cart {

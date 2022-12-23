@@ -7,11 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-	@GetMapping("/comm/goods/list")
-	public String shop(){
-		return "views/main/shop";
-	}
-
+	
+ 
 	//장바구니로 이동
 	@GetMapping("/members/cart")
 	public String cart(Model model){
