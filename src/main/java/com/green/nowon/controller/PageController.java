@@ -16,7 +16,7 @@ public class PageController {
     @GetMapping("/comm/goods/list")
     public String shop(Model model) {
         //goodsService.findAllGoods(model);
-        return "views/main/shop";
+        return "views/main/menu/shop";
     }
 
 	//장바구니로 이동

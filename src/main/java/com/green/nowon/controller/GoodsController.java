@@ -15,11 +15,11 @@ public class GoodsController {
 	
 	@GetMapping("/common/goods/{no}")
 	public String detail(@PathVariable long no, Model model) {
-		service.detail(no, model);
-		return "/goods/detail";
+		//service.detail(no, model);
+		return "views/goods/goodsDetailPage";
 	}
 	
-	 @GetMapping("/common/category/{no}/goods")
+	 @GetMapping("/comm/category/{no}/goods")
 		public String goodsOfCategory(@PathVariable long no, Model model) {
 			service.goodsOfCategory(no, model);
 			return "views/main/menu/shop";
