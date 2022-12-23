@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/commons/footer.css">
     <link rel="stylesheet" href="/css/goods/goodsDetailPage.css">
 
+    <script src="/js/user/rating.js"></script>
+
 
 </head>
 <body>
@@ -34,7 +36,9 @@
             <div class="price">€64.95</div>
             <section class="color">
                 <div>Pick a colour: moonrise pink</div>
-                <div class="color2"><button></button></div>
+                <div class="color2">
+                    <button></button>
+                </div>
             </section>
             <section class="color">
                 <div>Quintity</div>
@@ -77,6 +81,25 @@
         </div>
 
     </div>
+    <form action="#">
+        <div id="rate">
+            <div>
+    <span class="star">
+        ★★★★★
+        <span>★★★★★</span>
+    <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+    </span>
+            </div>
+            <div>
+                <span>별점을 드래그해주세요</span>
+                <div>
+                    <textarea cols="65">상품평을 입력해주세요</textarea>
+                </div>
+                <button type="submit">등록하기</button>
+            </div>
+        </div>
+    </form>
+
 </main>
 <th:block th:insert="/layout/footer::footer"/>
 </body>
