@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+	<link rel="stylesheet" href="/css/commons/common.css">
+    <link rel="stylesheet" href="/css/commons/header.css">
+    <link rel="stylesheet" href="/css/commons/footer.css">
+	<link rel="stylesheet" href="/css/user/mypage/myOrders.css">
+</head>
+
+<body>
+<th:block th:insert="/layout/header::header"/>
+	<main class="flex center">
+		<h1>주문목록페이지</h1>
+		<div class="view-size-c center">
+				<ul class="orders">
+					<li class="myorders-menu">
+						<p>My Orders</p>
+					</li>
+				</ul>
+		</div>
+	</main>
+<th:block th:insert="/layout/footer::footer"/>
+</body>
+</html>

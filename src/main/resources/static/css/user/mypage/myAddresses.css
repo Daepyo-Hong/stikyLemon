@@ -1,0 +1,9 @@
+@charset "UTF-8";
+main{
+	margin: 5em auto;
+}
+main div{
+	height:500px;
+	padding: 3em;
+	background-color: rgb(206, 222, 215);
+}

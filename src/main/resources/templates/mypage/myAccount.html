@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
+<head>
+	<link rel="stylesheet" href="/css/commons/common.css">
+    <link rel="stylesheet" href="/css/commons/header.css">
+    <link rel="stylesheet" href="/css/commons/footer.css">
+	<link rel="stylesheet" href="/css/user/mypage/myAccount.css">
+</head>
+<body>
+<th:block th:insert="/layout/header::header"/>
+	<main class="flex center">
+		<h1>내정보확인하는페이지</h1>
+			<div class="view-size-c center">
+				<ul class="accounts">
+					<li class="accounts-menu">
+						<p>My Account</p>
+					</li>
+				</ul>
+		</div>
+	</main>
+<th:block th:insert="/layout/footer::footer"/>
+</body>
+</html>

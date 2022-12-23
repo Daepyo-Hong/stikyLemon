@@ -22,12 +22,22 @@
 			<div class="wrap content-size">
 				<ul class="Al flex right">
 					<li class="cart">
-						<a href="/members/cart"><img src="/images/headerImg/cart.png" class="img_cart"/>Shopping cart</a>
+						<a href="/members/cart"><img src="/images/headerImg/cart.png" class="img_cart"/>Shopping cart &nbsp;&nbsp;|</a>
 					</li>
-					<li class="log">
-						<a href="/comm/signin" >
-							<span>Login</span>
-						</a>
+					<li class="log" sec:authorize="isAnonymous()">
+						<a href="/comm/signin"><span>Login</span></a>
+					</li>
+					<li class="mypage" sec:authorize="isAuthenticated()">
+						<button type="button" class="mypage-btn">
+							<span th:if="${#authentication.principal.nickName==null}"  sec:authentication="principal.name"></span>
+							<img src="/images/headerImg/down.png" class="img_mypage"/>
+						</button>
+						<div class="mypage_content wrap">
+							<p><a href="/members/myOrders">my orders</p></a>
+							<p><a href="/members/myAccount">my account</p></a>
+							<p><a href="/members/myAddresses">my addresses</p></a>
+							<p><a href="/logout">logout</p></a>
+						</div>
 					</li>
 				</ul>
 			</div>
