@@ -6,12 +6,11 @@
 	<script src="/js/main/shop.js"></script>
 </head>
 <main>
-	<a href="/">HOME</a>
 	<div class="flex" style="margin: 0 auto;">
 		<nav style="flex: 1" id="filter">
 			<span>Filter</span>
 			<hr>
-			<button id="aside-collection" class="flex between">
+			<button id="aside-collection" class="flex">
 				<span>Collection</span>
 				<span>-</span>
 			</button>
@@ -35,101 +34,18 @@
 					<option value="기타">Name Z-A</option>
 				</select>
 			</div>
-			<div class="flex column">
-				<ul class="flex items-list" style="flex: 1">
-					<li style="flex: 1">
-						<span>처음거에만 디테일페이지연결해놓음</span>
-						<a href="/comm/goods/detail" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" >
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-					<li style="flex: 1">
-						<a href="#" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-					<li style="flex: 1">
-						<a href="#" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-					<li style="flex: 1">
-						<a href="#" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-				</ul>
-				<ul class="flex" style="flex: 1">
-					<li style="flex: 1">
-						<a href="#" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-					<li style="flex: 1">
-						<a href="#" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-					<li style="flex: 1">
-						<a href="#" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-					<li style="flex: 1">
-						<a href="#" class="items flex column around">
-							<img src="/images/shop/1.jpg" alt="'no image!'" sizes="cover" width="200" height="300">
-							<div class="flex column between">
-								<p>
-									backpack large | meet me in the meadows | moonrise pink
-								</p>
-								<span>$64.95</span>
-							</div>
-						</a>
-					</li>
-
-				</ul>
+			<div class="goods-list">
+				<div th:each="dto:${list}">
+					<a th:href="|/comm/goods/detail/${dto.no}|" class="items flex column around">
+						<img th:src="${dto.defImgUrl}" alt="'no image!'">
+						<div class="flex column between">
+							<p th:text="${dto.title}">
+								backpack large | meet me in the meadows | moonrise pink
+							</p>
+							<span th:text="${dto.price}">$64.95</span>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

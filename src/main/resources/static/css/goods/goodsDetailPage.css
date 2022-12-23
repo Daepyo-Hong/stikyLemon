@@ -9,8 +9,7 @@
     margin-right: 45px;
 }
 
-.leftS > div > img {
-    position: relative;
+.leftS > div:first-child > img {
     width: 500px;
     height: 750px;
 

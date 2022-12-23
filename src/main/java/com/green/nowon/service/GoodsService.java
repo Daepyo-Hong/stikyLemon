@@ -22,4 +22,7 @@ public interface GoodsService {
     void update(GoodsUpdateDTO dto);
 
     void removeGoods(long no);
+
+    void findAllGoods(Model model);
+
 }

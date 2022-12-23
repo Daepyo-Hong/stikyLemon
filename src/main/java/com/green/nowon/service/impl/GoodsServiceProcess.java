@@ -162,6 +162,11 @@ public class GoodsServiceProcess implements GoodsService{
 				.map(GoodsDetailImgDTO::new)
 				.collect(Collectors.toList());
 		model.addAttribute("imgs",imgList);
+	}
 
+	@Override
+	public void findAllGoods(Model model) {
+		List<GoodsListDTO> list = goodsRepo.findAll().stream().map(GoodsListDTO::new).collect(Collectors.toList());
+		model.addAttribute("list",list);
 	}
 }

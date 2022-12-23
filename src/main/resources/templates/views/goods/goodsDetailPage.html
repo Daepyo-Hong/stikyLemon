@@ -20,14 +20,14 @@
 <main id="all">
     <div class="wrap flex">
         <div class="leftS">
-            <div><img src="/images/shop/shoes.jpg" alt="상품이미지"></div>
-            <div class="second">작은 이미지들</div>
-            <div class="third">Yay! This backpack is made from recycled PET bottles! On the front you find an extra
-                pocket. The lining
-                has an acorn pattern and is waterproof. The zippers are from YKK and the shoulder straps are
-                adjustable.
-                On the inside you'll find an elastic bottle holder and a pocket all over the back that closes with
-                velcro. On the name tag you can write down your name and contact details.
+            <div th:each="img:${imgs}" th:if="${img.defImg}">
+				<img th:src="${img.totUrl}" alt="상품이미지">
+			</div>
+            <div class="second" th:each="img:${imgs}" th:if="!${img.defImg}">
+				<img th:src="${img.totUrl}" width="100px" height="100px" alt="상품이미지">
+			</div>
+            <div class="third" th:text="${dto.content}">
+				콘텐츠
             </div>
         </div>
         <div class="rightS">
@@ -54,7 +54,8 @@
                     </ul>
                 </div>
             </section>
-            <button><span>Add</span></button>
+            <button>장바구니추가</button>
+			<button>바로구매</button>
             <div class="goodsdetail">
                 <h2>specifications</h2>
                 <ul>
