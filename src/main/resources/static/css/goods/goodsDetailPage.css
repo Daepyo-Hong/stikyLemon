@@ -1,6 +1,6 @@
 #all {
     width: 890px;
-    height: 1044px;
+    /*height: 1044px;*/
     line-height: 170%;
     margin: 25px auto;
 }
@@ -130,4 +130,34 @@
     width: 26px;
     height: 26px;
     border-radius: 50%;
+}
+
+.star {
+    position: relative;
+    font-size: 2rem;
+    color: #ddd;
+}
+
+.star input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.star span {
+    width: 0;
+    position: absolute;
+    left: 0;
+    color: yellow;
+    overflow: hidden;
+    pointer-events: none;
+}
+#rate{
+    padding: 2px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid #e87f3e;
 }
