@@ -12,7 +12,30 @@
     <link rel="stylesheet" href="/css/goods/goodsDetailPage.css">
 
     <script src="/js/user/rating.js"></script>
+	<script th:inline="javascript">
+		$(function (){
+			$("#btn-addCart").click(btnCartClicked);
+		});
 
+
+		function btnCartClicked(){
+				var quantity = $("#quantity").val();
+				var goodsNo = [[${dto.no}]];
+				$.ajax({
+					url:"/members/cart",
+					type:"post",
+					data:{
+						quantity:quantity,
+						goodsNo:goodsNo
+					},
+					success:function (){
+						if(confirm("장바구니에 저장되었습니다.\n장바구니로 이동하시겠습니까?")){
+							location.href="/members/cart";
+						}
+					}
+				});
+		}
+	</script>
 
 </head>
 <body>
@@ -47,14 +70,14 @@
                         <li class="bseq_ea">10</li>
                         <li class="flex">
                             <button type="button" onclick="fnCalCount('m', this);">-</button>
-                            <input type="text" name="pop_out" value="0" readonly="readonly"
+                            <input type="text" id="quantity" name="pop_out" value="1" readonly="readonly"
                                    style="text-align:center;"/>
                             <button type="button" onclick="fnCalCount('p',this);">+</button>
                         </li>
                     </ul>
                 </div>
             </section>
-            <button>장바구니추가</button>
+            <button id="btn-addCart">장바구니추가</button>
 			<button>바로구매</button>
             <div class="goodsdetail">
                 <h2>specifications</h2>

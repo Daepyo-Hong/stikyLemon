@@ -9,6 +9,7 @@
 #filter>button{
     width: 100%;
     font-size: 16px;
+    background-color: rgba(237, 250, 247, 0.75);
 }
 #filter>ul>li>input{
     display: block;
@@ -54,7 +55,8 @@
 }
 .goods-list{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 10px;
     padding: 10px;
     border: 1px solid lightgray;
@@ -63,7 +65,12 @@
 .goods-list>div{
     border: 1px solid lightgray;
 }
+#aside-collection>span:first-child{
+    line-height: 30px;
+}
 #aside-collection>span:nth-child(2){
-    margin-left: 8em;
+    margin-left: 7em;
+    margin-right: 1em;
+    width: 30px;
     font-size: 30px;
 }

@@ -49,7 +49,8 @@
 			<div class="wrap content-size">
 				<ul class="Al flex right">
 					<li class="cart">
-						<a href="/members/cart"><img src="/images/headerImg/cart.png" class="img_cart"/>Shopping cart
+						<a href="/members/cart">
+							<img src="/images/headerImg/cart.png" class="img_cart"/>Shopping cart
 							&nbsp;&nbsp;|</a>
 					</li>
 					<li class="log" sec:authorize="isAnonymous()">
@@ -62,10 +63,10 @@
 							<img src="/images/headerImg/down.png" class="img_mypage"/>
 						</button>
 						<div class="mypage_content wrap">
-							<p><a href="/members/myOrders">my orders</p></a>
-							<p><a href="/members/myAccount">my account</p></a>
-							<p><a href="/members/myAddresses">my addresses</p></a>
-							<p><a href="/logout">logout</p></a>
+							<p><a href="/members/myOrders">my orders</a></p>
+							<p><a href="/members/myAccount">my account</a></p>
+							<p><a href="/members/myAddresses">my addresses</a></p>
+							<p><a href="/logout">logout</a></p>
 						</div>
 					<li class="log" sec:authorize="isAnonymous()">
 						<a href="/comm/signin">
