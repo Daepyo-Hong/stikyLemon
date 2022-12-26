@@ -1,6 +1,7 @@
 package com.green.nowon.controller;
 
 import com.green.nowon.domain.dto.goods.GoodsUpdateDTO;
+import com.green.nowon.service.BoardService;
 import com.green.nowon.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.nowon.domain.dto.goods.GoodsInsertDTO;
 import com.green.nowon.service.GoodsService;
@@ -24,6 +26,9 @@ public class AdminController {
 
     @Autowired
     private CategoryService categoryService;
+    
+    @Autowired
+    private BoardService boardService;
 
 //어드민페이지 이동
     @GetMapping("/admin")
@@ -63,9 +68,10 @@ public class AdminController {
         return "redirect:/admin/goods/list";
     }
 
-//관리자페이지에서 관리자-게시글조회페이지로 이동
+    //관리자페이지에서 관리자-게시글조회페이지로 이동
 	@GetMapping("/admin/qna/list")
-	public String adminQnAlist(){
+	public String adminQnAlist(@RequestParam(defaultValue = "1") int page , Model model){
+		boardService.getListAll(page, model);
 	    return "adminpage/qna/admin-qnalist";
 	}
 // 상품 삭제처리
@@ -92,5 +98,12 @@ public class AdminController {
     public Map<String, String> tempUpload(MultipartFile gimg) {
         return goodsService.fileTempUpload(gimg);
     }
+    
+  //관리자-답변작성 페이지 이동
+	@GetMapping("/admin/qna/reply/{bno}")
+	public String detail(@PathVariable long bno, Model model) {
+		boardService.sendDetail(bno, model);
+		return "adminpage/qna/admin-qna-reply";
+	}
 
 }
