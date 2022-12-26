@@ -2,6 +2,7 @@ package com.green.nowon.domain.dto.goods;
 
 import com.green.nowon.domain.entity.CategoryGoodsEntity;
 import com.green.nowon.domain.entity.GoodsEntity;
+import com.green.nowon.domain.entity.ReviewEntity;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -16,6 +17,7 @@ public class GoodsDetailDTO {
     private String productCare;    //주의사항
     private int price;
     private int stock;
+
 
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
@@ -36,4 +38,5 @@ public class GoodsDetailDTO {
     public GoodsDetailDTO(CategoryGoodsEntity cie){
         this(cie.getGoods());
     }
+
 }

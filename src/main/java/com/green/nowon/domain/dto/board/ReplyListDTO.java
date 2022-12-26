@@ -17,6 +17,7 @@ public class ReplyListDTO {
 	
 	private LocalDateTime updatedDate;
 
+
 	public ReplyListDTO(ReplyEntity e) {
 		this.rno = e.getRno();
 		this.text = e.getText();
