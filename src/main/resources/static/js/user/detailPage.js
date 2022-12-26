@@ -1,26 +1,26 @@
-var amount;
+var quantity;
 $(function () {
     $("#add").click(function () {
-        amount = $("#amount");
-        if (parseInt(amount.val()) === 99)
+        quantity = $("#quantity");
+        if (parseInt(quantity.val()) === 99)
             return;
-        var plusval = parseInt(amount.val()) + 1;
-        amount.val(plusval);
+        var plusval = parseInt(quantity.val()) + 1;
+        quantity.val(plusval);
         settp(plusval);
 
     });
     $("#minus").click(function () {
-        amount = $("#amount");
-        if (parseInt(amount.val()) === 1)
+        quantity = $("#amount");
+        if (parseInt(quantity.val()) === 1)
             return;
-        var minusval = parseInt(amount.val()) - 1;
-        amount.val(minusval);
+        var minusval = parseInt(quantity.val()) - 1;
+        quantity.val(minusval);
         settp(minusval);
     });
     $("#amount").change(function (){
         settp($(this).val());
     });
 });
-    function settp(amount){
-        $("#TP").val(amount*$("#vprice").val());
+    function settp(quantity){
+        $("#TP").val(quantity*$("#vprice").val());
     }
