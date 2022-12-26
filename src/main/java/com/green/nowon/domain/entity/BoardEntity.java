@@ -14,6 +14,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.green.nowon.domain.dto.board.AdminReplyUpdateDTO;
 import com.green.nowon.domain.dto.board.BoardUpdateDTO;
 
 import lombok.AllArgsConstructor;
@@ -37,7 +38,11 @@ public class BoardEntity extends BaseDateEntity{	@Id
 	private String title;
 	@Column(nullable = false)
 	private String content;
+	@Column(name = "reply_num"  ,nullable = false)
+	private int replyNum;
 	private int readCount;
+	@Column(name = "admin_reply")
+	private String adminReply;
 	//작성자 - MemeberEntity
 	
 	//@JoinColumn이 명시되면 주엔티티(부모)
@@ -52,4 +57,11 @@ public class BoardEntity extends BaseDateEntity{	@Id
 		this.content=dto.getContent();
 		return this;
 	}
+	
+	public BoardEntity adminReplyUpdate(AdminReplyUpdateDTO dto) {
+		this.adminReply=dto.getAdminReply();
+		this.replyNum =dto.getReplyNum();
+		return this;
+	}
+	
 }

@@ -24,25 +24,25 @@ th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 						<tr class="tr2" th:each="dto : ${list}">
 		    				<td th:text="${dto.bno}">글번호</td>
 		    				<td><a class="td1" th:href="|/admin/qna/reply/${dto.bno}|">[[${dto.title}]]</a></td>
-		    				<td th:text="${dto.readCount}">조회수</td>
-		    				<td>[[${dto.writer}]]</td>
+		    				<td th:text="${dto.writer}"></td>
 		    				<td>
 		    					<span class="td1" th:if="${dto.updatedDate.toLocalDate() ne dto.toDay}"
 		    					th:text="${dto.updatedDate.toLocalDate()}">날짜만 출력</span>
 		    					<span class="td1" th:if="${dto.updatedDate.toLocalDate() eq dto.toDay}" 
 		    					th:text="${#temporals.format(dto.updatedDate, 'HH시 mm분 ss초')}">시간만 출력</span>
 		    				</td>
+		    				<td th:text="${dto.readCount}">조회수</td>
 		    			</tr>
 		    			<tr th:if="${p.getNumberOfElements()==0}">
 		    				<td colspan="5">작성된 문의글이 없습니다.</td>
 		    			</tr>
 				</table>
 				<div th:if="${p.getNumberOfElements()>0}">
-	    			<a th:if="${p.hasPrevious()}" th:href="|/comm/board-list?page=${p.getNumber()}|">&lt;</a>
+	    			<a th:if="${p.hasPrevious()}" th:href="|/admin/qna/list?page=${p.getNumber()}|">&lt;</a>
 		    			<span th:text="${p.getNumber()+1}">현재페이지</span>
 		    			/
 		    			<span th:text="${p.getTotalPages()}">총페이지수</span> 
-	    			<a th:if="${p.hasNext()}" th:href="|/comm/board-list?page=${p.getNumber()+2}|">&gt;</a>
+	    			<a th:if="${p.hasNext()}" th:href="|/admin/qna/list?page=${p.getNumber()+2}|">&gt;</a>
     			</div>
 			</div>
 			

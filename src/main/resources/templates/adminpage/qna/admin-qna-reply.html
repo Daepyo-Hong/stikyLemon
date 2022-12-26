@@ -11,6 +11,39 @@
     </style>
     <script type="text/javascript">
     $(function(){
+		$("#answer_insert").click(function(){
+			const text = $("#admin_answer").val();
+			const replyN = 1
+			const bnoN = $("#bnoNum").val();
+			
+			
+			const AdminReplyUpdateDTO ={
+					"adminReply":text,
+					"replyNum":replyN,
+					"bno":bnoN
+			}
+		
+			console.log(AdminReplyUpdateDTO)
+			
+			
+			
+			$.ajax({
+				method:"POST",
+				url:"/admin/qna/reply/update",
+				contentType:"application/json",
+				dataType:"json",
+				data:JSON.stringify(AdminReplyUpdateDTO),
+				success:function(result){
+					if(result == "SUCCESS"){
+						console.log("통신성공");
+						
+					}
+				},error:function(e){
+					console.log(e)
+				}
+			})//ajax close
+			
+		})
     	$("#btn-edit").click(editMode);
     	$("#btn-cancel").click(function(){
     		$("#edit-mode").hide();
@@ -35,8 +68,10 @@
     	
     		
     		<form id="edit-mode" th:action="|/comm/board-list/${detail.bno}|" method="post">
-    			<div class="wrap view-size-m">   			
+    			<div class="wrap view-size-m">
+    		<!--	<input type="hidden" name"="bno" id="bnoNum" th:value="${detail.bno}">    -->	
     			<table class=".table-0" border="1" >
+    			
 		    			<tr>
 		    				<td class="td-t">글번호</td>
 		    				<td th:text="${detail.bno}"></td>
@@ -79,11 +114,13 @@
 		    		</table>
 	    		</div>
     		</form>
+    		<input type="hidden" id="bnoNum" th:value="${detail.bno}">
     		<!-- //////////////////////////////////////// -->
     		<table border="1" id="def-mode">
     			<tr>
     				<td>글번호</td>
     				<td th:text="${detail.bno}"></td>
+    				
     			</tr>
     			<tr>
     				<td>작성일</td>
@@ -117,7 +154,7 @@
     			<hr>
     			<h2 class="title-d">답변하기</h2>
     			<div>
-    				<textarea id="admin_answer" rows="8" cols="60"></textarea>
+    				<textarea th:name="adminReply" th:id="admin_answer" rows="8" cols="60"></textarea>
     			</div>
     			<div class="title-a">
     				<input type="button" id="answer_insert" value="등록하기">
@@ -125,5 +162,7 @@
     		</div>
     	</div>
     </main>
+   
+
 </body>
 </html>

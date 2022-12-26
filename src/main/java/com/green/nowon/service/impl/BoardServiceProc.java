@@ -14,6 +14,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.green.nowon.domain.dto.board.AdminReplyUpdateDTO;
 import com.green.nowon.domain.dto.board.BoardDetailDTO;
 import com.green.nowon.domain.dto.board.BoardListDTO;
 import com.green.nowon.domain.dto.board.BoardSaveDTO;
@@ -134,6 +135,35 @@ public class BoardServiceProc implements BoardService{
 		System.out.println(">>>>>>>>>>>>수정처리");
 		repository.findById(bno).map(entity->entity.update(dto));
 		System.out.println(">>>>>>>>>>>>수정처리완료");
-	}//@Transactional  메서드가 끝나면 commit 이루어지므로 이전에 Entity객체가 변경되면 update가 반영
+	}
+
+	@Override
+	public String updateAdmin(long bno,AdminReplyUpdateDTO dto) {
+		Optional<BoardEntity> result = repository.findById(bno);
+		
+		if(result.isPresent()) {
+			BoardEntity entity= result.get();
+			entity.adminReplyUpdate(dto);
+			repository.save(entity);
+			return "SUCCESS";
+		}
+		return "FAIL";
+		
+	}
+
+	@Override
+	public void getAdminQnaList(int page, Model model) throws Exception {
+		int size=10;
+		Sort sort=Sort.by(Direction.DESC, "bno");
+		Pageable pageable=PageRequest.of(page-1, size, sort);
+		Page<BoardEntity> result=repository.findAll(pageable);
+		
+		model.addAttribute("p", result);
+		
+		model.addAttribute("list", repository.findByReplyNum(1));
+		System.out.println("dfdfdff");		
+		
+	}
+
 
 }
