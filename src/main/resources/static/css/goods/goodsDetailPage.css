@@ -24,7 +24,7 @@
 .leftS > div:last-child {
     position: relative;
     width: 500px;
-    height: 144px;
+    margin-top: 50px;
 }
 
 .rightS > h3 {
@@ -68,7 +68,7 @@
     margin: 25px 0;
 }
 
-.goodsdetail > h2 {
+.goodsdetail >h2 {
     font-size: 14px;
     color: #3E498F;
     margin: 5px 0;
@@ -86,37 +86,44 @@
     margin: 10px 0;
 }
 
-.bseq_ea{
+.bseq_ea {
     display: none;
     color: transparent;
     margin: 10px 0;
 }
-.btn-ea{
-    margin:15px 0;
+
+.btn-ea {
+    margin: 15px 0;
 }
-.btn-ea>ul>li{
+
+.btn-ea > ul > li {
     border: 1px solid transparent;
 }
-.btn-ea>ul>li>*{
+
+.btn-ea > ul > li > * {
     flex: 1;
 }
-.btn-ea>ul>li>input:focus{
+
+.btn-ea > ul > li > input:focus {
     outline: none;
 
 }
-.btn-ea>ul>li>input{
+
+.btn-ea > ul > li > input {
     /*border:1px solid transparent;*/
     width: 40px;
     font-size: 18px;
-    padding:0px;
+    padding: 0px;
 
 }
-.btn-ea>ul>li>button{
+
+.btn-ea > ul > li > button {
     width: 25px;
     font-size: 22px;
     font-weight: 700;
 }
-.color>div>button{
+
+.color > div > button {
     height: 21.5px;
     width: 21.5px;
     border: 1px solid white;
@@ -124,39 +131,30 @@
     background-color: #e87f3e;
     margin: 1.5px;
 }
-.color2{
-    border:1px solid #d2973c;
+
+.color2 {
+    border: 1px solid #d2973c;
     width: 26px;
     height: 26px;
     border-radius: 50%;
 }
 
-.star {
-    position: relative;
-    font-size: 2rem;
-    color: #ddd;
-}
-
-.star input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.star span {
-    width: 0;
-    position: absolute;
-    left: 0;
-    color: yellow;
-    overflow: hidden;
-    pointer-events: none;
-}
-#rate{
-    padding: 2px;
+.secondParents {
     width: 500px;
-    border-radius: 10px;
-    border: 1px solid #e87f3e;
+    height: auto;
+}
+#amount{
+    text-align: right;
+}
+#minus #add{
+    border-radius: 5px;
+    background-color: #d2973c;
+}
+#reply{
+    width: 500px;
+    margin-top: 10px;
+    text-align: left;
+}
+#reply>form>div {
+    text-align: right;
 }

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/goods/goodsDetailPage.css">
 
     <script src="/js/user/rating.js"></script>
+    <script src="/js/user/detailPage.js"></script>
 
 
 </head>
@@ -21,19 +22,21 @@
     <div class="wrap flex">
         <div class="leftS">
             <div th:each="img:${imgs}" th:if="${img.defImg}">
-				<img th:src="${img.totUrl}" alt="상품이미지">
-			</div>
-            <div class="second" th:each="img:${imgs}" th:if="!${img.defImg}">
-				<img th:src="${img.totUrl}" width="100px" height="100px" alt="상품이미지">
-			</div>
+                <img th:src="${img.totUrl}" alt="상품이미지">
+            </div>
+            <div class="flex secondParents">
+                <div class="second" th:each="img:${imgs}" th:if="!${img.defImg}">
+                    <img th:src="${img.totUrl}" width="100px" height="100px" alt="상품이미지">
+                </div>
+            </div>
             <div class="third" th:text="${dto.content}">
-				콘텐츠
+                콘텐츠
             </div>
         </div>
         <div class="rightS">
-            <h3>backpack large | meet me in the meadows | moonrise pink</h3>
-            <div class="RS">SKU: 1802049</div>
-            <div class="price">€64.95</div>
+            <h3 th:text="${dto.title}"></h3>
+            <!--            <div class="RS" th:text="${dto.specifications}"></div>-->
+            <div class="price" th:text="${dto.price}+'원'"></div>
             <section class="color">
                 <div>Pick a colour: moonrise pink</div>
                 <div class="color2">
@@ -46,61 +49,56 @@
                     <ul class="flex" style="text-align:center;">
                         <li class="bseq_ea">10</li>
                         <li class="flex">
-                            <button type="button" onclick="fnCalCount('m', this);">-</button>
-                            <input type="text" name="pop_out" value="0" readonly="readonly"
-                                   style="text-align:center;"/>
-                            <button type="button" onclick="fnCalCount('p',this);">+</button>
+                            <input type="hidden" name="sell_price" value="65" id="vprice">
+                            <input type="button" value=" - " name="minus" id="minus">
+                            <input type="text" name="amount" value="1" size="3" max="99" id="amount">
+                            <input type="button" value=" + " name="add" id="add">
                         </li>
                     </ul>
                 </div>
             </section>
             <button>장바구니추가</button>
-			<button>바로구매</button>
+            <button>바로구매</button>
             <div class="goodsdetail">
                 <h2>specifications</h2>
-                <ul>
-                    <li><h2>sizes</h2></li>
-                    <li><span>size - </span><span>27 x 13 x 38 cm</span></li>
-                    <li><span>maximun shoulder strap - </span><span>67cm</span></li>
-                    <li><br></li>
-                    <li><h2>materials</h2></li>
-                    <li><span>material outside - </span><span>recycled PET bottles</span></li>
-                    <li><span>material inside - </span><span>waterproof nylon</span></li>
-                    <li><span>material strap - </span><span>cotton webbing</span></li>
-                    <li><span>zipper - </span><span>matt white YKK</span></li>
-                    <li><span>buckles - </span><span>matt white metal</span></li>
+                <ul th:text="${dto.specifications}">
+                    <!--                    <li><h2>sizes</h2></li>-->
+                    <!--                    <li><span>size - </span><span>27 x 13 x 38 cm</span></li>-->
+                    <!--                    <li><span>maximun shoulder strap - </span><span>67cm</span></li>-->
+                    <!--                    <li><br></li>-->
+                    <!--                    <li><h2>materials</h2></li>-->
+                    <!--                    <li><span>material outside - </span><span>recycled PET bottles</span></li>-->
+                    <!--                    <li><span>material inside - </span><span>waterproof nylon</span></li>-->
+                    <!--                    <li><span>material strap - </span><span>cotton webbing</span></li>-->
+                    <!--                    <li><span>zipper - </span><span>matt white YKK</span></li>-->
+                    <!--                    <li><span>buckles - </span><span>matt white metal</span></li>-->
 
                 </ul>
                 <hr>
                 <h2>product care</h2>
-                <div>You can easily clean this bag with a wet cloth. We advise you not to wash the bag in the
-                    washing
-                    machine. Just some water will do the trick!
+                <div th:text="${dto.productCare}">
+                    <!--                    You can easily clean this bag with a wet cloth. We advise you not to wash the bag in the-->
+                    <!--                    washing-->
+                    <!--                    machine. Just some water will do the trick!-->
                 </div>
             </div>
 
         </div>
 
     </div>
-    <form action="#">
-        <div id="rate">
+    <div id="reply">
+        <p>별점과 상품평을 입력해주세요</p>
+        <form method="post" action="/comm/goods/detail/{gno}">
+            <input value="5" name="rate" type="hidden">
+            <textarea cols="70" name="text">
+            </textarea>
+            <input type="hidden" name="goodsNo" th:value="${dto.no}">
+            <br>
             <div>
-    <span class="star">
-        ★★★★★
-        <span>★★★★★</span>
-    <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-    </span>
-            </div>
-            <div>
-                <span>별점을 드래그해주세요</span>
-                <div>
-                    <textarea cols="65">상품평을 입력해주세요</textarea>
-                </div>
                 <button type="submit">등록하기</button>
             </div>
-        </div>
-    </form>
-
+        </form>
+    </div>
 </main>
 <th:block th:insert="/layout/footer::footer"/>
 </body>
