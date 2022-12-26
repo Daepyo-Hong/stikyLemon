@@ -13,4 +13,5 @@ public interface ReviewEntityRepository extends JpaRepository<ReviewEntity, Long
 
     List<ReviewEntity> findAllByGoodsNoOrderByCreatedDateDesc(long no);
 
+    List<ReviewEntity> findByGoodsNo(long no);
 }

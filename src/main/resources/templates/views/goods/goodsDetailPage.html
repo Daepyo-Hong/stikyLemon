@@ -88,9 +88,24 @@
     </div>
     <div id="reply">
         <p>별점과 상품평을 입력해주세요</p>
-        <form method="post" action="/comm/goods/detail/{gno}">
-            <input value="5" name="rate" type="hidden">
-            <textarea cols="70" name="text">
+        <form method="post" name="myform" id="myform" action="/comm/goods/detail/review">
+            <fieldset>
+                <span class="text-bold"></span>
+                <input type="radio" name="rate" value="5" id="rate1"><label
+                    for="rate1">★</label>
+                <input type="radio" name="rate" value="4" id="rate2"><label
+                    for="rate2">★</label>
+                <input type="radio" name="rate" value="3" id="rate3"><label
+                    for="rate3">★</label>
+                <input type="radio" name="rate" value="2" id="rate4"><label
+                    for="rate4">★</label>
+                <input type="radio" name="rate" value="1" id="rate5"><label
+                    for="rate5">★</label>
+            </fieldset>
+            <div><span>★ [[${average}]]</span></div>
+<!--            <input value="5" name="rate" type="hidden">-->
+            <textarea cols="70" name="text" id="reviewContents" placeholder="좋은 리뷰 감사합니다!">
+
             </textarea>
             <input type="hidden" name="goodsNo" th:value="${dto.no}">
             <br>
@@ -98,6 +113,20 @@
                 <button type="submit">등록하기</button>
             </div>
         </form>
+    </div>
+    <div class="container">
+        <div class="item flex ">
+            <ul>
+                <li th:each="dto:${reviews}">
+                    <p th:if="${dto.rate == 5}">★★★★★</p>
+                    <p th:if="${dto.rate == 4}">★★★★</p>
+                    <p th:if="${dto.rate == 3}">★★★</p>
+                    <p th:if="${dto.rate == 2}">★★</p>
+                    <p th:if="${dto.rate == 1}">★</p>
+                    <p th:text="${dto.text}"></p>
+                </li>
+            </ul>
+        </div>
     </div>
 </main>
 <th:block th:insert="/layout/footer::footer"/>

@@ -1,8 +1,10 @@
 package com.green.nowon.controller;
 
 import com.green.nowon.domain.dto.goods.ReviewDTO;
+import com.green.nowon.security.MyUserDetails;
 import com.green.nowon.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +17,11 @@ public class ReviewController {
     @Autowired
     ReviewService reviewService;
 
-    @PostMapping("/comm/goods/detail/{gno}")
-    public String review(@PathVariable Long gno, Model model, ReviewDTO dto) {
-        reviewService.insertReview(gno, model, dto);
-         return "redirect:/comm/goods/detail/"+gno;
+    @PostMapping("/comm/goods/detail/review")
+    public String review(ReviewDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
+        System.out.println(">>>>>"+dto);
+         reviewService.insertReview(dto, userDetails.getMno());
+         return "redirect:/comm/goods/detail/"+dto.getGoodsNo();
     }
 
 }

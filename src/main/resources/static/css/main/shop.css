@@ -61,9 +61,28 @@
     margin-bottom: 30px;
 }
 .goods-list>div{
+    width: 100%;
+    height: 100%;
+    position: relative;
     border: 1px solid lightgray;
 }
 #aside-collection>span:nth-child(2){
     margin-left: 8em;
     font-size: 30px;
 }
+
+.goods-list>div>div>span{
+    position: absolute;
+    bottom: 1px;
+    right: 1.5px;
+}
+.goods-list>div>a>div>p{
+    position: absolute;
+    bottom: 16px;
+}
+.goods-list>div>a>div>span{
+    position: absolute;
+    bottom: 1px;
+    color: #3e7de8;
+}
+

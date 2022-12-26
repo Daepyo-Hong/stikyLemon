@@ -1,5 +1,6 @@
 package com.green.nowon.domain.entity;
 
+import com.green.nowon.domain.dto.goods.ReviewDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -36,6 +37,7 @@ public class ReviewEntity extends BaseDateEntity{
 	@JoinColumn(name = "no", nullable = false)
 	@ManyToOne(cascade = CascadeType.DETACH)
 	private GoodsEntity goods;
+
 
 
 
