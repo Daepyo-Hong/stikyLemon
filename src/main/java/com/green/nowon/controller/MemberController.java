@@ -49,8 +49,6 @@ public class MemberController {
         System.out.println(quantity);
         System.out.println(goodsNo);
         cartService.insertData(goodsNo, quantity, mno);
-
-        //cartService.addCartList(mno,quantity,goodsNo);
     }
     //장바구니 갯수 변경시 반영
     @ResponseBody
@@ -61,6 +59,7 @@ public class MemberController {
         cartService.updateCart(no, quantity);
     }
 
+    //장바구니 내역 삭제시
     @ResponseBody
     @DeleteMapping("/members/cart")
     public void deleteCartGoods(long no){
