@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Getter
 public class ReviewListDTO {
 
+    private  String memberName;
     private long rno;
     private String text;
     private long rate;
@@ -23,6 +24,7 @@ public class ReviewListDTO {
         this.text = e.getText();
         this.rate = e.getRate();
         this.mno = e.getMember().getMno();
+        this.memberName= e.getMember().getName();
         this.gno = e.getGoods().getNo();
     }
 }

@@ -12,32 +12,32 @@
     <link rel="stylesheet" href="/css/goods/goodsDetailPage.css">
 
     <script src="/js/user/rating.js"></script>
-	<script src="/js/user/detailPage.js"></script>
+    <script src="/js/user/detailPage.js"></script>
 
-	<script th:inline="javascript">
-		$(function (){
-			$("#btn-addCart").click(btnCartClicked);
-		});
+    <script th:inline="javascript">
+        $(function () {
+            $("#btn-addCart").click(btnCartClicked);
+        });
 
 
-		function btnCartClicked(){
-				var quantity = $("#quantity").val();
-				var goodsNo = [[${dto.no}]];
-				$.ajax({
-					url:"/members/cart",
-					type:"post",
-					data:{
-						quantity:quantity,
-						goodsNo:goodsNo
-					},
-					success:function (){
-						if(confirm("장바구니에 저장되었습니다.\n장바구니로 이동하시겠습니까?")){
-							location.href="/members/cart";
-						}
-					}
-				});
-		}
-	</script>
+        function btnCartClicked() {
+            var quantity = $("#quantity").val();
+            var goodsNo = [[${dto.no}]];
+            $.ajax({
+                url: "/members/cart",
+                type: "post",
+                data: {
+                    quantity: quantity,
+                    goodsNo: goodsNo
+                },
+                success: function () {
+                    if (confirm("장바구니에 저장되었습니다.\n장바구니로 이동하시겠습니까?")) {
+                        location.href = "/members/cart";
+                    }
+                }
+            });
+        }
+    </script>
 
 </head>
 <body>
@@ -67,22 +67,25 @@
                     <button></button>
                 </div>
             </section>
-            <section class="color">
-                <div>Quintity</div>
-                <div class="btn-ea">
-                    <ul class="flex" style="text-align:center;">
-                        <li class="bseq_ea">10</li>
-                        <li class="flex">
-                            <input type="hidden" name="sell_price" value="65" id="vprice">
-                            <input type="button" value=" - " name="minus" id="minus">
-                            <input type="text" name="amount" value="1" size="3" max="99" id="quantity">
-                            <input type="button" value=" + " name="add" id="add">
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <button id="btn-addCart">장바구니추가</button>
-			<button>바로구매</button>
+            <form action="/members/user/orders" method="post">
+                <section class="color">
+                    <div>Quintity</div>
+                    <div class="btn-ea">
+                        <ul class="flex" style="text-align:center;">
+                            <li class="bseq_ea">10</li>
+                            <li class="flex">
+                                <input type="hidden" name="no" th:value="${dto.no}" >
+                                <input type="hidden"  value="65" id="vprice">
+                                <input type="button" value=" - " id="minus">
+                                <input type="text" name="quantity" value="1" size="3" max="99" id="quantity">
+                                <input type="button" value=" + " id="add">
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <button type="button" id="btn-addCart">장바구니추가</button>
+                <button type="submit">바로구매하이</button>
+            </form>
             <div class="goodsdetail">
                 <h2>specifications</h2>
                 <ul th:text="${dto.specifications}">
@@ -114,7 +117,7 @@
                     for="rate5">★</label>
             </fieldset>
             <div><span>★ [[${average}]]</span></div>
-<!--            <input value="5" name="rate" type="hidden">-->
+            <!--            <input value="5" name="rate" type="hidden">-->
             <textarea cols="70" name="text" id="reviewContents" placeholder="좋은 리뷰 감사합니다!">
 
             </textarea>
@@ -135,6 +138,7 @@
                     <p th:if="${dto.rate == 2}">★★</p>
                     <p th:if="${dto.rate == 1}">★</p>
                     <p th:text="${dto.text}"></p>
+                    <p th:text="${dto.memberName}"></p>
                 </li>
             </ul>
         </div>

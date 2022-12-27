@@ -37,20 +37,5 @@ class SpringWebSampleApplicationTests {
 				.addRole(MyRole.ADMIN)
 		);
 	}
-	@Autowired
-	DestinationEntityRepository destRepo;
-
-	@Commit
-	@Transactional
-	//@Test
-	void 배송지입력테스트() {
-		mrepo.findById(1L).orElseThrow()
-				.addAddress(DestinationEntity.builder()
-						.zonecode("54321")
-						.address("주소임니둥3")
-						.build());
-
-	}
-
-	
 }
+
