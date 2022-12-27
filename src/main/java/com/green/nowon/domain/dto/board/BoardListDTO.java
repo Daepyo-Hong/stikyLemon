@@ -16,6 +16,9 @@ public class BoardListDTO {
 	private String writer;
 	private LocalDateTime updatedDate;
 	private LocalDate toDay;
+	private int replyNum;
+	private String adminReply;
+	
 	
 	//Entity를 -> BoardListDTO(BoardEntity ent)
 	public BoardListDTO(BoardEntity ent) {
@@ -26,6 +29,8 @@ public class BoardListDTO {
 		this.writer = ent.getMember().getEmail()+"("+ent.getMember().getName()+")";//email을 작성자로 쓴경우
 		this.updatedDate = ent.getUpdatedDate();
 		toDay=LocalDate.now();
+		this.replyNum =ent.getReplyNum();
+		this.adminReply=ent.getAdminReply();
 	}
 	
 
