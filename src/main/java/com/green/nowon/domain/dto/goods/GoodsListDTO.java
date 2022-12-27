@@ -15,12 +15,12 @@ public class GoodsListDTO {
     private String productCare;    //주의사항
     private int price;
     private int stock;
-
     private LocalDateTime updatedDate;
     private String defImgUrl;
     private double avg;
 
     private int reCount;
+
 
     public void SetAvg(double e){
         this.avg=e;

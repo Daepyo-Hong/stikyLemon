@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PageController {
@@ -27,6 +24,23 @@ public class PageController {
         return "views/main/shop";
     }
 
+    @GetMapping("/comm/goods/list/{cno}")
+    public String shopCate(@PathVariable long cno,Model model){
+        goodsService.findCateGoods(cno, model);
+        return "views/main/shop";
+    }
+
+    @GetMapping("/comm/goods/list/ajax")
+    public String shopAllAjax(Model model){
+        goodsService.findAllGoods(model);
+        return "views/main/shop_list";
+    }
+
+    @GetMapping("/comm/goods/list/ajax/{cno}")
+    public String shopCateAjax(@PathVariable long cno,Model model){
+        goodsService.findCateGoods(cno, model);
+        return "views/main/shop_list";
+    }
 
 
     @GetMapping("/faq-list")

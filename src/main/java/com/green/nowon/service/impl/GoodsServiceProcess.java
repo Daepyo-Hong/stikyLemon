@@ -185,7 +185,6 @@ public class GoodsServiceProcess implements GoodsService {
         List<GoodsListDTO> list = goodsRepo.findAll().stream().map(GoodsListDTO::new).collect(Collectors.toList());
 
         for(GoodsListDTO dto: list){
-
             List<Long> rates = reviewRepo.findByGoodsNo(dto.getNo()).stream().map(e -> e.getRate()).collect(Collectors.toList());
             dto.setReCount(rates.size());
             long sum = 0;
@@ -196,6 +195,27 @@ public class GoodsServiceProcess implements GoodsService {
             dto.SetAvg(Math.round(average*100)/100.0);
         }
         model.addAttribute("list", list);
-
+        model.addAttribute("cateType", "all");
     }
+
+    @Override
+    public void findCateGoods(long cno, Model model) {
+        //List<GoodsListDTO> list = goodsRepo.findAll().stream().map(GoodsListDTO::new).collect(Collectors.toList());
+        List<CategoryGoodsEntity> result= cateGoodsRepo.findByCategoryNo(cno);
+
+        List<GoodsListDTO> list = result.stream().map(GoodsListDTO::new).collect(Collectors.toList());
+        for(GoodsListDTO dto: list){
+            List<Long> rates = reviewRepo.findByGoodsNo(dto.getNo()).stream().map(e -> e.getRate()).collect(Collectors.toList());
+            dto.setReCount(rates.size());
+            long sum = 0;
+            for(long num : rates){
+                sum +=num;
+            }
+            double average = (double) sum / rates.size();
+            dto.SetAvg(Math.round(average*100)/100.0);
+        }
+        model.addAttribute("list", list);
+        model.addAttribute("cateType", cno);
+    }
+
 }

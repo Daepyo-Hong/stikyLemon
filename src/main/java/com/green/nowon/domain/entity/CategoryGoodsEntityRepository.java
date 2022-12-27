@@ -11,4 +11,6 @@ public interface CategoryGoodsEntityRepository extends JpaRepository<CategoryGoo
     void deleteByGoodsNo(long no);
 
     List<CategoryGoodsEntity> findByGoodsNo(long no);
+
+    List<CategoryGoodsEntity> findByCategoryNo(long cno);
 }

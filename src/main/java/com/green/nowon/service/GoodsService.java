@@ -25,4 +25,6 @@ public interface GoodsService {
 
     void findAllGoods(Model model);
 
+    void findCateGoods(long cno, Model model);
+
 }

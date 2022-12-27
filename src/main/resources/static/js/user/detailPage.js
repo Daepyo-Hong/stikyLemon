@@ -10,14 +10,14 @@ $(function () {
 
     });
     $("#minus").click(function () {
-        quantity = $("#amount");
+        quantity = $("#quantity");
         if (parseInt(quantity.val()) === 1)
             return;
         var minusval = parseInt(quantity.val()) - 1;
         quantity.val(minusval);
         settp(minusval);
     });
-    $("#amount").change(function (){
+    $("#quantity").change(function (){
         settp($(this).val());
     });
 });
