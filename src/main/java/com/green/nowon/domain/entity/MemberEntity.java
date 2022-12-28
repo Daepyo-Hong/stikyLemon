@@ -1,5 +1,6 @@
 package com.green.nowon.domain.entity;
 
+import com.green.nowon.domain.dto.member.MemberUpdateDTO;
 import com.green.nowon.security.MyRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,11 +8,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@DynamicUpdate
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -55,4 +61,21 @@ public class MemberEntity extends BaseDateEntity {
     @Builder.Default
     @OneToMany(cascade = CascadeType.ALL)
     private List<DeliveryEntity> dests = new ArrayList<>();
+
+    /*
+    private List<DestinationEntity> dests = new ArrayList<>();
+
+    public MemberEntity addAddress(DestinationEntity dest){
+        this.dests.add(dest);
+        return this;
+    }
+
+	public MemberEntity update(MemberUpdateDTO dto ,PasswordEncoder pe) {
+		if(dto.getEmail()!=null && !dto.getEmail().trim().equals(""))email=dto.getEmail();
+		if(dto.getName()!=null && !dto.getName().trim().equals(""))name=dto.getName();
+		if(dto.getPass()!=null && !dto.getPass().trim().equals(""))pass= pe.encode(dto.getPass());
+		if(dto.getNickName()!=null && !dto.getNickName().trim().equals(""))nickName=dto.getNickName();
+		return this;
+	}
+    */
 }

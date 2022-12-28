@@ -26,6 +26,7 @@
 	margin: 30px auto;
 	width: 55px;
 	height: 55px;
+	text-decoration:none;
 }
 
 #logo>.wrap a {
@@ -62,7 +63,7 @@
 }
 
 #um>.wrap .Al li.cart a {
-	padding: 15px;
+	padding: 10px;
 	color: #f9b840;
 	font-weight: 400;
 	margin-top: -10px;
@@ -70,6 +71,7 @@
 
 #um>.wrap .Al li.cart a:hover {
 	color: rgb(251, 211, 138);
+	text-decoration-line:none;
 }
 
 #um>.wrap .Al li.log a span {
@@ -80,6 +82,7 @@
 
 #um>.wrap .Al li.log a span:hover {
 	color: rgb(251, 211, 138);
+	text-decoration-line:none;
 }
 
 /*////////////////////////////////////////*/
@@ -96,12 +99,13 @@
 /*로그인시 나타나는 닉네임 호버시 흐려지게 */
 #um>.wrap .Al li.mypage span:hover {
 	color: rgb(251, 211, 138);
+	text-decoration:none;
 }
 /*닉네임 옆 이미지*/
 #um>.wrap .Al li.mypage img {
-	height: 20px;
+	height: 23px;
 	padding: 0.3em;
-    margin-right: 30px;
+    margin-right: 6px;
 }
 /* 이미지 클릭시 마이페이지메뉴 나오게*/
 #um>.wrap .Al li.mypage:hover .mypage_content {
@@ -131,7 +135,13 @@
 /*마이페이지 메뉴내용호버시 색변환*/
 #um>.wrap .Al li.mypage div.mypage_content p a:hover{
 	color: darkorange;
+	text-decoration:none;
 }
+
+/* .mypage-btn{
+padding: 0 0px 0px 6px;
+
+} */
 /*////////////////////////////////////////*/
 
 /* 메인메뉴 */
@@ -153,13 +163,14 @@
 
 #nb>.wrap ul li a:hover { /* 마우스 커서올리면 색바뀜!*/
 	color: rgb(251, 211, 138);
+	text-decoration:none;
 }
 
 #nb>.wrap ul li ul.sub { /* 숨겨진 메뉴!!*/
 	display: none;
 	position: absolute;
 	text-align: center;
-	left: -30px;
+	left: -25px;
 }
 
 #nb>.wrap ul li ul.sub.S {
@@ -174,11 +185,10 @@
 	display: inline-block;
 	background: white;
 	background-position: center;
-	background-size: 50px;
 	margin: auto;
-	padding: 10px 15px;
-	width: 150px;
-	text-align: center;
+	padding: 13px 25px 15px 10px ;
+	width: 140px;
+	
 }
 
 .log span{
@@ -201,6 +211,7 @@
 }
 .menu1:hover ul{
 	display: block;
+	 z-index: 2;
 }
 .menu1 ul>li{
 	margin-top: 0.5em;
