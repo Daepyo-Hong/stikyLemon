@@ -11,15 +11,32 @@
 <body>
 <th:block th:insert="/layout/header::header"/>
 	<main class="flex center">
-		<h1>내정보확인하는페이지</h1>
-			<div class="view-size-c center">
-				<ul class="accounts">
-					<li class="accounts-menu">
-						<p>My Account</p>
+		<h1>내정보페이지</h1>
+		<div class="view-size-c">
+			<section class="accounts">
+				<ol class="accounts-menu">
+					<li>my Account</li>
+					<li>View and edit your personal info below.</li>
+				</ol>
+				<ol class="accounts-content1 ">
+					<li>Account</li>
+					<li>Update your personal information.</li>
+					<li>Login Email: </li>
+					<li>Your Login email can't be changed</li>
+				</ol>
+				
+				<ol class="accounts-content2">
+					<li>
+						<p><input type="text" name="name" placeholder="이름"></p>
+						<p><input type="text" name="nickName" placeholder="닉네임"></p>
+						<p><input type="text" name="pass" placeholder="비밀번호"></p>
+						<p><input type="text" name="email" placeholder="이메일"></p>
+						<button type="submit">저장하기</button>
 					</li>
-				</ul>
+				</ol>	
+			</section>
 		</div>
 	</main>
-<th:block th:insert="/layout/footer::footer"/>
+<th:block th:insert="/layout/footer::footer"/>	
 </body>
 </html>

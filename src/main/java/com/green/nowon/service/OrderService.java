@@ -15,4 +15,6 @@ public interface OrderService {
     long deliveryInfoSave(DeliveryInfoDTO dto, String email);
 
     void save(OrderInsertDTO dto, String email);
+
+    void allOfdeliveries(String email, Model model);
 }

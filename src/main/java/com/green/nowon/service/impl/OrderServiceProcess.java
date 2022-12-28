@@ -85,8 +85,15 @@ public class OrderServiceProcess implements OrderService {
                     .order(orderResult)
                     .build());
         }
+    }
 
-
+    //이짱이 페이먼트 연결한것 배송지 등록창이 보이게끔!
+    @Override
+    public void allOfdeliveries(String email, Model model) {
+        model.addAttribute("base", deliveryRepo.findByMember_email(email)
+                .stream()
+                .map(DeliveryListDTO::new)
+        );
 
     }
 }

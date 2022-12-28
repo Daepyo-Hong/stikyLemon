@@ -5,7 +5,6 @@ import com.green.nowon.domain.dto.member.DeliveryInfoDTO;
 import com.green.nowon.domain.dto.member.OrderInsertDTO;
 import com.green.nowon.security.MyUserDetails;
 import com.green.nowon.service.OrderService;
-import com.green.nowon.service.impl.OrderServiceProcess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -55,4 +54,26 @@ public class OrderController {
         service.baseOfdeliveries(userDetails.getEmail(), model);
         return "views/user/deliveries-base";
     }
+
+
+    //이메일을 기준으로 배송지정보를 저장하겠다라는뜻
+    @ResponseBody
+    @PostMapping("/member/myAddresses")
+    public long deliveryInfo(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
+        return service.deliveryInfoSave(dto, userDetails.getEmail());
+
+    }
+    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
+    @GetMapping("/member/myAddresses")
+    public String deliveries(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+        service.deliveries(userDetails.getEmail(), model);
+        return "mypage/myAddresses";
+    }
+    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
+    @GetMapping("/member/ezzange")
+    public String baseOfdeliveries(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+        service.allOfdeliveries(userDetails.getEmail(), model);
+        return "mypage/ezzange-payment";
+    }
+
 }

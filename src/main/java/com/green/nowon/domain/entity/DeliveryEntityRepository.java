@@ -15,4 +15,5 @@ public interface DeliveryEntityRepository extends JpaRepository<DeliveryEntity, 
 
 	Optional<DeliveryEntity> findByBaseAndMember_email(boolean base, String email);
 
+	List<DeliveryEntity> findByMember_email(String email);
 }
