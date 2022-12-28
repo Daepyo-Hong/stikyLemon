@@ -6,10 +6,12 @@ import com.green.nowon.service.LogService;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -72,6 +74,15 @@ public class SignController {
         session.invalidate();
         ModelAndView mv = new ModelAndView("redirect:/");
         return mv;
+    }
+
+    //ajax로 로그인체크 할 때
+    @ResponseBody
+    @GetMapping("/members/login-check")
+    public boolean loginCheck(Authentication auth) {
+        //로그인했을때는 인증정보확인가능
+        //비로그인시 는 null
+        return auth != null;
     }
 
 }

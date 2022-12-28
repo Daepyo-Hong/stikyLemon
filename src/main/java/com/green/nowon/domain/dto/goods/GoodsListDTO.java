@@ -21,6 +21,9 @@ public class GoodsListDTO {
 
     private int reCount;
 
+    private int sPrice;
+    private int dPrice;
+
 
     public void SetAvg(double e){
         this.avg=e;
@@ -35,6 +38,8 @@ public class GoodsListDTO {
         this.stock=e.getStock();
         this.updatedDate=e.getUpdatedDate();
         this.defImgUrl=e.defImg().getUrl()+e.defImg().getNewName();
+        sPrice=0;
+        dPrice=3000;
     }
     public GoodsListDTO(CategoryGoodsEntity cie){
         this(cie.getGoods());
