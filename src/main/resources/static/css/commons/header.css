@@ -63,7 +63,7 @@
 }
 
 #um>.wrap .Al li.cart a {
-	padding: 15px;
+	padding: 10px;
 	color: #f9b840;
 	font-weight: 400;
 	margin-top: -10px;
@@ -135,6 +135,11 @@
 #um>.wrap .Al li.mypage div.mypage_content p a:hover{
 	color: darkorange;
 	text-decoration:none;
+}
+
+.mypage-btn{
+padding: 0 0px 0px 6px;
+
 }
 /*////////////////////////////////////////*/
 
