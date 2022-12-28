@@ -50,25 +50,9 @@
 				<ul class="Al flex right">
 					<li class="cart">
 						<a href="/members/cart"><img src="/images/headerImg/cart.png" class="img_cart"/>Shopping cart
-							&nbsp;&nbsp;|</a>
+							&nbsp;|</a>
 					</li>
-
-					<li class="mypage" sec:authorize="isAuthenticated()">
-						<button type="button" class="mypage-btn">
-							<span th:if="${#authentication.principal.nickName==null}"
-								  sec:authentication="principal.name"></span>
-							<span th:if="${#authentication.principal.nickName}"
-								  sec:authentication="principal.nickName"></span>
-							<img src="/images/headerImg/down.png" class="img_mypage"/>
-						</button>
-						<div class="mypage_content wrap">
-							<p><a href="/members/myOrders">my orders</a></p>
-							<p><a href="/members/myAccount">my account</a></p>
-							<p><a href="/members/myAddresses">my addresses</a></p>
-							<p sec:authorize="hasRole('ADMIN')"><a href="/admin">admin page</a></p>
-
-							<p><a href="/logout">logout</a></p>
-						</div>
+					
 					<li class="log" sec:authorize="isAnonymous()">
 						<a href="/comm/signin">
 							<span>Login&nbsp;&nbsp;&nbsp;</span>
@@ -76,7 +60,7 @@
 					</li>
 					<li class="log">
 						<a href="/comm/qna">
-							<span>|&nbsp;&nbsp;<img src="/images/headerImg/oror.png" width="17px" height="17px;">Community</span>
+							<span><img src="/images/headerImg/oror.png" width="17px" height="17px;">Community&nbsp;&nbsp;&nbsp;|</span>
 						</a>
 					</li>
 					<!-- <li class="log" sec:authorize="isAuthenticated()">
@@ -91,6 +75,24 @@
 					</li>
 					</li>
 					-->
+					
+					<li class="mypage" sec:authorize="isAuthenticated()">
+						<button type="button" class="mypage-btn">&nbsp;&nbsp;
+							<span th:if="${#authentication.principal.nickName==null}"
+								  sec:authentication="principal.name"></span>
+							<span th:if="${#authentication.principal.nickName}"
+								  sec:authentication="principal.nickName"></span>
+							<img src="/images/headerImg/down.png" class="img_mypage"/>
+						</button>
+						<div class="mypage_content wrap">
+							<p><a href="/members/myOrders">my orders</a></p>
+							<p><a href="/members/myAccount">my account</a></p>
+							<p><a href="/members/myAddresses">my addresses</a></p>
+							<p sec:authorize="hasRole('ADMIN')"><a href="/admin">admin page</a></p>
+
+							<p><a href="/logout">logout</a></p>
+						</div>
+					
 
 				</ul>
 			</div>

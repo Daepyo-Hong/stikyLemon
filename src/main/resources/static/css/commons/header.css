@@ -84,7 +84,9 @@
 	color: rgb(251, 211, 138);
 	text-decoration-line:none;
 }
-
+#um>.wrap .Al li.log a{
+	text-decoration: none;
+}
 /*////////////////////////////////////////*/
 /*로그인 시 로그인없어지고 닉네임나오는 부분 */
 #um>.wrap .Al li.mypage{

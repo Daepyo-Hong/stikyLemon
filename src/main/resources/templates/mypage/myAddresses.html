@@ -7,51 +7,93 @@
     <link rel="stylesheet" href="/css/commons/header.css">
     <link rel="stylesheet" href="/css/commons/footer.css">
     <link rel="stylesheet" href="/css/user/mypage/myAddresses.css">
+    
+    <script src="/js/user/daumPostcode.js"></script>
+    <script src="/js/ezzdaumPostcode.js"></script>
+    <link rel="stylesheet" href="/css/goods/comm.css">
 </head>
 
 <body>
 <th:block th:insert="/layout/header::header"/>
 	<main class="flex center">
 		<h1>내배송지페이지</h1>
-			<div class="view-size-c center">
-			<section class="addresses">
-				
-				<ol><!-- 여기에 class="flex" 넣으면 가로정렬-->
-					<li>My Addresses</li>
-					<li>배송지 : </li>
-					<li>주소 : </li>
-					<li>연락처 : </li>
-					<li>선택 : </li>
-				</ol>
-				<div class="addresses-isEmpty" th:if="${#lists.isEmpty(list)}">
-					현재 배송지 정보가 존재하지 않습니다.
-				</div>	
-				<ol class="addresses-content flex" th:each="dto :${list}">
-					<li>
-						<p th:text="${dto.deliveryAddrName}">배송지이름</p>			
-						<p th:text="${dto.receiverName}">수신자이름</p>
-						<p th:if="${dto.base}"><button class="base btn">기본배송지</button> </p>
-					</li>
-					<li>
-						<p th:text="${dto.postcode}">우편번호</p>
-						<p>
-							<span th:text="${dto.roadAddress}">도로명주소</span>
-							<span th:text="${dto.extraAddress}">참고항목</span>
-						</p>
-						<p th:text="${dto.detailAddress}">상세주소</p>
-					</li>
-					<li>
-						<p th:text="${dto.phone1}">전화번호</p>
-					</li>
-					<li>
-						<div><button class="btn">선택</button></div>
-					</li>
-				</ol>
-			</section>
-			<section>
-				<a href="/members/deliveriesBase">기본 배송지 보기</a>
-				<a href="/member/ezzange">이짱이페이먼트 배송지 등록하기</a>
-			</section>
+			<div class="addresses view-size-c">
+			
+			<section id="delivery">
+					<h1>배송지정보</h1>
+					<div class="wrap">
+						<ul id="menu-d" class="addresses-content flex">
+							<!-- ///////////기본배송지/////////////////////// -->
+							<li class="target" onclick="memuDClicked(this)">
+								<button type="button" id="base-delivery" >기본배송지</button>
+								<div class="disp" id="base-delivery-disp">
+									<p>배송지 정보가 존재하지 않습니다.</p>
+								</div>
+							</li>
+							<!-- ///////////신규배송지/////////////////////// -->
+							<li onclick="memuDClicked(this)">
+								<button type="button" id="new-delivery">신규배송지</button>
+								<div class="disp">
+									<form id="deliverySave" >
+										<dl>
+											<dt>수령인</dt>
+											<dd>
+												<input type="text" name="receiverName">
+											</dd>
+										</dl>
+										<dl>
+											<dt>배송지명</dt>
+											<dd>
+												<input type="text" name="deliveryAddrName">
+											</dd>
+										</dl>
+										<dl>
+											<dt>연락처1</dt>
+											<dd>
+												<input type="text" name="phone1">
+											</dd>
+										</dl>
+										<dl>
+											<dt>연락처2</dt>
+											<dd>
+												<input type="text" name="phone2">
+											</dd>
+										</dl>
+										<dl>
+											<dt>배송지 주소</dt>
+											<dd>
+												<input type="text" id="postcode" name="postcode" placeholder="우편번호">
+												<input type="button" onclick="daumPostcode()" value="우편번호 찾기"><br>
+												<input type="text" id="roadAddress" name="roadAddress" placeholder="도로명주소">
+												<input type="text" id="jibunAddress" name="jibunAddress" placeholder="지번주소">
+												<span id="guide" style="color:#999;display:none"></span>
+												<input type="text" id="detailAddress"  name="detailAddress" placeholder="상세주소">
+												<input type="text" id="extraAddress" name="extraAddress" placeholder="참고항목">
+											</dd>
+										</dl>
+										<button type="button" onclick="deliverySave()">배송지 등록</button>
+									</form>
+									<!-- /////////////////////// -->
+									<dl>
+										<dt>배송메모</dt>
+										<dd>
+											<input type="text" name="memo">
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<!-- ///////////배송지목록/////////////////////// -->
+						<!-- 
+						<li onclick="memuDClicked(this)">
+								<button type="button" id="btn-delivery-list">배송지 목록</button>
+								<div class="disp" id="deliveries">
+									
+								</div>
+							</li> -->	
+						</ul>
+					</div>
+				</section>
+			
 		</div>
 	</main>
 <th:block th:insert="/layout/footer::footer"/>	
