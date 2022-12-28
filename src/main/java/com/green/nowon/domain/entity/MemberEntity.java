@@ -53,12 +53,6 @@ public class MemberEntity extends BaseDateEntity {
 
     //배송지정보
     @Builder.Default
-    @JoinColumn
     @OneToMany(cascade = CascadeType.ALL)
-    private List<DestinationEntity> dests = new ArrayList<>();
-
-    public MemberEntity addAddress(DestinationEntity dest){
-        this.dests.add(dest);
-        return this;
-    }
+    private List<DeliveryEntity> dests = new ArrayList<>();
 }

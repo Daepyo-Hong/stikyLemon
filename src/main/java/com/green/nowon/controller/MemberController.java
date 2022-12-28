@@ -18,18 +18,6 @@ public class MemberController {
     @Autowired
     CartService cartService;
 
-    //소셜이든 기본로그인이든 myUserDetails 로 참조할 수 있음
-    @GetMapping("/members/info")
-    public String memberInfo(@AuthenticationPrincipal MyUserDetails myUserDetails) {
-        log.info("Member정보...............");
-        log.info("------------------------------------------");
-        log.info(myUserDetails);
-        log.info("myUserDetails.isSocial()"+myUserDetails.isSocial());
-        log.info("myUserDetails.getName()"+myUserDetails.getName());
-        log.info("myUserDetails.getAttributes()"+myUserDetails.getAttributes());
-
-        return "views/user/info";
-    }
     //장바구니로 이동
     @GetMapping("/members/cart")
     public String cart(Model model, @AuthenticationPrincipal MyUserDetails userDetails) {
