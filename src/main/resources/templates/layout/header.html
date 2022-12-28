@@ -54,8 +54,6 @@
 					</li>
 
 					<li class="mypage" sec:authorize="isAuthenticated()">
-						<span th:if="${#authentication.principal.name!=null}"
-							  sec:authentication="principal.name"></span>
 						<button type="button" class="mypage-btn">
 							<span th:if="${#authentication.principal.nickName==null}"
 								  sec:authentication="principal.name"></span>

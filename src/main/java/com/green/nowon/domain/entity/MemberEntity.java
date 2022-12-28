@@ -62,10 +62,7 @@ public class MemberEntity extends BaseDateEntity {
     @OneToMany(cascade = CascadeType.ALL)
     private List<DeliveryEntity> dests = new ArrayList<>();
 
-    /*
-    private List<DestinationEntity> dests = new ArrayList<>();
-
-    public MemberEntity addAddress(DestinationEntity dest){
+    public MemberEntity addAddress(DeliveryEntity dest){
         this.dests.add(dest);
         return this;
     }
@@ -77,5 +74,5 @@ public class MemberEntity extends BaseDateEntity {
 		if(dto.getNickName()!=null && !dto.getNickName().trim().equals(""))nickName=dto.getNickName();
 		return this;
 	}
-    */
+
 }

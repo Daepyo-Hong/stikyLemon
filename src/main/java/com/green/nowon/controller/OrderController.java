@@ -20,12 +20,6 @@ public class OrderController {
     @Autowired
     private OrderService service;
 
-    //결제이후 처리과정에서 신규배송지일시 등록하는것
-    @ResponseBody
-    @PostMapping("/members/delivery")
-    public long deliveryInfo(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
-        return service.deliveryInfoSave(dto, userDetails.getEmail());
-    }
 
     //상품디테일에서 구매하기 버튼 눌렀을 때
     @GetMapping("/members/order")
@@ -48,6 +42,7 @@ public class OrderController {
         service.deliveries(userDetails.getEmail(), model);
         return "views/user/deliveries";
     }
+
     //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
     @GetMapping("/members/deliveries/base")
     public String baseOfdeliveries(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
@@ -55,25 +50,37 @@ public class OrderController {
         return "views/user/deliveries-base";
     }
 
+    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
+    @GetMapping("/member/ezzange")
+    public String baseOfdeliveries_ezz(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+        service.allOfdeliveries(userDetails.getEmail(), model);
+        return "mypage/ezzange-payment";
+    }
+
+
+    //결제이후 처리과정에서 신규배송지일시 등록하는것
+    @ResponseBody
+    @PostMapping("/members/delivery")
+    public long deliveryInfo(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
+        return service.deliveryInfoSave(dto, userDetails.getEmail());
+    }
+
+    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
+    @GetMapping("/member/myAddresses")
+    public String deliveries_ezz(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+        service.deliveries(userDetails.getEmail(), model);
+        return "mypage/myAddresses";
+    }
 
     //이메일을 기준으로 배송지정보를 저장하겠다라는뜻
     @ResponseBody
     @PostMapping("/member/myAddresses")
-    public long deliveryInfo(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
+    public long deliveryInfo_ezz(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
         return service.deliveryInfoSave(dto, userDetails.getEmail());
 
     }
-    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
-    @GetMapping("/member/myAddresses")
-    public String deliveries(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
-        service.deliveries(userDetails.getEmail(), model);
-        return "mypage/myAddresses";
-    }
-    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
-    @GetMapping("/member/ezzange")
-    public String baseOfdeliveries(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
-        service.allOfdeliveries(userDetails.getEmail(), model);
-        return "mypage/ezzange-payment";
-    }
+
+
+
 
 }
