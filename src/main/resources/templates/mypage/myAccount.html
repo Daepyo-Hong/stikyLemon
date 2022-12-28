@@ -46,9 +46,7 @@
 							<input type="hidden" name="mno" th:value="${#authentication.principal.mno}">
 	    					<input type="hidden" name="_method" value="PUT">
 	    						<button type="button"  class="bu-aa">Discard</button>
-		    					<button type="submit" class="bu-aa">Update Info</button>
-		    					<p class="p2">수정 후 다시 로그인 해주세요</p>
-		    					
+		    					<button type="submit" onClick="alert('수정 완료! 로그아웃 후 다시 로그인 해주세요')" class="bu-aa">Update Info</button>
 						</li>
 					</ol>
 				</form>	
