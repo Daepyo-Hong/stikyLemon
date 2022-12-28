@@ -65,6 +65,8 @@
 							<p><a href="/members/myOrders">my orders</a></p>
 							<p><a href="/members/myAccount">my account</a></p>
 							<p><a href="/members/myAddresses">my addresses</a></p>
+							<p sec:authorize="hasRole('ADMIN')"><a href="/admin">admin page</a></p>
+							
 							<p><a href="/logout">logout</a></p>
 						</div>
 					<li class="log" sec:authorize="isAnonymous()">
