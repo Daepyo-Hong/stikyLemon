@@ -19,12 +19,24 @@
 			$("#btn-addCart").click(btnCartClicked);
 		});
 
+		function loginCheck() {
+			var isLogin = false;
+			$.ajax({
+				url: "/comm/login-check",
+				async: false,
+				success: function (result) {
+					isLogin = result;
+				}
+			});
+			return isLogin;
+		}
+
 		//주문클릭했을때
 		function btnOrderClicked(){
 			var quantity=$("#quantity").val();
 			var goodsNo=$("#no").val();
 
-			if (!loginCheck()) {
+			if(!loginCheck()) {
 				var result = confirm("바로구매는 로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 				if (result) {
 					location.href = "/comm/signin";
@@ -35,24 +47,12 @@
 			location.href=`/members/order?goodsNo=${goodsNo}&quantity=${quantity}`;
 		}
 
-		function loginCheck() {
-			var isLogin = false;
-			$.ajax({
-				url: "/members/login-check",
-				async: false,
-				success: function (result) {
-					isLogin = result;
-				}
-			})
-			return isLogin;
-		}
-
 
 		function btnCartClicked() {
 			var quantity = $("#quantity").val();
 			var goodsNo = [[${dto.no}]];
 
-			if (!loginCheck()) {
+			if(!loginCheck()) {
 				var result = confirm("카트저장은 로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 				if (result) {
 					location.href = "/comm/signin";

@@ -28,6 +28,15 @@ public class OrderController {
         return "views/user/order-payment";
     }
 
+    @GetMapping("/members/cartOrders")
+    public String cartPayment(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+        long mno = userDetails.getMno();
+
+
+        service.orderGoodsFromCart(mno, model);
+        return "views/user/order-payment";
+    }
+
     @ResponseBody
     @PostMapping("/members/order")
     public void orderSave(@RequestBody OrderInsertDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {

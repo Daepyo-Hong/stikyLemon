@@ -8,12 +8,13 @@ import com.green.nowon.domain.dto.member.OrderGoodsInsertDTO;
 import com.green.nowon.domain.dto.member.OrderInsertDTO;
 import com.green.nowon.domain.entity.*;
 import com.green.nowon.service.OrderService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,6 +25,10 @@ public class OrderServiceProcess implements OrderService {
     private DeliveryEntityRepository deliveryRepo;
     @Autowired
     MemberEntityRepository memRepo;
+    @Autowired
+    CartGoodsDetailRepository cartGoodsRepo;
+    @Autowired
+    CartEntityRepository cartRepo;
     @Autowired
     OrderEntityRepository orderRepo;
     @Autowired
@@ -61,6 +66,24 @@ public class OrderServiceProcess implements OrderService {
                 .map(OrderGoodsListDTO::new)
                 .get()
                 .quantity(dto.getQuantity()));
+    }
+
+    @Override
+    public void orderGoodsFromCart(long mno, Model model) {
+        List<OrderGoodsDTO> result =  cartGoodsRepo.findByCart(cartRepo.findByMember_mno(mno).get())
+                .stream()
+                .map(OrderGoodsDTO::new)
+                .collect(Collectors.toList());
+        List<OrderGoodsListDTO> list = new ArrayList<>();
+        result.forEach(s->
+                list.add(goodsRepo.findById(s.getGoodsNo())
+                        .map(OrderGoodsListDTO::new)
+                        .get()
+                        .quantity(s.getQuantity())));
+
+        model.addAttribute("list", list);
+
+
     }
 
     //주문완료후 결제정보 DB저장

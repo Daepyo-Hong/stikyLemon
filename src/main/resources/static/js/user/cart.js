@@ -3,6 +3,10 @@ $(function (){
     quantityChanged($("#minus_1"));
 });
 
+function btnCartOrderClicked(){
+    location.href="/members/cartOrders";
+}
+
 function btnMinusClicked(el){
     var quantity = Number($(el).next().val())-1;
     if(quantity<1)
