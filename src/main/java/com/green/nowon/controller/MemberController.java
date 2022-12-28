@@ -84,5 +84,12 @@ public class MemberController {
     public String myAddresses() {
     	return "mypage/myAddresses";
     }
+//  //내배송지페이지 에서 기본배송지로이동 이동
+//    @GetMapping("/members/deliveriesBase")
+//    public String deliveriesBase() {
+//    	
+//    	return "mypage/deliveries-base";
+//    }
+//    
 
 }

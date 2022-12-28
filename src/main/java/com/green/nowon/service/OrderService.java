@@ -7,13 +7,15 @@ import com.green.nowon.domain.dto.member.DeliveryInfoDTO;
 
 public interface OrderService {
 
-	void orderGoods(OrderGoodsDTO dto, Model model);
+	//void orderGoods(OrderGoodsDTO dto, Model model);
 
-	void deliveryInfoSave(DeliveryInfoDTO dto, String email);
+	long deliveryInfoSave(DeliveryInfoDTO dto, String email);
 
 	void deliveries(String email, Model model);
 
 	void baseOfdeliveries(String email, Model model);
+
+	void allOfdeliveries(String email, Model model);
 
 	
 

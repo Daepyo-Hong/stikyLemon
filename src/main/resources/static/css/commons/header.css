@@ -113,6 +113,7 @@
 	display: none;
 	background-color: rgba(255,255,255,0.8);
 	border-radius:15px;
+	z-index: 10;
 }
 /*마이페이지 메뉴내용 p태그 공간줌*/
 #um>.wrap .Al li.mypage div.mypage_content p {
@@ -190,10 +191,12 @@
 .menu1 ul{
 	display: none;
 	position: absolute;
-	background-color: white;
+	background-color: rgba(255,255,255,90%);
 	width: 100%;
 	left: 0;
 	text-align: center;
+	z-index: 10;
+	border-radius: 15px;
 
 }
 .menu1:hover ul{

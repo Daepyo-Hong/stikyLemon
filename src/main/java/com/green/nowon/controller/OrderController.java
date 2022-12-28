@@ -20,32 +20,34 @@ public class OrderController {
 	@Autowired
 	private OrderService service;
 	
+	//이메일을 기준으로 배송지정보를 저장하겠다라는뜻
 	@ResponseBody
-	@PostMapping("/user/delivery")
-	public void deliveryInfo(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
-		service.deliveryInfoSave(dto, userDetails.getEmail());
+	@PostMapping("/member/myAddresses")
+	public long deliveryInfo(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails userDetails) {
+		return service.deliveryInfoSave(dto, userDetails.getEmail());
+		
 	}
 	
-	@GetMapping("/user/order")
-	public String orderPayment(OrderGoodsDTO dto, Model model) {
-		service.orderGoods(dto, model);
-		return "user/order-payment";
-	}
+//	@GetMapping("/member/ezzange")
+//	public String orderPayment(OrderGoodsDTO dto, Model model) {
+//		service.orderGoods(dto, model);
+//		return "mypage/ezzange-payment";
+//	}
 	
 	//@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
-	@GetMapping("/user/deliveries")
+	@GetMapping("/member/myAddresses")
 	public String deliveries(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
 		service.deliveries(userDetails.getEmail(), model);
-		return "user/deliveries";
+		return "mypage/myAddresses";
 	}
 	
 	//@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
-		@GetMapping("/user/deliveries/base")
+		@GetMapping("/member/ezzange")
 		public String baseOfdeliveries(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
-			service.baseOfdeliveries(userDetails.getEmail(), model);
-			return "user/deliveries-base";
+			service.allOfdeliveries(userDetails.getEmail(), model);
+			return "mypage/ezzange-payment";
 		}
 	
-	
+		
 
 }

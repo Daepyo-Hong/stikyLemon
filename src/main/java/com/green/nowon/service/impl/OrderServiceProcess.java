@@ -48,20 +48,32 @@ public class OrderServiceProcess implements OrderService {
 									.collect(Collectors.toList())
 				);
 	}
-	
-	@Transactional
-	@Override
-	public void orderGoods(OrderGoodsDTO dto, Model model) {
-		model.addAttribute("list", GoodsRepo.findById(dto.getGoodsNo()).map(OrderGoodsListDTO::new)
-				.get()
-				.quantity(dto.getQuantity()));
-	}
+	//주문결제라 주석처리함 
+//	@Transactional
+//	@Override
+//	public void orderGoods(OrderGoodsDTO dto, Model model) {
+//		model.addAttribute("list", GoodsRepo.findById(dto.getGoodsNo()).map(OrderGoodsListDTO::new)
+//				.get()
+//				.quantity(dto.getQuantity()));
+//	}
 
+	//멤버 이메일을 기준으로 배송지 데이터를 저장한다는뜻
 	@Override
-	public void deliveryInfoSave(DeliveryInfoDTO dto, String email) {
-		deliveryRepo.save(dto.toEntity()
+	public long deliveryInfoSave(DeliveryInfoDTO dto, String email) {
+		return deliveryRepo.save(dto.toEntity()
 				.base(deliveryRepo.countByMember_email(email)==0?true:false)//배송지정보가 없으면 base=true
-				.member(memRepo.findByEmail(email).orElseThrow()));
+				.member(memRepo.findByEmail(email).orElseThrow()))
+				.getNo();
+		
+	}
+	//이짱이 페이먼트 연결한것 배송지 등록창이 보이게끔!
+	@Override
+	public void allOfdeliveries(String email, Model model) {
+		model.addAttribute("base", deliveryRepo.findByMember_email(email)
+				.stream()
+				.map(DeliveryListDTO::new)
+				);
+		
 	}
 	
 	
