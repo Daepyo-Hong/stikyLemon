@@ -208,6 +208,7 @@ padding: 0 0px 0px 6px;
 }
 .menu1:hover ul{
 	display: block;
+	 z-index: 2;
 }
 .menu1 ul>li{
 	margin-top: 0.5em;
