@@ -12,4 +12,6 @@ public interface MemberEntityRepository extends JpaRepository<MemberEntity,Long>
     Optional<MemberEntity> findByEmailAndSocialAndDeleted(String username, boolean b, boolean b1);
 
     Optional<MemberEntity> findByEmailAndDeleted(String email, boolean b);
+
+    Optional<MemberEntity> findByEmail(String email);
 }

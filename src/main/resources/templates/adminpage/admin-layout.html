@@ -15,13 +15,14 @@
 	<link rel="stylesheet" href="/css/admin/admin-header.css">
 	<link rel="stylesheet" href="/css/admin/admin-footer.css">
 	<link rel="stylesheet" href="/css/commons/common.css">
+	<link rel="icon" href="/images/favicon/orange.png" type="image/x-icon" sizes="16x16">
 
 	<th:block th:replace="${head}"/>
 </head>
 
 <body>
 <th:block th:insert="adminpage/admin-header::header"/>
-<a href="/admin/category/reg">카테고리등록페이지</a>
+
 <th:block th:replace="${main}"/>
 <th:block th:insert="adminpage/admin-footer::footer"/>
 

@@ -1,27 +1,71 @@
 package com.green.nowon.controller;
 
+import com.green.nowon.domain.dto.board.BoardUpdateDTO;
+import com.green.nowon.domain.dto.member.MemberUpdateDTO;
 import com.green.nowon.security.MyUserDetails;
+import com.green.nowon.service.CartService;
+import com.green.nowon.service.MemberService;
+
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Log4j2
 @Controller
 public class MemberController {
 
+	@Autowired
+	MemberService memberservice;
 
-    //소셜이든 기본로그인이든 myUserDetails 로 참조할 수 있음
-    @GetMapping("/members/info")
-    public String memberInfo(@AuthenticationPrincipal MyUserDetails myUserDetails) {
-        log.info("Member정보...............");
-        log.info("------------------------------------------");
-        log.info(myUserDetails);
-        log.info("myUserDetails.isSocial()"+myUserDetails.isSocial());
-        log.info("myUserDetails.getName()"+myUserDetails.getName());
-        log.info("myUserDetails.getAttributes()"+myUserDetails.getAttributes());
+    @Autowired
+    CartService cartService;
 
-        return "views/user/info";
+    //장바구니로 이동
+    @GetMapping("/members/cart")
+    public String cart(Model model, @AuthenticationPrincipal MyUserDetails userDetails) {
+        //카트 없으면 생성
+        cartService.createCart(userDetails.getMno());
+        //카트에 담긴 목록 불러와야함
+        cartService.getCartList(userDetails.getMno(), model);
+        return "views/user/cart";
+    }
+    //장바구니에 데이터 추가
+    @ResponseBody
+    @PostMapping("/members/cart")
+    public void addCart( long goodsNo, long quantity, @AuthenticationPrincipal MyUserDetails userDetails){
+        long mno = userDetails.getMno();
+        cartService.createCart(mno);
+
+        System.out.println(quantity);
+        System.out.println(goodsNo);
+        cartService.insertData(goodsNo, quantity, mno);
+    }
+    //장바구니 갯수 변경시 반영
+    @ResponseBody
+    @PostMapping("/members/cart/update")
+    public void updateCart(long no, long quantity){
+        System.out.println("Controller");
+        System.out.println("no: "+no+"\nquantity : "+quantity);
+        cartService.updateCart(no, quantity);
+    }
+
+    //장바구니 내역 삭제시
+    @ResponseBody
+    @DeleteMapping("/members/cart")
+    public void deleteCartGoods(long no){
+        cartService.deleteCartGoods(no);
     }
     
     //멤버 마이페이지관련 경로이동
@@ -41,5 +85,12 @@ public class MemberController {
     public String myAddresses() {
     	return "mypage/myAddresses";
     }
+
+    //@RequestMapping(value = "/members/myAccount/update", method = RequestMethod.PUT)
+    @PutMapping("/members/myAccount")// method="post"-> <input type="hidden" name="_method" value="PUT">
+	public String memberUpdate(MemberUpdateDTO dto, Authentication auth) {
+		memberservice.updateMember(dto, auth);
+		return "redirect:/members/myAccount";
+	}
 
 }

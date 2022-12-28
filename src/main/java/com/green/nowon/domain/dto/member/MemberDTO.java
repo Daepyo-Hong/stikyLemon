@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.green.nowon.domain.dto.board.BoardUpdateDTO;
 import com.green.nowon.security.MyRole;
 
 import lombok.Getter;
@@ -28,4 +29,10 @@ public class MemberDTO {
         this.roles.add(role);
         return this;
     }
+
+	public void updateMember(MemberUpdateDTO dto) {
+		
+	}
+
+	
 }

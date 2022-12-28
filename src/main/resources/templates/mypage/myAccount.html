@@ -9,15 +9,48 @@
 	<link rel="stylesheet" href="/css/user/mypage/myAccount.css">
 </head>
 <body>
+
 <th:block th:insert="/layout/header::header"/>
 	<main class="flex center">
-		<h1>내정보확인하는페이지</h1>
-			<div class="view-size-c center">
-				<ul class="accounts">
-					<li class="accounts-menu">
-						<p>My Account</p>
-					</li>
-				</ul>
+		<h1>내정보페이지</h1>
+		<div class="view-size-c">
+			<section class="accounts">
+				<ol class="accounts-menu">
+					<li>my Account</li>
+					<li>View and edit your personal info below.</li>
+				</ol>
+				<ol class="accounts-content1 ">
+					<li>Account</li>
+					<li>Update your personal information.</li>
+					<li>Login Email:<span class="email-1" sec:authentication="principal.email"></span> </li>
+					<li>Your Login email can't be changed</li>
+				</ol>
+				<form  action="/members/myAccount" method="post">
+					<ol class="accounts-content2">
+						<li>
+							<!-- <span sec:authentication="principal.name"></span> -->
+							<p class="pp">Name</p><p><input type="text" name="name" placeholder="이름" th:value="${#authentication.principal.name}"></p>
+						</li>
+						<li>
+							<!-- <span sec:authentication="principal.nickName"></span> -->
+							<p class="pp">Nick name</p><p><input type="text" name="nickName" placeholder="닉네임" th:value="${#authentication.principal.nickName}"></p>
+						</li>
+						<li>
+							<p class="pp">Password</p><p><input type="text" name="pass" placeholder="비밀번호"></p>
+						</li>
+					<!-- 	<li>
+							<span sec:authentication="principal.email"></span>
+							<p><input type="hidden" name="email" placeholder="이메일" th:value="${#authentication.principal.email}"></p>
+						</li> -->
+						<li class="center">
+							<input type="hidden" name="mno" th:value="${#authentication.principal.mno}">
+	    					<input type="hidden" name="_method" value="PUT">
+	    						<button type="button"  class="bu-aa">Discard</button>
+		    					<button type="submit" onClick="alert('수정 완료! 로그아웃 후 다시 로그인 해주세요')" class="bu-aa">Update Info</button>
+						</li>
+					</ol>
+				</form>
+			</section>
 		</div>
 	</main>
 <th:block th:insert="/layout/footer::footer"/>

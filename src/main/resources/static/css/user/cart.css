@@ -93,16 +93,21 @@ main > div {
     text-align: right;
 }
 
+#total-pay>div{
+    position: sticky;
+    top:20vh;
+    padding: 20px;
+    background-color: #ffccab;
+}
 
-
-#total-pay>div>ul>li{
+#total-pay>div>div>ul>li{
     margin-bottom: 20px;
 
 }
-#total-pay>div>ul>li.sub-text{
+#total-pay>div>div>ul>li.sub-text{
     margin-top: -15px;
 }
-#total-pay>div>ul>li.sub-text>span{
+#total-pay>div>div>ul>li.sub-text>span{
     font-size: 12px;
     color: #a22c2c;
 }

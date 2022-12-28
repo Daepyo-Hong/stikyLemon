@@ -14,11 +14,44 @@
 	<main class="flex center">
 		<h1>내배송지페이지</h1>
 			<div class="view-size-c center">
-				<ul class="addresses">
-					<li class="addresses-menu">
-						<p>My Addresses</p>
+			<section class="addresses">
+				
+				<ol><!-- 여기에 class="flex" 넣으면 가로정렬-->
+					<li>My Addresses</li>
+					<li>배송지 : </li>
+					<li>주소 : </li>
+					<li>연락처 : </li>
+					<li>선택 : </li>
+				</ol>
+				<div class="addresses-isEmpty" th:if="${#lists.isEmpty(list)}">
+					현재 배송지 정보가 존재하지 않습니다.
+				</div>	
+				<ol class="addresses-content flex" th:each="dto :${list}">
+					<li>
+						<p th:text="${dto.deliveryAddrName}">배송지이름</p>			
+						<p th:text="${dto.receiverName}">수신자이름</p>
+						<p th:if="${dto.base}"><button class="base btn">기본배송지</button> </p>
 					</li>
-				</ul>
+					<li>
+						<p th:text="${dto.postcode}">우편번호</p>
+						<p>
+							<span th:text="${dto.roadAddress}">도로명주소</span>
+							<span th:text="${dto.extraAddress}">참고항목</span>
+						</p>
+						<p th:text="${dto.detailAddress}">상세주소</p>
+					</li>
+					<li>
+						<p th:text="${dto.phone1}">전화번호</p>
+					</li>
+					<li>
+						<div><button class="btn">선택</button></div>
+					</li>
+				</ol>
+			</section>
+			<section>
+				<a href="/members/deliveriesBase">기본 배송지 보기</a>
+				<a href="/member/ezzange">이짱이페이먼트 배송지 등록하기</a>
+			</section>
 		</div>
 	</main>
 <th:block th:insert="/layout/footer::footer"/>	

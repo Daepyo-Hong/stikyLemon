@@ -2,8 +2,25 @@
 main{
 	margin: 5em auto;
 }
-main div{
+main>div>.addresses{
 	height:500px;
 	padding: 3em;
 	background-color: rgb(206, 222, 215);
+	
+	
+}
+main>div>.addresses>ol>li:first-child{
+	font-size: 32px;
+	font-weight: 300;
+	padding: 1em;
+	border-bottom: 1px solid #fff;
+}
+main>div>.addresses>ol>li{
+	padding: 0.5em;
+}
+main>div>.addresses>div.addresses-isEmpty{
+	margin: 5em 20em;
+}
+main>div>.addresses>.addresses-content{
+	padding: 0.5em;
 }

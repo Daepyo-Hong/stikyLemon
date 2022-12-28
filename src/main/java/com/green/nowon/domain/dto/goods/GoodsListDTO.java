@@ -3,9 +3,7 @@ package com.green.nowon.domain.dto.goods;
 import com.green.nowon.domain.entity.CategoryGoodsEntity;
 import com.green.nowon.domain.entity.GoodsEntity;
 import lombok.Data;
-import net.bytebuddy.asm.Advice;
 
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 @Data
@@ -17,9 +15,19 @@ public class GoodsListDTO {
     private String productCare;    //주의사항
     private int price;
     private int stock;
-
     private LocalDateTime updatedDate;
     private String defImgUrl;
+    private double avg;
+
+    private int reCount;
+
+    private int sPrice;
+    private int dPrice;
+
+
+    public void SetAvg(double e){
+        this.avg=e;
+    }
 
     public GoodsListDTO(GoodsEntity e){
         this.no=e.getNo();
@@ -30,6 +38,8 @@ public class GoodsListDTO {
         this.stock=e.getStock();
         this.updatedDate=e.getUpdatedDate();
         this.defImgUrl=e.defImg().getUrl()+e.defImg().getNewName();
+        sPrice=0;
+        dPrice=3000;
     }
     public GoodsListDTO(CategoryGoodsEntity cie){
         this(cie.getGoods());
