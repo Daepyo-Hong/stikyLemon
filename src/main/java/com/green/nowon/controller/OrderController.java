@@ -50,14 +50,6 @@ public class OrderController {
         return "views/user/deliveries-base";
     }
 
-//    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
-//    @GetMapping("/member/ezzange")
-//    public String baseOfdeliveries_ezz(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
-//        service.allOfdeliveries(userDetails.getEmail(), model);
-//        return "mypage/ezzange-payment";
-//    }
-
-
     //결제이후 처리과정에서 신규배송지일시 등록하는것
     @ResponseBody
     @PostMapping("/members/delivery")
@@ -65,12 +57,15 @@ public class OrderController {
         return service.deliveryInfoSave(dto, userDetails.getEmail());
     }
 
+////////////////마이페이지에서 배송지등록///////////////////////////////////////////////////////    
+    
     //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
     @GetMapping("/member/myAddresses")
     public String deliveries_ezz(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
         service.deliveries(userDetails.getEmail(), model);
         return "mypage/myAddresses";
     }
+    
 
     //이메일을 기준으로 배송지정보를 저장하겠다라는뜻
     @ResponseBody
@@ -81,6 +76,11 @@ public class OrderController {
     }
 
 
-
+//  //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
+//  @GetMapping("/member/ezzange")
+//  public String baseOfdeliveries_ezz(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+//      service.allOfdeliveries(userDetails.getEmail(), model);
+//      return "mypage/ezzange-payment";
+//  }
 
 }

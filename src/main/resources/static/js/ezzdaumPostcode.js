@@ -1,4 +1,55 @@
- /***사용-등록버튼 누르면 경로를 통해 배송지정보를 저장하고 등록완료 버튼 뜨게  */
+/**
+ * 
+ */
+ /*getBaseDelivery는 저장한 배송지를 ? 하고 배송지목록을 클릭하면 btnDeliveryListClicked? */
+//기본배송지 관련 
+$(function(){
+	getBaseDelivery();
+	$("#deliverySave").submit(deliverySave);
+	$("#btn-delivery-list").click(btnDeliveryListClicked);
+});
+
+//기본배송지 받아오는거
+function getBaseDelivery(){
+	$.ajax({
+		url:"/members/deliveries/base",
+		success:function(resultHTML){
+			$("#base-delivery-disp").html(resultHTML);
+			
+			$("#delivery-no").val($("#baseDeliveryNo").val());
+			$("#menu-d>li").removeClass("target");
+			$("#menu-d>li").eq(0).addClass("target");
+		},
+		error:function(){
+			memuDClicked($("#menu-d>li").eq(1));
+			alert("배송지 정보가 존재하지 않습니다.");
+		}
+	});
+}
+
+/** *html에서 사용- memuDClicked를 쓰면 getBaseDelivery로 리턴  */
+function memuDClicked(el){
+	if($(el).index()==0){
+		getBaseDelivery();
+		return;
+	}
+	$("#menu-d>li").removeClass("target");
+	$(el).addClass("target");
+}
+
+
+/** *deliveries누르면 btnDeliveryListClicked실행하고 "/members/deliveries" 경로로드감 
+내배송지목록보여주기*/
+function btnDeliveryListClicked(){
+	$.get(
+		"/members/deliveries",
+		function(resultHTML){
+			$("#deliveries").html(resultHTML);
+		}
+	);
+}
+
+/***사용-등록버튼 누르면 경로를 통해 배송지정보를 저장하고 등록완료 버튼 뜨게  */
 function deliverySave(){
 	$.ajax({
 		url:"/member/myAddresses",
@@ -9,46 +60,6 @@ function deliverySave(){
 			alert("등록완료");
 		}
 	});
-}
-/** *html에서 사용- memuDClicked를 쓰면 getBaseDelivery로 리턴  */
-function memuDClicked(el){
-	if($(el).index()==0){
-		getBaseDelivery();
-		return;
-	}
-	$("#menu-d>li").removeClass("target");
-	$(el).addClass("target");
-}
-/** * 위에서 이거사용 - getBaseDelivery는 저장한 배송지를 ? 하고 배송지목록을 클릭하면 btnDeliveryListClicked? */
-$(function(){
-	getBaseDelivery();
-	$("#deliverySave").submit(deliverySubmited);
-	$("#btn-delivery-list").click(btnDeliveryListClicked);
-	//$("#menu-d>li").click(memuDClicked);
-});
-/** * 밑에서 이거 사용 -getBaseDelivery는 아래경로로 돌려줌 */
-function getBaseDelivery(){
-	$.ajax({
-		url:"/member/deliveries/base",
-		success:function(resultHTML){
-			$("#base-delivery-disp").html(resultHTML);
-			$("#menu-d>li").removeClass("target");
-			$("#menu-d>li").eq(0).addClass("target");
-		},
-		error:function(){
-			memuDClicked($("#menu-d>li").eq(1));
-			alert("배송지 정보가 존재하지 않습니다.");
-		}
-	});
-}
-/** *세번째에서 사용  btnDeliveryListClicked는 아래경로로 돌려줌 내배송지보여주기인듯?*/
-function btnDeliveryListClicked(){
-	$.get(
-		"/member/myAddresses",
-		function(resultHTML){
-			$("#deliveries").html(resultHTML);
-		}
-	);
 }
 
  //이거사용 그 도로명주소 찾기임 

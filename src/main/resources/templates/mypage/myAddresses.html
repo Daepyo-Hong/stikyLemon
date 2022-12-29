@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="/css/commons/footer.css">
     <link rel="stylesheet" href="/css/user/mypage/myAddresses.css">
     
-    <script src="/js/user/daumPostcode.js"></script>
     <script src="/js/ezzdaumPostcode.js"></script>
     <link rel="stylesheet" href="/css/goods/comm.css">
 </head>
 
 <body>
 <th:block th:insert="/layout/header::header"/>
-	<main class="flex center">
+	<main class="flex center" id="addresses-main">
 		<h1>내배송지페이지</h1>
 			<div class="addresses view-size-c">
-			
-			<section id="delivery">
+			<section id="myAddresses">
+				<ol class="addresses-menu">
+					<li>my Addresses</li>
+					<li>Manage the delivery address according to the menu below.</li>
+				</ol>
+			</section>
+			<section id="addresses">
 					<h1>배송지정보</h1>
 					<div class="wrap">
 						<ul id="menu-d" class="addresses-content flex">
@@ -83,13 +87,12 @@
 								</div>
 							</li>
 							<!-- ///////////배송지목록/////////////////////// -->
-						<!-- 
-						<li onclick="memuDClicked(this)">
+							<li onclick="memuDClicked(this)">
 								<button type="button" id="btn-delivery-list">배송지 목록</button>
 								<div class="disp" id="deliveries">
 									
 								</div>
-							</li> -->	
+							</li>
 						</ul>
 					</div>
 				</section>
