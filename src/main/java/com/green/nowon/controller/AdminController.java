@@ -73,9 +73,13 @@ public class AdminController {
     //관리자페이지에서 관리자-게시글조회페이지로 이동
 	@GetMapping("/admin/qna/list")
 	public String adminQnAlist(@RequestParam(defaultValue = "1") int page , Model model) throws Exception{
-		boardService.getListAll(page, model);
-		//boardService.getAdminQnaList(page, model);
-	
+		//boardService.getListAll(page, model);
+		int afterNum =1;
+		boardService.getAdminQnaList(page,afterNum,model);
+		
+		int beforeNum = 0;
+		boardService.getBeforeAdminQnaList(page,beforeNum,model);
+		
 		
 	    return "adminpage/qna/admin-qnalist";
 	}
@@ -109,6 +113,15 @@ public class AdminController {
 	public String detail(@PathVariable long bno, Model model) {
 		boardService.sendDetail(bno, model);
 		return "adminpage/qna/admin-qna-reply";
+	}
+	
+	//관리자-답변작성확인 페이지이동
+	@GetMapping("/admin/qna/reply/check/{bno}")
+	public String checkReply(@PathVariable long bno,Model model) {
+		boardService.sendDetail(bno, model);
+		boardService.getAdminQnaCheck(bno, model);
+		
+		return "adminpage/qna/admin-qna-check";
 	}
 	
 	//관리자-답변작성 완료! 

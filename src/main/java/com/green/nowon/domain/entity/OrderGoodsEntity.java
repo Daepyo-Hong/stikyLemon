@@ -20,7 +20,7 @@ public class OrderGoodsEntity {
 	private long no;
 	
 	private int orderPrice;//주문금액
-	private int quantity;//주문수량
+	private long quantity;//주문수량
 	
 	@JoinColumn//order_no
 	@ManyToOne
