@@ -116,14 +116,13 @@
     			</tr>
     			
     		</table>
-    		
-    		
     		<div>
     			<hr>
     			<h2 class="title-d">관리자 답변</h2>
     			<div>
     				<textarea th:name="adminReply" th:id="admin_answer" th:text="${detail.adminReply}" rows="8" cols="60" readonly="readonly"></textarea>
     			</div>
+    			<button class="bu-c"><a href="/admin/qna/list">목록보기</a></button>
     		</div>
     	</div>
     </main>

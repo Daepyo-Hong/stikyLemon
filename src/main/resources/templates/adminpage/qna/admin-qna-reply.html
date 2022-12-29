@@ -155,8 +155,9 @@
     				<textarea th:name="adminReply" th:id="admin_answer" rows="8" cols="60"></textarea>
     			</div>
     			<div class="title-a">
-    				<input type="button" id="answer_insert" value="등록하기">
+    				<input type="button" id="answer_insert" onClick="alert('답변을 등록하였습니다!')" value="등록하기">
     			</div>
+    			<button class="bu-c"><a href="/admin/qna/list">목록보기</a></button>
     		</div>
     	</div>
     </main>
