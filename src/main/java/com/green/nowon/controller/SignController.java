@@ -1,18 +1,18 @@
 package com.green.nowon.controller;
 
 import com.green.nowon.domain.dto.member.MemberInsertDTO;
+import com.green.nowon.security.MyUserDetails;
 import com.green.nowon.service.LogService;
-
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class SignController {
@@ -28,7 +28,9 @@ public class SignController {
     }
 
 
-    //이메일로 로그인하기 버튼 눌렀을 때
+    /**
+     *이메일로 로그인하기 버튼 눌렀을 때
+     */
     @GetMapping("/comm/emailSignin")
     public String emailLogin() {
         return "views/sign/emailsignin";
@@ -78,11 +80,14 @@ public class SignController {
 
     //ajax로 로그인체크 할 때
     @ResponseBody
-    @GetMapping("/members/login-check")
-    public boolean loginCheck(Authentication auth) {
+    @GetMapping("/comm/login-check")
+    public boolean loginCheck(@AuthenticationPrincipal MyUserDetails myUserDetails) {
         //로그인했을때는 인증정보확인가능
         //비로그인시 는 null
-        return auth != null;
+        if(myUserDetails.getName().isEmpty()){
+            return false;
+        }
+        return true;
     }
 
 }

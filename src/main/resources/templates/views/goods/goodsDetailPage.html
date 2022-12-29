@@ -23,8 +23,7 @@
 		function btnOrderClicked(){
 			var quantity=$("#quantity").val();
 			var goodsNo=$("#no").val();
-
-			if (!loginCheck()) {
+			if (loginCheck()==false) {
 				var result = confirm("바로구매는 로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 				if (result) {
 					location.href = "/comm/signin";
@@ -38,7 +37,7 @@
 		function loginCheck() {
 			var isLogin = false;
 			$.ajax({
-				url: "/members/login-check",
+				url: "/comm/login-check",
 				async: false,
 				success: function (result) {
 					isLogin = result;
@@ -52,7 +51,7 @@
 			var quantity = $("#quantity").val();
 			var goodsNo = [[${dto.no}]];
 
-			if (!loginCheck()) {
+			if (loginCheck()==false) {
 				var result = confirm("카트저장은 로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 				if (result) {
 					location.href = "/comm/signin";

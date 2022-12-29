@@ -8,7 +8,6 @@ import com.green.nowon.domain.dto.member.OrderGoodsInsertDTO;
 import com.green.nowon.domain.dto.member.OrderInsertDTO;
 import com.green.nowon.domain.entity.*;
 import com.green.nowon.service.OrderService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -28,6 +27,10 @@ public class OrderServiceProcess implements OrderService {
     OrderEntityRepository orderRepo;
     @Autowired
     OrderGoodsEntityRepository orderGoodsRepo;
+    @Autowired
+    private CartGoodsDetailRepository cartGoodsDetailRepo;
+
+
     @Override
     public void baseOfdeliveries(String email, Model model) {
         model.addAttribute("base", deliveryRepo.findByBaseAndMember_email(true,email)
@@ -63,6 +66,7 @@ public class OrderServiceProcess implements OrderService {
                 .quantity(dto.getQuantity()));
     }
 
+
     //주문완료후 결제정보 DB저장
     @Override
     public void save(OrderInsertDTO dto, String email) {
@@ -96,4 +100,11 @@ public class OrderServiceProcess implements OrderService {
         );
 
     }
+
+    @Override
+    public void orderGoodsFromCart(long mno, Model model) {
+
+    }
+
+
 }

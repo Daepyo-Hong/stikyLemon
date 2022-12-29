@@ -4,6 +4,7 @@ import com.green.nowon.domain.dto.goods.OrderGoodsDTO;
 import com.green.nowon.domain.dto.member.DeliveryInfoDTO;
 import com.green.nowon.domain.dto.member.OrderInsertDTO;
 import com.green.nowon.security.MyUserDetails;
+import com.green.nowon.service.CartService;
 import com.green.nowon.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -20,6 +21,9 @@ public class OrderController {
     @Autowired
     private OrderService service;
 
+    @Autowired
+    private CartService cartService;
+
 
     //상품디테일에서 구매하기 버튼 눌렀을 때
     @GetMapping("/members/order")
@@ -27,6 +31,8 @@ public class OrderController {
         service.orderGoods(dto, model);
         return "views/user/order-payment";
     }
+
+
 
     @ResponseBody
     @PostMapping("/members/order")
@@ -79,6 +85,7 @@ public class OrderController {
         return service.deliveryInfoSave(dto, userDetails.getEmail());
 
     }
+
 
 
 

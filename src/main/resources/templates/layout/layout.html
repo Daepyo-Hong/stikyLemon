@@ -19,6 +19,7 @@ th:fragment="myLayout(head, main)">
 	</head>
 	<body>
 		<th:block th:insert="/layout/header::header"/>
+
 		<th:block th:replace="${main}"/>
 		<th:block th:insert="/layout/footer::footer"/>
 	</body>
