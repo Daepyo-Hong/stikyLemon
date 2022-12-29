@@ -1,5 +1,6 @@
 package com.green.nowon.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -145,25 +146,51 @@ public class BoardServiceProc implements BoardService{
 			BoardEntity entity= result.get();
 			entity.adminReplyUpdate(dto);
 			repository.save(entity);
+			System.out.println("SUCCESS");
 			return "SUCCESS";
 		}
+		System.out.println("FAIL");
 		return "FAIL";
 		
 	}
 
 	@Override
-	public void getAdminQnaList(int page, Model model) throws Exception {
+	public void getAdminQnaList(int page, int replyNum, Model model) {
 		int size=10;
 		Sort sort=Sort.by(Direction.DESC, "bno");
 		Pageable pageable=PageRequest.of(page-1, size, sort);
 		Page<BoardEntity> result=repository.findAll(pageable);
 		
 		model.addAttribute("p", result);
-		
-		model.addAttribute("list", repository.findByReplyNum(1));
-		System.out.println("dfdfdff");		
+		List<BoardEntity> replyResult = repository.findByReplyNum(replyNum);
+		List<BoardListDTO> replyList = replyResult.stream().map(BoardListDTO::new).collect(Collectors.toList());
+		model.addAttribute("list", replyList);
+	
 		
 	}
 
+	@Override
+	public void getBeforeAdminQnaList(int page, int replyNum, Model model) {
+		int size=10;
+		Sort sort=Sort.by(Direction.DESC, "bno");
+		Pageable pageable=PageRequest.of(page-1, size, sort);
+		Page<BoardEntity> result=repository.findAll(pageable);
+		
+		model.addAttribute("p", result);
+		List<BoardEntity> replyResult = repository.findByReplyNum(replyNum);
+		List<BoardListDTO> replyList = replyResult.stream().map(BoardListDTO::new).collect(Collectors.toList());
+		model.addAttribute("Beforelist", replyList);		
+		
+	}
+
+	
+	@Override
+	public void getAdminQnaCheck(long bno, Model model) {
+		
+		model.addAttribute("result", repository.findById(bno)
+				.map(BoardDetailDTO::new)
+				.orElseThrow());
+		
+	}
 
 }

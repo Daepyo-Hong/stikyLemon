@@ -18,6 +18,8 @@ public class BoardDetailDTO {
 	private String writerNickName;
 	private LocalDateTime createdDate;
 	private LocalDateTime updatedDate;
+	private int replyNum;
+	private String adminReply;
 	
 	//entity-> dto map
 	public BoardDetailDTO(BoardEntity ent) {
@@ -30,6 +32,8 @@ public class BoardDetailDTO {
 		this.writerNickName =ent.getMember().getNickName();//작성자는 이메일정보로 대체
 		this.createdDate = ent.getCreatedDate();
 		this.updatedDate = ent.getUpdatedDate();
+		this.replyNum =ent.getReplyNum();
+		this.adminReply=ent.getAdminReply();
 	}
 	
 	

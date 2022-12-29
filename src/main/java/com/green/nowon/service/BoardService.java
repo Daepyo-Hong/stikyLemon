@@ -25,6 +25,11 @@ public interface BoardService {
 	
 	String updateAdmin(long bno, AdminReplyUpdateDTO dto);
 
-	void getAdminQnaList(int page, Model model) throws Exception;
+	void getAdminQnaList(int page,int replyNum, Model model);
+	
+	void getBeforeAdminQnaList(int page,int replyNum, Model model);
+	
+	void getAdminQnaCheck(long bno, Model model);
+	
 	
 }

@@ -28,9 +28,7 @@ public class SignController {
     }
 
 
-    /**
-     *이메일로 로그인하기 버튼 눌렀을 때
-     */
+    //이메일로 로그인하기 버튼 눌렀을 때
     @GetMapping("/comm/emailSignin")
     public String emailLogin() {
         return "views/sign/emailsignin";
@@ -81,13 +79,11 @@ public class SignController {
     //ajax로 로그인체크 할 때
     @ResponseBody
     @GetMapping("/comm/login-check")
-    public boolean loginCheck(@AuthenticationPrincipal MyUserDetails myUserDetails) {
+    public boolean loginCheck(@AuthenticationPrincipal MyUserDetails userDetails) {
         //로그인했을때는 인증정보확인가능
         //비로그인시 는 null
-        if(myUserDetails.getName().isEmpty()){
-            return false;
-        }
-        return true;
+
+        return  userDetails != null;
     }
 
 }

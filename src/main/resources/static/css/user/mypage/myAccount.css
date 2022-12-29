@@ -3,7 +3,7 @@ main{
 	margin: 5em auto;
 }
 main div{
-	height:500px;
+	height:600px;
 	padding: 3em;
 	background-color: rgb(206, 222, 215);
 }
@@ -47,8 +47,17 @@ button.bu-aa{
 	border-style: solid;
 	border-color:#8e8e8e;
 	background-color: #8e8e8e;
-	color: white;
+	color: rgb(206, 222, 215);
 	font-weight: 200;
 
+}
+li>input.bu-dd, .bu-dd{
+	display:inline-block;
+	padding: 5px 15px 5px 15px;
+	border-style: solid;
+	border-color:#8e8e8e;
+	background-color: #8e8e8e;
+	color:  rgb(206, 222, 215);
+	font-weight: 200;
 }
 

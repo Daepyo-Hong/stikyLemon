@@ -4,7 +4,6 @@ import com.green.nowon.domain.dto.goods.OrderGoodsDTO;
 import com.green.nowon.domain.dto.member.DeliveryInfoDTO;
 import com.green.nowon.domain.dto.member.OrderInsertDTO;
 import com.green.nowon.security.MyUserDetails;
-import com.green.nowon.service.CartService;
 import com.green.nowon.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -21,9 +20,6 @@ public class OrderController {
     @Autowired
     private OrderService service;
 
-    @Autowired
-    private CartService cartService;
-
 
     //상품디테일에서 구매하기 버튼 눌렀을 때
     @GetMapping("/members/order")
@@ -32,7 +28,14 @@ public class OrderController {
         return "views/user/order-payment";
     }
 
+    @GetMapping("/members/cartOrders")
+    public String cartPayment(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+        long mno = userDetails.getMno();
 
+
+        service.orderGoodsFromCart(mno, model);
+        return "views/user/order-payment";
+    }
 
     @ResponseBody
     @PostMapping("/members/order")
@@ -56,12 +59,12 @@ public class OrderController {
         return "views/user/deliveries-base";
     }
 
-    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
-    @GetMapping("/member/ezzange")
-    public String baseOfdeliveries_ezz(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
-        service.allOfdeliveries(userDetails.getEmail(), model);
-        return "mypage/ezzange-payment";
-    }
+//    //@ResponseBody 표기하지 않은 ajax요청입니다. response결과로 HTML페이지
+//    @GetMapping("/member/ezzange")
+//    public String baseOfdeliveries_ezz(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+//        service.allOfdeliveries(userDetails.getEmail(), model);
+//        return "mypage/ezzange-payment";
+//    }
 
 
     //결제이후 처리과정에서 신규배송지일시 등록하는것
@@ -85,7 +88,6 @@ public class OrderController {
         return service.deliveryInfoSave(dto, userDetails.getEmail());
 
     }
-
 
 
 

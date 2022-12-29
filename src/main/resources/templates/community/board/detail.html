@@ -48,8 +48,8 @@
 					</form>
 					</th:block>
 	    		</div>
+	    		<button class="bu-a"><a href="/comm/qna"><img src="/images/orange.png"/>뒤로가기</a></button>
     		</div>
-    		
     		
     		<form id="edit-mode" th:action="|/comm/board-list/${detail.bno}|" method="post">
     			<div class="wrap view-size-m">   			
@@ -126,27 +126,14 @@
     				<td>내용</td>
     				<td th:text="${detail.content}"></td>
     			</tr>
-    			
     		</table>
-    		
-    		
-    		<div>
-    			<p>댓글</p>
-    			<hr>
-    			<table>
-    				<tr>
-    					<td>댓글번호</td>
-    					<td>내용</td>
-    					<td>작성자</td>
-    					<td>작성일</td>
-    				</tr>
-    				<tr th:each="r :${replies}">
-    					<td th:text="${r.rno}">댓글번호</td>
-    					<td>[[${r.text}]]</td>
-    					<td th:utext="${r.writer}">작성자</td>
-    					<td>[(${r.updatedDate.toLocalDate()})]</td>
-    				</tr>
-    			</table>
+	    		<div>
+	    			<hr>
+	    			<h2 class="title-d">관리자 답변</h2>
+	    			<div class="tit-d">
+	    				<textarea th:name="adminReply" th:id="admin_answer" th:text="${detail.adminReply}" rows="8" cols="60" readonly="readonly"></textarea>
+	    			</div>
+	    		</div>
     		</div>
     	</div>
     </main>

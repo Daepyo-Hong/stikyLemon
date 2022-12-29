@@ -9,14 +9,14 @@ import lombok.Setter;
 public class OrderGoodsListDTO {
 	private GoodsListDTO goods;
 
-	private int quantity;
+	private long quantity;
 
 	//수량에따른 가격
 	private int totPrice;
 
-	public OrderGoodsListDTO quantity(int quantity) {
+	public OrderGoodsListDTO quantity(long quantity) {
 		this.quantity=quantity;
-		this.totPrice=quantity*(goods.getPrice()-goods.getSPrice());
+		this.totPrice= (int) (quantity*(goods.getPrice()-goods.getSPrice()));
 		return this;
 	}
 	//주문금액

@@ -84,7 +84,9 @@
 	color: rgb(251, 211, 138);
 	text-decoration-line:none;
 }
-
+#um>.wrap .Al li.log a{
+	text-decoration: none;
+}
 /*////////////////////////////////////////*/
 /*로그인 시 로그인없어지고 닉네임나오는 부분 */
 #um>.wrap .Al li.mypage{
@@ -179,18 +181,22 @@ padding: 0 0px 0px 6px;
 
 #nb>.wrap ul li:hover ul.sub {
 	display: block; /* 마우스올리면 메뉴펼쳐짐!!  */
+	
 }
+
 
 #nb>.wrap ul li ul.sub>li {
 	display: inline-block;
 	background: white;
 	background-position: center;
 	margin: auto;
-	padding: 13px 25px 15px 10px ;
-	width: 140px;
-	
+	padding: 13px 20px 15px 20px ;
+	width: 130px;
 }
 
+#nb>.wrap ul li ul.sub>li:last-child{
+	border-radius: 0 0 5px 5px;
+}
 .log span{
 	color: #97610f;
 }
