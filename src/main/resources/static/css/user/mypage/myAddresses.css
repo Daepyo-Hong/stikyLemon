@@ -13,6 +13,9 @@
 .base-delivery-disp{
 	margin: 5em 20em;
 }
+.base-delivery-disp>ul>li{
+	padding: 1em;
+}
 main>div>.addresses>.addresses-content{
 	padding: 0.5em;
 }
@@ -40,6 +43,7 @@ input[type=checkbox] {
 main>div.addresses #addresses{
 	border-bottom: 1px solid #fff;
 }
+
 #menu-d{
 	position: relative;
 	height: 350px;
@@ -47,6 +51,11 @@ main>div.addresses #addresses{
 }
 #menu-d>li{
 	margin-right: 2px;
+}
+#menu-d li div.disp ul li{
+	margin: 1em;
+	font-size: 18px;
+	font-weight: 500;
 }
 #menu-d>li>button {
 	display: block;
@@ -82,6 +91,25 @@ main>div.addresses #addresses{
 	font-weight: 700;
 	box-shadow: 3px -3px 3px rgba(0,0,0,25%);
 }
+#menu-d>li>.disp>form>div>dl{
+	margin: 1.2em 0;
+}
+#menu-d>li>.disp>form>div>dl>dt{
+	margin: 0 1em;
+}
+#menu-d>li>.disp>form>div>dl>dd{
+	margin: 0 1em;
+}
+#menu-d>li>.disp>form>div>button{
+	position: absolute;
+	right: 65px;
+	bottom: 15px;
+	padding:0.5em;
+	border: 1px solid #a9a9a9;
+	border-radius: 10px;
+	box-shadow: 1px -1px 1px rgba(0,0,0,25%);
+}
+/*/////////////////////////////////*/
 
 #deliveries>ol:first-child{
 	border-top: 1px solid #777;
