@@ -11,39 +11,7 @@
     </style>
     <script type="text/javascript">
     $(function(){
-		$("#answer_insert").click(function(){
-			const text = $("#admin_answer").val();
-			const replyN = 1
-			const bnoN = $("#bnoNum").val();
-			
-			
-			const AdminReplyUpdateDTO ={
-					"adminReply":text,
-					"replyNum":replyN,
-					"bno":bnoN
-			}
-		
-			console.log(AdminReplyUpdateDTO)
-			
-			
-			
-			$.ajax({
-				method:"POST",
-				url:"/admin/qna/reply/update",
-				contentType:"application/json",
-				dataType:"json",
-				data:JSON.stringify(AdminReplyUpdateDTO),
-				success:function(result){
-					if(result == "SUCCESS"){
-						console.log("통신성공");
-						
-					}
-				},error:function(e){
-					console.log(e)
-				}
-			})//ajax close
-			
-		})
+    	
     	$("#btn-edit").click(editMode);
     	$("#btn-cancel").click(function(){
     		$("#edit-mode").hide();
@@ -64,6 +32,8 @@
     	<h1>메인영역</h1>
     	<div class="wrap view-size-m center">
     		<div class="title-d">관리자 답변</div>
+    		<!-- ROLE_USER 인경우만 -->
+    	
     		
     		<form id="edit-mode" th:action="|/comm/board-list/${detail.bno}|" method="post">
     			<div class="wrap view-size-m">
@@ -146,16 +116,11 @@
     			</tr>
     			
     		</table>
-    		
-    		
     		<div>
     			<hr>
-    			<h2 class="title-d">답변하기</h2>
+    			<h2 class="title-d">관리자 답변</h2>
     			<div>
-    				<textarea th:name="adminReply" th:id="admin_answer" rows="8" cols="60"></textarea>
-    			</div>
-    			<div class="title-a">
-    				<input type="button" id="answer_insert" onClick="alert('답변을 등록하였습니다!')" value="등록하기">
+    				<textarea th:name="adminReply" th:id="admin_answer" th:text="${detail.adminReply}" rows="8" cols="60" readonly="readonly"></textarea>
     			</div>
     			<button class="bu-c"><a href="/admin/qna/list">목록보기</a></button>
     		</div>

@@ -74,8 +74,8 @@
 							<span>&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</span>
 						</a>
 					</li>
-					
-					
+
+
 					<li class="mypage" sec:authorize="isAuthenticated()">
 						<button type="button" class="mypage-btn">&nbsp;&nbsp;
 							<span th:if="${#authentication.principal.nickName==null}"
@@ -92,7 +92,7 @@
 
 							<p><a href="/logout">logout</a></p>
 						</div>
-					
+
 
 				</ul>
 			</div>
