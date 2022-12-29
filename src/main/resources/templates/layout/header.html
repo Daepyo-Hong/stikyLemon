@@ -52,12 +52,6 @@
 						<a href="/members/cart"><img src="/images/headerImg/cart.png" class="img_cart"/>Shopping cart
 							&nbsp;|</a>
 					</li>
-					
-					<li class="log" sec:authorize="isAnonymous()">
-						<a href="/comm/signin">
-							<span>Login&nbsp;&nbsp;&nbsp;</span>
-						</a>
-					</li>
 					<li class="log">
 						<a href="/comm/qna">
 							<span><img src="/images/headerImg/oror.png" width="17px" height="17px;">Community&nbsp;&nbsp;&nbsp;|</span>
@@ -75,6 +69,12 @@
 					</li>
 					</li>
 					-->
+					<li class="log" sec:authorize="isAnonymous()">
+						<a href="/comm/signin">
+							<span>&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</span>
+						</a>
+					</li>
+					
 					
 					<li class="mypage" sec:authorize="isAuthenticated()">
 						<button type="button" class="mypage-btn">&nbsp;&nbsp;
@@ -117,10 +117,10 @@
 					<li value="0" class="gnb cate menu1">
 						<a href="/comm/goods/list">shop</a>
 						<ul class="second-cate sub">
-							<li><a href="/comm/goods/list/11">가방</a></li>
-							<li><a href="/comm/goods/list/5">신발</a></li>
-							<li><a href="/comm/goods/list/2">의류</a></li>
-							<li><a href="/comm/goods/list/17">패션쇼품</a></li>
+							<li><a href="/comm/goods/list/11">bags</a></li>
+							<li><a href="/comm/goods/list/5">Shoes</a></li>
+							<li><a href="/comm/goods/list/2">Clothing</a></li>
+							<li><a href="/comm/goods/list/17">Accessories</a></li>
 						</ul>
 						<!-- <ul class="sub">
 							<li>
