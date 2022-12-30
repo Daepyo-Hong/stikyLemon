@@ -21,5 +21,7 @@ public interface OrderService {
     void allOfdeliveries(String email, Model model);
 
     void orderGoodsFromCart(long mno, Model model);
+//오더정보조회
+	void getOrders(String email, Model model);
 
 }

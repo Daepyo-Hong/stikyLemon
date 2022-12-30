@@ -11,17 +11,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.green.nowon.domain.dto.goods.OrderGoodsDTO;
 import com.green.nowon.domain.dto.member.MemberUpdateDTO;
 import com.green.nowon.security.MyUserDetails;
 import com.green.nowon.service.CartService;
 import com.green.nowon.service.MemberService;
+import com.green.nowon.service.OrderService;
 
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 @Controller
 public class MemberController {
-
+	@Autowired
+	private OrderService service;
+	
 	@Autowired
 	MemberService memberservice;
 
@@ -66,10 +70,12 @@ public class MemberController {
     
     //멤버 마이페이지관련 경로이동
     
-    //주문목록페이지 이동
+    
+    //주문페이지드갈떄 정보먼저 가져오자
     @GetMapping("/members/myOrders")
-    public String myOrders() {
-    	return "mypage/myOrders";
+    public String getOrders(@AuthenticationPrincipal MyUserDetails userDetails, Model model) {
+        service.getOrders(userDetails.getEmail(), model);
+        return "mypage/myOrders";
     }
     //내정보페이지 이동
     @GetMapping("/members/myAccount")
@@ -88,5 +94,6 @@ public class MemberController {
 		memberservice.updateMember(dto, auth);
 		return "redirect:/members/myAccount";
 	}
+   
 
 }
