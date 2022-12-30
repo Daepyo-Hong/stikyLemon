@@ -52,9 +52,9 @@ function quantityChanged(el){
         sumPrice+=Number($(`#TP_${i}`).val());
     }
     var totPrice = sumPrice+Number($("#tot-delivery").text());
-    $("#sum-price").text(sumPrice);
+    $("#sum-price").text(sumPrice+"원");
 
-    $("#tot-price").text(totPrice);
+    $("#tot-price").text(totPrice+"원");
 }
 function btnRemoveClicked(el){
     if(confirm("장바구니에서 삭제하시겠습니까?")){

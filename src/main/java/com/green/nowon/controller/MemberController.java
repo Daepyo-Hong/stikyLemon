@@ -79,6 +79,7 @@ public class MemberController {
     //내배송지페이지 이동
     @GetMapping("/members/myAddresses")
     public String myAddresses() {
+
     	return "mypage/myAddresses";
     }
 
