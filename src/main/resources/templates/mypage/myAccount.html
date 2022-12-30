@@ -28,20 +28,25 @@
 <th:block th:insert="/layout/header::header"/>
 	<main class="flex center">
 		<h1>내정보페이지</h1>
-		<div class="view-size-c">
+		<div class="view-size-c center">
 			<section class="accounts">
 				<ol class="accounts-menu">
 					<li>my Account</li>
+					<li id="LoginEmail">
+						Your Login email can't be changed | 
+						Login Email . <span class="email-1" sec:authentication="principal.email"></span> 
+						 
+					</li>
+					
+					<!-- 
 					<li>View and edit your personal info below.</li>
-				</ol>
-				<ol class="accounts-content1 ">
-					<li>Account</li>
-					<li>Update your personal information.</li>
-					<li>Login Email:<span class="email-1" sec:authentication="principal.email"></span> </li>
 					<li>Your Login email can't be changed</li>
+					 -->
 				</ol>
-				<form  action="/members/myAccount" method="post">
-					<ol class="accounts-content2">
+			</section>	
+			<nav class="accounts">
+				<form action="/members/myAccount" method="post">
+					<ol class="accounts-content">
 						<li>
 							<!-- <span sec:authentication="principal.name"></span> -->
 							<p class="pp">Name</p><p><input type="text" name="name" placeholder="이름" th:value="${#authentication.principal.name}"></p>
@@ -55,6 +60,9 @@
 						</li>
 						<li>
 							<p class="pp">Confirm password</p><p><input type="text" name="pass1" id="password2" placeholder="비밀번호"></p>
+						</li>
+						<li>
+							<p class="pp">Phone</p><p><input type="text" name="phone" placeholder="전화번호" ></p>
 						</li>
 					<!-- 	<li>
 							<span sec:authentication="principal.email"></span>
@@ -71,7 +79,7 @@
 						</li>
 					</ol>
 				</form>
-			</section>
+			</nav>
 		</div>
 	</main>
 <th:block th:insert="/layout/footer::footer"/>

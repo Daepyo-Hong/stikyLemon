@@ -2,6 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  th:replace="adminpage/admin-layout::adminLayout(~{this::head}, ~{this::main})">
 <head>
+<style type="text/css">
+main>div{
+	height: 600px;
+}
+</style>
 	<script type="text/javascript">
 		$(function(){
 			$("#cate1").keyup(fnKeyup);
@@ -34,7 +39,7 @@
 	</script>
 </head>
 <main>
-	<main>
+	
 		<h1>메인컨텐츠</h1>
 		<div class="wrap">
 			<p>카테고리 등록페이지</p>
@@ -61,6 +66,6 @@
 
 			</form>
 		</div>
-	</main>
+	
 </main>
 </html>

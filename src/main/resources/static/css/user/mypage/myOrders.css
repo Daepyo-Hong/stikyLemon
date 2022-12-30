@@ -3,7 +3,7 @@ main{
 	margin: 5em auto;
 }
 main div{
-	height:500px;
+	height:600px;
 	padding: 3em;
 	background-color: rgb(206, 222, 215);
 }
@@ -24,7 +24,7 @@ main div{
 	
 	padding:3em;
 	margin: 5em auto;
-	height: 200px;
+	height: 300px;
 	
 }
 .orders>li.myorders-content p{

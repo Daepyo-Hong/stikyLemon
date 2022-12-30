@@ -1,36 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
-	  th:replace="layout/layout :: myLayout(~{this::head}, ~{this::main})">
-<head>
-    <link rel="stylesheet" href="/css/user/mypage/myAddresses.css">
-</head>
-
-	<main class="flex center">
-		<h1>기본배송지페이지</h1>
-		<div class="view-size-c center">
-			<section class="addresses">
-				<div class="addresses-isEmpty" th:if="${#lists.isEmpty(list)}">
-					현재 배송지 정보가 존재하지 않습니다.
-				</div>	
-				<ul th:if="${base}">
-					<li>
-						<span th:text="${base.receiverName}">수하인</span>
-						(<span th:text="${base.deliveryAddrName}">배송이이름</span>)
-					</li>
-					<li th:text="${base.phone1}">
-						전화번호
-					</li>
-					<li>
-						(<span th:text="${base.postcode}">우편번호</span>)
-						<span th:text="${base.roadAddress}">길주소</span>
-						<span th:text="${base.extraAddress}">추가</span>
-						<span th:text="${base.detailAddress}">세부주소</span>
-						<button class="btn">정보수정</button>
-						<input type="hidden" th:value="${base.no}">
-					</li>
-				</ul>
-			</section>
-		</div>
-	</main>
+<html xmlns:th="http://www.thymeleaf.org">
+	<ul th:if="${base}">
+		<li>
+			<span th:text="${base.receiverName}">수하인</span>
+			(<span th:text="${base.deliveryAddrName}">배송이이름</span>)
+		</li>
+		<li th:text="${base.phone1}">
+			전화번호
+		</li>
+		<li>
+			(<span th:text="${base.postcode}">우편번호</span>)
+			<span th:text="${base.roadAddress}">길주소</span>
+			<span th:text="${base.extraAddress}">추가</span>
+			<span th:text="${base.detailAddress}">세부주소</span>
+			<button class="btn">정보수정</button>
+			<input type="hidden" th:value="${base.no}" id="baseDeliveryNo" >
+		</li>
+	</ul>
 </html>

@@ -1,32 +1,61 @@
 @charset "UTF-8";
-main{
+
+#addresses-main{
 	margin: 5em auto;
+	-ms-overflow-style: none;
 }
 .addresses{
-	height:500px;
+	height:600px;
 	padding: 3em;
 	background-color: rgb(206, 222, 215);
-	
-	
 }
 
 .base-delivery-disp{
 	margin: 5em 20em;
 }
+.base-delivery-disp>ul>li{
+	padding: 1em;
+}
 main>div>.addresses>.addresses-content{
 	padding: 0.5em;
 }
-
+/*//////////////////addresses-menu///////////////////////////////*/
+main>div.addresses>section#myAddresses ol{
+	padding: 1em;
+	border-bottom: 1px solid #fff;
+}
+main>div.addresses>section#myAddresses ol li{
+	padding: 0.2em;
+}
+main>div.addresses>section#myAddresses ol li:first-child{
+	font-size: 32px;
+	font-weight: 500;
+}
+main>div.addresses>section#myAddresses ol li:last-child{
+	font-size: 14px;
+	font-weight: 200;
+	color: #a4a4a4; 
+}
 /*/////////////////////배송지css////////////////////////////*/
 input[type=checkbox] {
 	display: inline-block;
 }
+main>div.addresses #addresses{
+	border-bottom: 1px solid #fff;
+}
+
 #menu-d{
 	position: relative;
-	height: 400px;
+	height: 350px;
+	margin: 2em 0em 2em 0em;
 }
 #menu-d>li{
 	margin-right: 2px;
+}
+#menu-d li div.disp ul li{
+	margin: 1em;
+	font-size: 18px;
+	font-weight: 500;
 }
 #menu-d>li>button {
 	display: block;
@@ -62,6 +91,25 @@ input[type=checkbox] {
 	font-weight: 700;
 	box-shadow: 3px -3px 3px rgba(0,0,0,25%);
 }
+#menu-d>li>.disp>form>div>dl{
+	margin: 1.2em 0;
+}
+#menu-d>li>.disp>form>div>dl>dt{
+	margin: 0 1em;
+}
+#menu-d>li>.disp>form>div>dl>dd{
+	margin: 0 1em;
+}
+#menu-d>li>.disp>form>div>button{
+	position: absolute;
+	right: 65px;
+	bottom: 15px;
+	padding:0.5em;
+	border: 1px solid #a9a9a9;
+	border-radius: 10px;
+	box-shadow: 1px -1px 1px rgba(0,0,0,25%);
+}
+/*/////////////////////////////////*/
 
 #deliveries>ol:first-child{
 	border-top: 1px solid #777;
@@ -90,6 +138,24 @@ input[type=checkbox] {
 #deliveries>ol:nth-child(even){
 	background-color: #e9e9e9;
 }
-#btn-delivery-list{
-	height: 500PX;
+ul.addresses-content li div#base-delivery-disp{
+	height: 300px;
+	padding: 4em;
 }
+ul.addresses-content li div.disp{
+	height: 300px;
+}
+/*/////////////////////////////////////////////*/
+::-webkit-scrollbar {
+  display: none;
+}
+/*특정 부분 스크롤바 없애기*/
+div#deliveries{
+	height: 300px;
+    overflow: scroll;
+}
+div#deliveries::-webkit-scrollbar{
+  display:none;
+}
+
+

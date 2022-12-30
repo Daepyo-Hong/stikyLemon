@@ -33,6 +33,7 @@ public class OrderServiceProcess implements OrderService {
     OrderEntityRepository orderRepo;
     @Autowired
     OrderGoodsEntityRepository orderGoodsRepo;
+    
     @Override
     public void baseOfdeliveries(String email, Model model) {
         model.addAttribute("base", deliveryRepo.findByBaseAndMember_email(true,email)
@@ -109,14 +110,36 @@ public class OrderServiceProcess implements OrderService {
                     .build());
         }
     }
-
-    //이짱이 페이먼트 연결한것 배송지 등록창이 보이게끔!
+    //오더정보가져오기~
     @Override
-    public void allOfdeliveries(String email, Model model) {
-        model.addAttribute("base", deliveryRepo.findByMember_email(email)
-                .stream()
-                .map(DeliveryListDTO::new)
-        );
+	public void getOrders(String email, Model model) {
+    	 List<OrderEntity> result = orderRepo.findByMemberEmail(email);
+    	 
+    	 result.forEach(e->{
+    		 List<OrderGoodsEntity> OGE = (orderGoodsRepo.findByOrder(e));
+    			
+    		 
+    	 });
+    	 //model.addAttribute("list",
+	}
+    
+    
+	
 
-    }
+	
+
+//    //이짱이 페이먼트 연결한것 배송지 등록창이 보이게끔!
+//    @Override
+//    public void allOfdeliveries(String email, Model model) {
+//        model.addAttribute("base", deliveryRepo.findByMember_email(email)
+//                .stream()
+//                .map(DeliveryListDTO::new)
+//        );
+//
+//    }
+    @Override
+	public void allOfdeliveries(String email, Model model) {
+		// TODO Auto-generated method stub
+		
+	}
 }
