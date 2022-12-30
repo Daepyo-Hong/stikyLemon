@@ -1,13 +1,8 @@
 package com.green.nowon.domain.dto.cart;
 
-import com.green.nowon.domain.entity.CartEntity;
 import com.green.nowon.domain.entity.CartGoodsDetail;
-import com.green.nowon.domain.entity.GoodsEntity;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
@@ -20,6 +15,10 @@ public class CartGoodsListDTO {
     private String title;
     private int price;
 
+    public CartGoodsListDTO quantity(int quantity) {
+        this.quantity=quantity;
+        return this;
+    }
     public CartGoodsListDTO(CartGoodsDetail e){
         this.no = e.getNo();
         this.quantity = e.getQuantity();

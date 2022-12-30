@@ -2,7 +2,9 @@ package com.green.nowon.domain.dto.goods;
 
 import com.green.nowon.domain.entity.GoodsEntity;
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 public class OrderGoodsListDTO {
 	private GoodsListDTO goods;

@@ -5,19 +5,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @EnableWebSecurity
 public class SecurityConfig {
@@ -50,8 +43,8 @@ public class SecurityConfig {
         http
                 .authorizeRequests(authorize -> authorize
                         //.antMatchers("/**").permitAll()
-                        .antMatchers("/css/**", "/js/**","/images/**").permitAll()
-                        .antMatchers("/", "/comm/**").permitAll()
+                        .antMatchers("/css/**", "/js/**","/images/**","/webjars/**","/files/**").permitAll()
+                        .antMatchers("/", "/comm/**","/my-websocket/**").permitAll()
                         .antMatchers("/members/**","/logout").hasRole("USER")
                         .antMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
