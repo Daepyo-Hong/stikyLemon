@@ -89,7 +89,9 @@ public class GoodsServiceProcess implements GoodsService {
     @Transactional
     @Override
     public void update(GoodsUpdateDTO dto) {
-        GoodsEntity entity = goodsRepo.save(dto.toGoodsEntity());
+        GoodsEntity entity =goodsRepo.findById(dto.getNo()).orElseThrow().update(dto);
+                //goodsRepo.save(dto.toGoodsEntity());
+        goodsRepo.save(entity);
 
         Map<String, List<String>> infos = dto.toGoodsImg(entity, locationUpload);
         List<String> defChange = infos.get("defImg");

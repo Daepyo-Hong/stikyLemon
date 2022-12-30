@@ -1,13 +1,13 @@
 package com.green.nowon.domain.entity;
 
 
+import com.green.nowon.domain.dto.goods.GoodsUpdateDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,5 +47,13 @@ public class GoodsEntity extends BaseDateEntity{
         return imgs.get(0); //만약 대표이미지가 없으면
     }
 
-
+    public GoodsEntity update(GoodsUpdateDTO e){
+        title=e.getTitle();
+        specifications=e.getSpecifications();
+        productCare=e.getProductCare();
+        price=e.getPrice();
+        stock=e.getStock();
+        content=e.getContent();
+        return this;
+    }
 }

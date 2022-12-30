@@ -6,12 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -59,11 +57,11 @@ public class MemberEntity extends BaseDateEntity {
 
     //배송지정보
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<DeliveryEntity> dests = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "member")
+    private List<DeliveryEntity> delivery = new ArrayList<>();
 
     public MemberEntity addAddress(DeliveryEntity dest){
-        this.dests.add(dest);
+        this.delivery.add(dest);
         return this;
     }
 
