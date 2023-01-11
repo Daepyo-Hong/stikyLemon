@@ -15,16 +15,16 @@ import java.util.List;
 public class NlpKomoranService {
 
 
-    private String USER_DIC = "user.dic";
-    private String USER_DIC_PATH = "/files/";
+    private String USER_DIC="user.dic";
+    private String USER_DIC_PATH="/files/";
 
     private Komoran komoran;
 
-    public NlpKomoranService() {
+    public NlpKomoranService(){
         komoran = new Komoran(DEFAULT_MODEL.LIGHT);
-        ClassPathResource cpr = new ClassPathResource("static" + USER_DIC_PATH);
+        ClassPathResource cpr=new ClassPathResource("static"+USER_DIC_PATH);
         try {
-            komoran.setUserDic(new File(cpr.getFile(), USER_DIC).getPath());
+            komoran.setUserDic(new File(cpr.getFile(),USER_DIC).getPath());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,7 +35,6 @@ public class NlpKomoranService {
 
         KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
 
-        System.out.println(analyzeResultList.getPlainText());
 
         List<Token> tokenList = analyzeResultList.getTokenList();
         for (Token token : tokenList) {
@@ -43,6 +42,8 @@ public class NlpKomoranService {
         }
 
     }
+
+
 
 
 }

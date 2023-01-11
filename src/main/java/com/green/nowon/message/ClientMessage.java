@@ -10,9 +10,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ClientMessage {
-	  private String name;
+	  private String content;
 
-	public String getContent() {
-		return null;
-	}
+
 }

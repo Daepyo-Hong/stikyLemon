@@ -59,7 +59,7 @@ public class ChatBotController {
         LocalDateTime today=LocalDateTime.now();
         String formattedtime=today.format(DateTimeFormatter.ofPattern("a H:mm"));
 
-        service.nlpAnalyze(message.getContent());
+//        service.nlpAnalyze(message.getContent());
 
         String responseText=message.getContent()+" 대한 답장입니다.";
 
