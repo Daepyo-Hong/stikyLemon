@@ -63,10 +63,10 @@ function inputTagString(text){
     var message=`
 		<div class="msg user flex end" style="justify-content: right">
 			<div class="message">
-				<div class="part"  style="justify-content: right">
+				<div class="part"  style="text-align: right">
 					<p style="margin: 0">${text}</p>
 				</div>
-				<div class="time" style="justify-content: right">${time}</div>
+				<div class="time" style="text-align: right">${time}</div>
 			</div>
 		</div>
 	`;
