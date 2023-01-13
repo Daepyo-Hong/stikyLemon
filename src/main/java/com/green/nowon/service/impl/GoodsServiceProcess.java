@@ -145,7 +145,8 @@ public class GoodsServiceProcess implements GoodsService {
     public void getList(Model model) {
         List<GoodsEntity> list = goodsRepo.findAll();
         model.addAttribute("list", list.stream()
-                .map(GoodsListDTO::new).collect(Collectors.toList()));
+                .map(GoodsListDTO::new)
+                .collect(Collectors.toList()));//List<GoodsListDTO>
     }
 
     //관리자페이지에서 상품 수정버튼 눌렀을 때 페이지 이동 전 객체담기

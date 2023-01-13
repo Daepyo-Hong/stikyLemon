@@ -14,7 +14,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
 public class SecurityConfig {
-	
+
+    //챗봇할때쓴거
 	@Bean
 	public AuthenticationManager authenticationManager( AuthenticationConfiguration authenticationConfiguration) throws Exception {
 	    return authenticationConfiguration.getAuthenticationManager();
@@ -54,7 +55,6 @@ public class SecurityConfig {
                         .loginProcessingUrl("/comm/emailSigninSec")    //[POST] form태그의 action
                         .usernameParameter("email")         //username -> email
                         .passwordParameter("pass")          //password -> pass
-
                         .permitAll()
 
                 )
