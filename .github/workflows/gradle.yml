@@ -18,7 +18,7 @@ env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   CODEDEPLOY_APPLICATION_NAME: ${{ secrets.CODEDEPLOY_APPLICATION_NAME }}
   CODEDEPLOY_DEPLOYMENT_GROUP_NAME: ${{ secrets.CODEDEPLOY_DEPLOYMENT_GROUP_NAME }}
-  S3_LOCATION_BUCKET: ${{ secrets.S3_LOCATION_BUCKET }}
+  S3_LOCATION_BUCKET: ${{ secrets.S3_LOCATION_BUCKET }}  
 
 permissions:
   contents: read
@@ -36,10 +36,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     # gradlew 실행권한부여
-    - name: Grant exe permission for gradlew
+    - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@v2.3.3
+      uses: gradle/gradle-build-action@v2
       with:
         arguments: build
     # AWS 인증 (IAM 사용자 Access Key, Secret Key 활용)
