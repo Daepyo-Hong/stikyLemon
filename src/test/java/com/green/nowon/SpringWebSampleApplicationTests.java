@@ -30,7 +30,7 @@ class SpringWebSampleApplicationTests {
     private DeliveryEntityRepository deliveryRepo;
 
 
-    @Test
+   // @Test
     void 배송지정보등록() {
        /* deliveryRepo.save(dto.toEntity()
                 .base(deliveryRepo.countByMember_email(email)==0?true:false)//배송지정보가 없으면 base=true
