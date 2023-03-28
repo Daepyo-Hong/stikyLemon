@@ -13,8 +13,6 @@ import java.time.format.DateTimeFormatter;
 @Controller
 public class ChatBotController {
 
-    @Autowired
-    NlpKomoranService service;
 
     @MessageMapping("/hello") // /app/hello
     @SendTo("/topic/greetings")//stompClient.subscribe
